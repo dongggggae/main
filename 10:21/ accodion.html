@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        font-family: Helvetica, Arial, sans-serif;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .panel-question {
+        margin-bottom: 20px;
+        background-color: #fff;
+      }
+
+      .panel-heading {
+        font-weight: bold;
+        padding: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .panel-body {
+        padding: 15px;
+      }
+
+      #btn-collapse {
+        margin-bottom: 10px;
+        background-color: #999;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        padding: 5px;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="btn-collapse">Collapse All</button>
+      <h2>FAQ</h2>
+      <section id="faq">
+        <div class="panel-question active">
+          <div class="panel-heading">+ Lorem ipsum dolor sit?1</div>
+          <div class="panel-body" id="thisone">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+              aliquid voluptate fugit quaerat non molestiae quo magni soluta
+              minima corporis! Soluta, ipsa et.
+            </p>
+            <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+          </div>
+        </div>
+
+        <div class="panel-question">
+          <div class="panel-heading">+ Lorem ipsum dolor sit?2</div>
+          <div class="panel-body">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+              aliquid voluptate fugit quaerat non molestiae quo magni soluta
+              minima corporis! Soluta, ipsa et.
+            </p>
+            <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+          </div>
+        </div>
+
+        <div class="panel-question">
+          <div class="panel-heading">+ Lorem ipsum dolor sit?3</div>
+          <div class="panel-body">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad
+              aliquid voluptate fugit quaerat non molestiae quo magni soluta
+              minima corporis! Soluta, ipsa et.
+            </p>
+            <p>Quos quibusdam, nesciunt totam ullam quasi neque!</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      let btnCollapse = document.getElementById("btn-collapse"),
+        heading = document.querySelectorAll(".panel-heading"),
+        question = document.querySelectorAll(".panel-question"),
+        answer = document.querySelectorAll(".panel-body");
+
+      for (let i = 0; i < heading.length; i++) {
+        heading[i].addEventListener("click", function (e) {
+          for (let j = 0; j < question.length; j++) {
+            question[j].classList.remove("active");
+            e.target.parentNode.classList.add("active");
+            activateBody();
+          }
+        });
+      }
+      function activateBody() {
+        for (let y = 0; y < answer.length; y++) {
+          answer[y].style.display = "none";
+          
+        }
+        let activePanel = document.querySelector(
+          ".panel-question.active .panel-body"
+        );
+        activePanel.style.display = "block";
+      }
+      btnCollapse.addEventListener("click", function () {
+        for (let x = 0; x < answer.length; x++) {
+          answer[x].style.display = "none";
+        }
+      });
+      activateBody();
+    </script>
+  </body>
+</html>
