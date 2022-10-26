@@ -1,0 +1,142 @@
+@import url(./css/reset.css);
+@font-face {
+  font-family: "Cafesquare";
+  src: url(./fonts/Cafe24Ohsquare.woff);
+}
+@font-face {
+  font-family: "pretendard";
+  src: url(./fonts/Pretendard-Regular.woff);
+}
+:root {
+  --color-main: rgb(17, 17, 17);
+  --color-sub: rgb(255, 255, 255);
+  --color-sup: rgb(232, 232, 232);
+  --color-point: rgb(25, 101, 254);
+  --color-im: rgb(254, 218, 25);
+  --font-heading: "Cafesquare";
+  --font-article: "pretendard";
+  --font-size-head: 55px;
+  --s: 8px;
+  --m: 16px;
+  --l: 20px;
+  --xl: 24px;
+  --xxl: 32px;
+  --xxxl: 40px;
+}
+// 글꼴,색,본문의 색,크기 지정
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: var(--color-sub);
+}
+#wallPaper {
+  will-change: transform;
+  position: fixed;
+  transform: scaleY(0);
+  inset: 0px;
+  transform-origin: center bottom;
+  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.5s;
+  z-index: -1;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  transform-origin: center top;
+  background-color: var(--color-main);
+  &.even {
+    transform: scaleY(0);
+  }
+  &.odd {
+    transform: scaleY(1.2);
+  }
+}
+#header {
+  height: 150px;
+  transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  width: 100%;
+  nav.inner {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 1.7631vw 6.9444vw;
+    .tabs {
+      opacity: 1;
+      position: relative;
+      display: flex;
+      height: 80px;
+      perspective: 9999px;
+      will-change: transform;
+      transition: 0.35s;
+
+      &:first-of-type {
+        width: 13.5vw;
+      }
+      &:nth-of-type(2) {
+        width: 21.8vw;
+      }
+      &:last-of-type {
+        width: 15.6vw;
+      }
+      &:hover .tab {
+        transform: rotateX(90deg);
+      }
+      .tab {
+        font-family: var(--font-heading);
+        font-size: 4vw;
+        color: var(--color-sub);
+        width: 51px;
+        height: 80px;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: translateZ(-30px);
+        transition: transform 0.4s cubic-bezier(0.26, 1, 0.3, 1);
+        will-change: transform;
+        &:nth-of-type(2) {
+          transition-delay: 0.0514s;
+        }
+
+        &:nth-of-type(3) {
+          transition-delay: 0.1028s;
+        }
+
+        &:nth-of-type(4) {
+          transition-delay: 0.15428s;
+        }
+
+        &:nth-of-type(5) {
+          transition-delay: 0.2057142s;
+        }
+
+        &:nth-of-type(6) {
+          transition-delay: 0.25714s;
+        }
+
+        &:nth-of-type(7) {
+          transition-delay: 0.30857s;
+        }
+        .top,
+        .bottom {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          line-height: 80px;
+          text-align: center;
+        }
+        .top {
+          transform: rotateY(0deg) translateZ(30px);
+        }
+        .bottom {
+          transform: rotateX(-90deg) translateZ(30px);
+        }
+      }
+    }
+  }
+}
+section {
+  height: 500vh;
+  color: var(--color-sub);
+}
