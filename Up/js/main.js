@@ -23,26 +23,39 @@
 // }
 // 제이쿼리 자바스크립트로 바꿀거임
 let $tabs = $(".tabs"),
-  $wallPaper = $("#wallPaper");
+  $wallPaper = $("#wallPaper"),
+  currentTab;
 
 $tabs.click(function (e) {
   e.preventDefault();
   let idx = $(this).index();
   $tabs.removeClass("on");
   $(this).addClass("on");
-  openPage(idx);
+  changeBg(idx);
+  tabShow(idx);
 });
 
-function openPage(i) {
-  let currentTab = $tabs.eq(i).attr("class");
-  let change = currentTab.replace("tabs", "");
-  let bgChange = change.replace("on", "");
-
-  if (i == 0 || i == 2) {
-    $wallPaper.attr("class", bgChange);
-    $tabs.find(".tab").css({ color: "rgb(255, 255, 255)" });
+function changeBg(i) {
+  // bg색상 바꾸기
+  if (i % 2 == 0) {
+    currentTab = "even";
+    $wallPaper.attr("class", currentTab);
   } else {
-    $wallPaper.attr("class", bgChange);
-    $tabs.find(".tab").css({ color: "rgb(17, 17, 17)" });
+    currentTab = "odd";
+    $wallPaper.attr("class", currentTab);
+  }
+}
+
+function tabShow(i) {
+  // bg가 바뀌고 나서 탭 보여주기
+  if (i % 2 == 0) {
+    
+    setTimeout(function () {
+      $tabs.find(".tab").css({ color: "rgb(17, 17, 17)" });
+    }, 1150);
+  } else {
+    setTimeout(function () {
+      $tabs.find(".tab").css({ color: "rgb(255, 255, 255)" });
+    }, 1150);
   }
 }
