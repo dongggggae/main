@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../reset.css" />
+    <style>
+      @font-face {
+        font-family: blaa;
+        src: url(./Cafe24Ohsquare.woff);
+      }
+      html,
+      body {
+        font-family: blaa;
+        height: 100%;
+        background-color: rgb(17, 17, 17);
+      }
+
+      .workSlide {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      .textSlide {
+        z-index: 2;
+        width: 30%;
+        height: 80%;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .textWrap {
+        transition: 0.1s;
+        transform: translateY(-900%);
+        position: absolute;
+        width: 100%;
+        height: 33.333333%;
+        display: flex;
+        flex-direction: column;
+      }
+      .textWrap.animate {
+        transition: 0.6s cubic-bezier(1, 1, 1, 1);
+      }
+      .text {
+        z-index: 999;
+
+        cursor: pointer;
+        padding: 1rem;
+        opacity: 0;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 50px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .text.on {
+        opacity: 1;
+      }
+      .text.sub {
+        opacity: 0.5;
+      }
+      .bgSlide {
+        position: relative;
+        width: 70%;
+        height: 100%;
+      }
+      .bgWrap {
+        height: 100%;
+        width: 100%;
+        transform: translateX(-1000%);
+        position: absolute;
+        display: flex;
+      }
+      .bgWrap.animate {
+        transition: 0.6s cubic-bezier(1, 1, 1, 1);
+      }
+      .bg {
+        z-index: 1;
+        opacity: 0;
+        transition: 0.1s;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(255, 255, 255);
+        width: 960px;
+        height: 540px;
+        position: absolute;
+      }
+      .bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .bg.on {
+        opacity: 0.8;
+      }
+      .bg.sub {
+        opacity: 0.1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="workSlide">
+      <div class="textSlide">
+        <div class="textWrap animate">
+          <div class="text">서울 디자인 페스티벌</div>
+          <div class="text">청와대</div>
+          <div class="text">설빙</div>
+          <div class="text">JEEP</div>
+          <div class="text">홍루이젠</div>
+          <div class="text">칠성 사이다</div>
+          <div class="text">뮤고</div>
+          <div class="text">세븐브로이</div>
+          <div class="text">ADERERROR</div>
+          <div class="text">ARTISTY</div>
+          <div class="text">BMW</div>
+          <div class="text">인천광역시</div>
+          <div class="text">UP & DOWN</div>
+          <div class="text">퍼퓸그라피</div>
+          <div class="text">포카리스웨트</div>
+          <div class="text">Round A Round</div>
+          <div class="text">STX</div>
+          <div class="text">위메프오</div>
+          <div class="text">LOTTE HOTEL</div>
+          <div class="text">스타벅스</div>
+          <div class="text">Nongshim Hotel</div>
+        </div>
+      </div>
+      <div class="bgSlide">
+        <div class="bgWrap animate">
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-sdf.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-chungwadae.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-sulbing.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-jeep.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-hong.png" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-shilseong.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-mugo.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-seven.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-ader.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-artisty.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-bmw.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-up&down.png" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-incheon.png" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-perfume.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-pocari.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-shilseong.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-stx.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-wmpo.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-lotte.jpg" alt="" />
+          </div>
+          <div class="bg">
+            <img src="./iloveimg-resized/tab1-star.jpg" alt="" />
+          </div>
+          <div class="bg">aa</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/tabs1.js"></script>
+  </body>
+</html>

@@ -7,13 +7,11 @@ html {
 .slideContainer {
   position: relative;
   width: 100%;
-
   overflow: hidden;
 }
 .slideWrap {
   position: absolute;
   width: 100%;
-
   display: flex;
 }
 .slideWrap.animate {
