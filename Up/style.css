@@ -31,7 +31,8 @@ html {
 }
 
 body {
-  background-color: var(--color-sub);
+  background-color: var(--color-main);
+  font-family: var(--font-article);
 }
 
 #wallPaper {
@@ -46,7 +47,7 @@ body {
   position: fixed;
   width: 100%;
   transform-origin: center top;
-  background-color: var(--color-main);
+  background-color: var(--color-sub);
 }
 #wallPaper.even {
   transform: scaleY(0);
@@ -130,7 +131,100 @@ body {
   transform: rotateX(-90deg) translateZ(-2.777778vw);
 }
 
-section {
-  height: 500vh;
+main {
+  display: none;
+  font-family: var(--font-article);
+}
+
+#tab1 {
   color: var(--color-sub);
+}
+
+#tab2 {
+  color: var(--color-main);
+}
+
+#tab3 {
+  color: var(--color-sub);
+}
+#tab3 .intro h2.title {
+  font-size: var(--l);
+}
+#tab3 .intro p {
+  line-height: 25px;
+}
+#tab3 .content-box {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  word-break: keep-all;
+}
+#tab3 .scroll-content .scroll-graphic {
+  overflow-x: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+#tab3 .scroll-content .scroll-graphic .graphic-item {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.5s;
+  will-change: opacity;
+}
+#tab3 .scroll-content .scroll-graphic .graphic-item .scene-img {
+  max-height: 100vh;
+}
+#tab3 .scroll-content .scroll-graphic .graphic-item .scene-img img {
+  max-width: 100%;
+  height: auto;
+}
+#tab3 .scroll-content .scroll-graphic .graphic-item.visible {
+  opacity: 1;
+}
+#tab3 .scroll-content .scroll-graphic .graphic-item .bird {
+  position: absolute;
+  left: 0;
+  bottom: 70%;
+  width: 100px;
+  transform: translateX(-100%);
+  transition: 1.5s linear 0.35s;
+}
+#tab3 .scroll-content .scroll-text {
+  position: relative;
+}
+#tab3 .scroll-content .scroll-text .text {
+  color: var(--color-main);
+  font-size: var(--m);
+  line-height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  word-break: keep-all;
+  margin-bottom: 60vh;
+}
+#tab3 .scroll-content .scroll-text .text strong {
+  font-size: var(--l);
+  color: #ff6565;
+}
+#tab3 .scroll-content .scroll-text .text:last-child {
+  margin-bottom: 40vh;
+}
+#tab3 .normal-content p {
+  font-size: 16px;
+}
+#tab3 footer {
+  margin-top: 5vh;
+  font-size: 10px;
+  color: var(--color-sup);
+  padding: 2rem 0 1rem;
+  text-align: center;
 }

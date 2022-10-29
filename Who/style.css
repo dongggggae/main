@@ -7,15 +7,7 @@ body {
   z-index: -1;
   margin: 0;
 }
-div,
-section,
-header,
-footer,
-p,
-h1,
-h2 {
-  box-sizing: border-box;
-}
+
 a {
   color: royalblue;
 }
@@ -23,7 +15,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-.global-width {
+.content-box {
   max-width: 620px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -42,7 +34,7 @@ img {
 .scroll-text {
   position: relative;
 }
-header p {
+.intro p {
   line-height: 25px;
 }
 .text {

@@ -9,7 +9,7 @@
     <style>
       @font-face {
         font-family: blaa;
-        src: url(./Cafe24Ohsquare.woff);
+        src: url(./NanumSquareOTF_acEB.woff);
       }
       html,
       body {
@@ -17,19 +17,21 @@
         height: 100%;
         background-color: rgb(17, 17, 17);
       }
-
+      a {
+        text-decoration: none;
+      }
       .workSlide {
         height: 100%;
         width: 100%;
         overflow: hidden;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
       }
+
       .textSlide {
         z-index: 2;
-        width: 30%;
+        width: 40%;
         height: 80%;
         overflow: hidden;
         position: relative;
@@ -44,36 +46,66 @@
         display: flex;
         flex-direction: column;
       }
+
       .textWrap.animate {
         transition: 0.6s cubic-bezier(1, 1, 1, 1);
       }
+
       .text {
         z-index: 999;
-
         cursor: pointer;
-        padding: 1rem;
-        opacity: 0;
+        margin-left: 2rem;
+        opacity: 1;
         color: rgb(255, 255, 255);
         text-align: center;
-        font-size: 50px;
         position: absolute;
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
       }
+
+      .text.on p {
+        background-size: calc(100% - 1px) 100%;
+        background-position: center bottom;
+      }
+
+      .text p {
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+        background-image: linear-gradient(
+          0deg,
+          rgb(255, 255, 255) 0%,
+          rgb(255, 255, 255) 100%
+        );
+        font-size: 4vw;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        background-size: 100% 0%;
+        transition: 0.8s cubic-bezier(1, 1, 1, 1);
+        letter-spacing: -2px;
+        white-space: nowrap;
+      }
+
       .text.on {
         opacity: 1;
       }
+
       .text.sub {
         opacity: 0.5;
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
       }
+
       .bgSlide {
         position: relative;
-        width: 70%;
+        width: 60%;
         height: 100%;
       }
+
       .bgWrap {
         height: 100%;
         width: 100%;
@@ -81,9 +113,11 @@
         position: absolute;
         display: flex;
       }
+
       .bgWrap.animate {
-        transition: 0.6s cubic-bezier(1, 1, 1, 1);
+        transition: 0.8s cubic-bezier(1, 1, 1, 1);
       }
+
       .bg {
         z-index: 1;
         opacity: 0;
@@ -91,21 +125,67 @@
         top: 50%;
         left: 25%;
         transform: translate(-50%, -50%);
-        background-color: rgb(255, 255, 255);
-        width: 960px;
-        height: 540px;
+        width: 900px;
+        height: 506px;
         position: absolute;
       }
+
       .bg img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
+
       .bg.on {
-        opacity: 0.8;
+        opacity: 1;
       }
+
       .bg.sub {
         opacity: 0.1;
+      }
+
+      section {
+        height: 500vh;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .workSlide {
+          flex-direction: column;
+        }
+        .bgSlide {
+          height: 70%;
+          width: 100%;
+        }
+        .text.sub {
+          opacity: 0.5;
+        }
+        .text p {
+          font-size: 8vw;
+        }
+        .bg.sub {
+          opacity: 0;
+        }
+        .textSlide {
+          width: 80%;
+          height: 30%;
+        }
+        .bg {
+          width: 720px;
+          margin: 0 1rem;
+          height: 405px;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .bg {
+          width: 640px;
+          height: 360px;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        .bg {
+          width: 480px;
+          height: 270px;
+        }
       }
     </style>
   </head>
@@ -113,33 +193,38 @@
     <div class="workSlide">
       <div class="textSlide">
         <div class="textWrap animate">
-          <div class="text">서울 디자인 페스티벌</div>
-          <div class="text">청와대</div>
-          <div class="text">설빙</div>
-          <div class="text">JEEP</div>
-          <div class="text">홍루이젠</div>
-          <div class="text">칠성 사이다</div>
-          <div class="text">뮤고</div>
-          <div class="text">세븐브로이</div>
-          <div class="text">ADERERROR</div>
-          <div class="text">ARTISTY</div>
-          <div class="text">BMW</div>
-          <div class="text">인천광역시</div>
-          <div class="text">UP & DOWN</div>
-          <div class="text">퍼퓸그라피</div>
-          <div class="text">포카리스웨트</div>
-          <div class="text">Round A Round</div>
-          <div class="text">STX</div>
-          <div class="text">위메프오</div>
-          <div class="text">LOTTE HOTEL</div>
-          <div class="text">스타벅스</div>
-          <div class="text">Nongshim Hotel</div>
+          <a href="#" target="_blank" class="text">
+            <!-- 중간부터 시작이여서 추가할때 21 다음부터 추가하고 추가한 갯수 만큼 WRAP에 트랜지션 -100씩 추가 하면 됨 -->
+            <p>12.서울 디자인 페스티벌</p></a
+          >
+          <a href="#" target="_blank" class="text"> <p>13. 청와대</p></a>
+          <a href="#" target="_blank" class="text"> <p>14. 설빙</p></a>
+          <a href="#" target="_blank" class="text"> <p>15. JEEP</p></a>
+          <a href="#" target="_blank" class="text"> <p>16. 홍루이젠</p></a>
+          <a href="#" target="_blank" class="text"> <p>17. 칠성 사이다</p></a>
+          <a href="#" target="_blank" class="text"> <p>18. 뮤고</p></a>
+          <a href="#" target="_blank" class="text"> <p>19. 세븐브로이</p></a>
+          <a href="#" target="_blank" class="text"> <p>20. ADERERROR</p></a>
+          <a href="#" target="_blank" class="text"> <p>21. ARTISTY</p></a>
+          <a href="#" target="_blank" class="text"> <p>1. BMW</p></a>
+          <a href="#" target="_blank" class="text"> <p>2. 인천광역시</p></a>
+          <a href="#" target="_blank" class="text"> <p>3. UP & DOWN</p></a>
+          <a href="#" target="_blank" class="text"> <p>4. UP & DOWN</p></a>
+          <a href="#" target="_blank" class="text"> <p>5. 포카리스웨트</p></a>
+          <a href="#" target="_blank" class="text"> <p>6. Round A Round</p></a>
+          <a href="#" target="_blank" class="text"> <p>7. STX</p></a>
+          <a href="#" target="_blank" class="text"> <p>8. 위메프오</p></a>
+          <a href="#" target="_blank" class="text"> <p>9. LOTTE HOTEL</p></a>
+          <a href="#" target="_blank" class="text"> <p>10. 스타벅스</p></a>
+          <a href="#" target="_blank" class="text">
+            <p>11. Nongshim Hotel</p></a
+          >
         </div>
       </div>
       <div class="bgSlide">
         <div class="bgWrap animate">
           <div class="bg">
-            <img src="./iloveimg-resized/tab1-sdf.jpg" alt="" />
+            <img src="./iloveimg-resized/tab1-sdf.gif" alt="" />
           </div>
           <div class="bg">
             <img src="./iloveimg-resized/tab1-chungwadae.jpg" alt="" />
@@ -202,7 +287,6 @@
         </div>
       </div>
     </div>
-
     <script src="./js/tabs1.js"></script>
   </body>
 </html>
