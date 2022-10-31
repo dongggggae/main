@@ -15,9 +15,11 @@
             <span></span>
           </div>
           <div class="intro_txt">
-            <p>
-              인트로텍스트+<i>인트로텍스트</i>인트로텍스트+<i>인트로텍스트+</i>
-            </p>
+            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
+            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
+            <p class="typing" id="intro_txt"></p>
+            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
+            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
           </div>
           <div class="line bot">
             <span></span>
@@ -26,7 +28,7 @@
       </div>
     </div>
     <div id="wallPaper" class="even"></div>
-    <header id="header">
+    <header id="header" class="hide">
       <nav class="inner">
         <a href="#tab1" class="tabs odd">
           <div class="tab">
@@ -107,98 +109,160 @@
     <main id="tab1">
       <div class="workSlide">
         <div class="textSlide">
+          <!-- 짝수개 만큼 추가하고 Y값 100씩 증가시키면 됨 -->
           <div class="textWrap animate">
-            <a href="#" target="_blank" class="workText">
-              <!-- 중간부터 시작이여서 추가할때 21 다음부터 추가하고 추가한 갯수 만큼 WRAP에 트랜지션 -100씩 추가 하면 됨 -->
-              <p>12.서울 디자인 페스티벌</p></a
+            <a href="#" data-index="1" class="workText"><p>포카리스웨트</p></a>
+            <a href="#" data-index="2" class="workText"><p>BMW</p></a>
+            <a href="#" data-index="3" class="workText"><p>SDF</p></a>
+            <a href="#" data-index="4" class="workText"><p>뮤고박스</p></a>
+            <a href="#" data-index="5" class="workText"><p>설빙</p></a>
+            <a href="#" data-index="6" class="workText"><p>JEEP</p></a>
+            <a href="#" data-index="7" class="workText"><p>코로나</p></a>
+            <a href="#" data-index="8" class="workText"><p>STARBUCKS</p></a>
+            <a href="#" data-index="9" class="workText"><p>Ader Error</p></a>
+            <a href="#" data-index="10" class="workText"><p>홍루이젠</p></a>
+            <a href="#" data-index="11" class="workText"><p>ACE BED</p></a>
+            <a href="#" data-index="12" class="workText"><p>청와대</p></a>
+            <a href="#" data-index="13" class="workText"><p>ARTISTY</p></a>
+            <a href="#" data-index="14" class="workText"><p>STX</p></a>
+            <a href="#" data-index="15" class="workText"
+              ><p>Round A Round</p></a
             >
-            <a href="#" target="_blank" class="workText"> <p>13. 청와대</p></a>
-            <a href="#" target="_blank" class="workText"> <p>14. 설빙</p></a>
-            <a href="#" target="_blank" class="workText"> <p>15. JEEP</p></a>
-            <a href="#" target="_blank" class="workText"> <p>16. 홍루이젠</p></a>
-            <a href="#" target="_blank" class="workText"> <p>17. 칠성 사이다</p></a>
-            <a href="#" target="_blank" class="workText"> <p>18. 뮤고</p></a>
-            <a href="#" target="_blank" class="workText"> <p>19. 세븐브로이</p></a>
-            <a href="#" target="_blank" class="workText"> <p>20. ADERERROR</p></a>
-            <a href="#" target="_blank" class="workText"> <p>21. ARTISTY</p></a>
-            <a href="#" target="_blank" class="workText"> <p>1. BMW</p></a>
-            <a href="#" target="_blank" class="workText"> <p>2. 인천광역시</p></a>
-            <a href="#" target="_blank" class="workText"> <p>3. UP & DOWN</p></a>
-            <a href="#" target="_blank" class="workText"> <p>4. UP & DOWN</p></a>
-            <a href="#" target="_blank" class="workText"> <p>5. 포카리스웨트</p></a>
-            <a href="#" target="_blank" class="workText"> <p>6. Round A Round</p></a>
-            <a href="#" target="_blank" class="workText"> <p>7. STX</p></a>
-            <a href="#" target="_blank" class="workText"> <p>8. 위메프오</p></a>
-            <a href="#" target="_blank" class="workText"> <p>9. LOTTE HOTEL</p></a>
-            <a href="#" target="_blank" class="workText"> <p>10. 스타벅스</p></a>
-            <a href="#" target="_blank" class="workText">
-              <p>11. Nongshim Hotel</p></a
+            <a href="#" data-index="16" class="workText"
+              ><p>Perfume Graphy</p></a
             >
+            <a href="#" data-index="17" class="workText"><p>위메프오</p></a>
+            <a href="#" data-index="18" class="workText"><p>세븐브로이</p></a>
+            <a href="#" data-index="19" class="workText"><p>칠성사이다</p></a>
+            <a href="#" data-index="20" class="workText"><p>롯데호텔</p></a>
+            <a href="#" data-index="21" class="workText"><p>넘버게임</p></a>
+            <a href="#" data-index="22" class="workText"><p>밤도깨비</p></a>
+            <a href="#" data-index="23" class="workText"><p>To Do List</p></a>
+            <a href="#" data-index="24" class="workText"><p>추가해야함</p></a>
+            <a href="#" data-index="25" class="workText"><p>추가해야함</p></a>
           </div>
         </div>
         <div class="bgSlide">
           <div class="bgWrap animate">
             <div class="bg">
-              <img src="./tab1-imges/tab1-sdf.gif" alt="" />
+              <!-- ftp로 올려서 인덱스 추가하기 -->
+              <!-- 짝수개 만큼 추가해서 X 100씩 추가하면 됨 -->
+              <a href="#">
+                <img src="./tab1-imges/tab1-pocari.jpg" alt="1.포카리스웨트"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-chungwadae.jpg" alt="" />
+              <a href="#"
+                ><img src="./tab1-imges/tab1-bmw.jpg" alt="2.bmw"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-sulbing.jpg" alt="" />
+              <a href=""><img src="./tab1-imges/tab1-sdf.gif" alt="3.SDF" /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-jeep.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-mugo.jpg" alt="4.MugoBox"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-hong.png" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-sulbing.jpg" alt="5.설빙"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-shilseong.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-jeep.jpg" alt="6.jeep"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-mugo.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-incheon.png" alt="7.인천광역시"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-seven.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-star.jpg" alt="8.스타벅스"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-ader.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-ader.jpg" alt="9.아더에러"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-artisty.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-hong.png" alt="10.홍루이젠"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-bmw.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-ace.jpg" alt="11.ACE BED"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-up&down.png" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-chungwadae.jpg" alt="12.청와대"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-incheon.png" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-artisty.jpg" alt="13.ARTISTY"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-perfume.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-stx.jpg" alt="14.STX"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-pocari.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-round.jpg" alt="15.Round a round"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-shilseong.jpg" alt="" />
+              <a href=""
+                ><img
+                  src="./tab1-imges/tab1-perfume.jpg"
+                  alt="16.Perfume Graphy"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-stx.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-wmpo.jpg" alt="17.위메프오"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-wmpo.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-seven.jpg" alt="18.seven"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-lotte.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-chilseong.jpg" alt="19.칠성사이다"
+              /></a>
             </div>
             <div class="bg">
-              <img src="./tab1-imges/tab1-star.jpg" alt="" />
+              <a href=""
+                ><img src="./tab1-imges/tab1-lotte.jpg" alt="20.롯데 호텔"
+              /></a>
             </div>
-            <div class="bg">aa</div>
+            <div class="bg">
+              <a href=""
+                ><img src="./tab1-imges/tab1-up&down.png" alt="21.넘버게임"
+              /></a>
+            </div>
+            <div class="bg">
+              <a href=""><img src="" alt="22.밤도깨비" /></a>
+            </div>
+            <div class="bg">
+              <a href=""><img src="" alt="23.To Do list" /></a>
+            </div>
+            <div class="bg">
+              <a href=""><img src="" alt="24.lst" /></a>
+            </div>
+            <div class="bg">
+              <a href=""><img src="" alt="25.last" /></a>
+            </div>
           </div>
         </div>
       </div>
