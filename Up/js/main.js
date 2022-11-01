@@ -26,194 +26,34 @@
 // intro\
 
 (() => {
-  String.prototype.toKorChars = function () {
-    var cCho = [
-        "ㄱ",
-        "ㄲ",
-        "ㄴ",
-        "ㄷ",
-        "ㄸ",
-        "ㄹ",
-        "ㅁ",
-        "ㅂ",
-        "ㅃ",
-        "ㅅ",
-        "ㅆ",
-        "ㅇ",
-        "ㅈ",
-        "ㅉ",
-        "ㅊ",
-        "ㅋ",
-        "ㅌ",
-        "ㅍ",
-        "ㅎ",
-      ],
-      cJung = [
-        "ㅏ",
-        "ㅐ",
-        "ㅑ",
-        "ㅒ",
-        "ㅓ",
-        "ㅔ",
-        "ㅕ",
-        "ㅖ",
-        "ㅗ",
-        "ㅘ",
-        "ㅙ",
-        "ㅚ",
-        "ㅛ",
-        "ㅜ",
-        "ㅝ",
-        "ㅞ",
-        "ㅟ",
-        "ㅠ",
-        "ㅡ",
-        "ㅢ",
-        "ㅣ",
-      ],
-      cJong = [
-        "",
-        "ㄱ",
-        "ㄲ",
-        "ㄳ",
-        "ㄴ",
-        "ㄵ",
-        "ㄶ",
-        "ㄷ",
-        "ㄹ",
-        "ㄺ",
-        "ㄻ",
-        "ㄼ",
-        "ㄽ",
-        "ㄾ",
-        "ㄿ",
-        "ㅀ",
-        "ㅁ",
-        "ㅂ",
-        "ㅄ",
-        "ㅅ",
-        "ㅆ",
-        "ㅇ",
-        "ㅈ",
-        "ㅊ",
-        "ㅋ",
-        "ㅌ",
-        "ㅍ",
-        "ㅎ",
-      ],
-      cho,
-      jung,
-      jong;
-    var str = this,
-      cnt = str.length,
-      chars = [],
-      cCode;
-    for (var i = 0; i < cnt; i++) {
-      cCode = str.charCodeAt(i);
-      if (cCode == 32) {
-        chars.push(" ");
-        continue;
-      } // 한글이 아닌 경우
-      if (cCode < 0xac00 || cCode > 0xd7a3) {
-        chars.push(str.charAt(i));
-        continue;
-      }
-      cCode = str.charCodeAt(i) - 0xac00;
-
-      jong = cCode % 28;
-      // 종성
-      jung = ((cCode - jong) / 28) % 21;
-
-      // 중성
-      cho = ((cCode - jong) / 28 - jung) / 21;
-      // 초성
-
-      //기본 코드 테스트가 ㅌㅔㅅ-ㅌ- 형식으로 저장됨
-      // chars.push(cCho[cho], cJung[jung]);
-      // if (cJong[jong] !== '') {
-      //     chars.push(cJong[jong]);
-      //     }
-
-      //  테스트라는 문장이 있으면 ㅌ테ㅅ스ㅌ트 형식으로 저장되도록함 (타이핑을 위해서)
-      chars.push(cCho[cho]);
-      chars.push(String.fromCharCode(44032 + cho * 588 + jung * 28));
-      if (cJong[jong] !== "") {
-        chars.push(String.fromCharCode(44032 + cho * 588 + jung * 28 + jong));
-      }
-    }
-
-    return chars;
-  };
-
-  //타이핑할 문장
-  var result = "함께+성장+지금+여기+";
-  var typeing1 = [];
-  result = result.split(""); // 한글자씩자름
-
-  //각글자 초성,중성,종성으로 나눔
-  for (var i = 0; i < result.length; i++) {
-    typeing1[i] = result[i].toKorChars();
-  }
-  console.log(typeing1);
-
-  //출력할 엘리먼트요소 가져옴
-  var resultDiv = document.getElementById("intro_txt");
-
-  //
-  var text = "";
-  var i = 0;
-  var j = 0;
-  var text = "";
-
-  //총글자수
-  var imax = typeing1.length;
-
-  //setInterval을 이용해 반복적으로 출력
-  var inter = setInterval(typi, 60);
-
-  function rp() {
-    let str = document.getElementById("intro_txt").innerText;
-    str1 = str
-      .replace("함께+", "함께+<i>")
-      .replace("성장+", "성장+</i>")
-      .replace("지금+", "지금+<i>")
-      .replace("여기+", "여기+</i>");
-    document.getElementById("intro_txt").innerHTML = str1;
-  }
-
-  function typi() {
-    //글자수만큼 반복후 종료
-    if (i <= imax - 1) {
-      //각 글자가 초성 중성 종성 순서대로 추가되도록
-      var jmax = typeing1[i].length;
-      resultDiv.innerHTML = text + typeing1[i][j];
-      j++;
-      if (j == jmax) {
-        text += typeing1[i][j - 1]; //초성중성종성 순서대로 출력된 글자는 저장 ( 다음 글자와 이어붙이기 위해서 )
-        i++;
-        j = 0;
-      }
-      rp();
-    } else {
-      clearInterval(inter);
-    }
-  }
-  var intro_mo = document.getElementById("intro");
+  var intro = document.getElementById("intro");
   var header = document.getElementById("header");
   let firstMain = document.getElementById("tab1");
   function intro1() {
-    intro_mo.classList.add("op_on");
+    intro.classList.add("open");
+  }
+  function introRe1() {
+    intro.querySelector(".first").style.opacity = "0";
+  }
+  function introRe2() {
+    intro.querySelector(".twice").style.opacity = "1";
+  }
+  function introRe3() { 
+    intro.querySelector(".twice").style.opacity = "0";
   }
   function intro2() {
-    intro_mo.classList.add("none");
+    intro.classList.add("none");
     header.classList.remove("hide");
   }
   function intro3() {
     firstMain.classList.add("active");
   }
-  setTimeout(() => intro1(), 1600);
-  setTimeout(() => intro2(), 3700);
-  setTimeout(() => intro3(), 3700);
+  setTimeout(() => intro1(), 500);
+  setTimeout(() => introRe1(), 1100);
+  setTimeout(() => introRe2(), 1700);
+  setTimeout(() => introRe3(), 2300);
+  setTimeout(() => intro2(), 3400);
+  setTimeout(() => intro3(), 3400);
 })();
 
 // header
@@ -297,7 +137,7 @@
         activeTitle();
         activeBg();
       }
-    }, 30);
+    }, 35);
   });
 
   slideTexts.forEach((text) => {

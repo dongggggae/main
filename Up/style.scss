@@ -1,3 +1,9 @@
+/* 10/25 시작 */
+/* 메뉴 구성 큐브 효과로 하기로 하고 탭123 으로 연결 탭 애니메이션 + 화면 전환 10/28 */
+/* tab3 반응형 끝 이지만 수정하면됨 10/30 */
+/* tab1 work desc만 추가 하면 끝 11/1 */
+/* tab2 프로젝트 이제 추가하면 됨  */
+
 @import url(./css/reset.css);
 @font-face {
   font-family: "Cafesquare";
@@ -19,6 +25,7 @@
   --color-im: rgb(254, 218, 25);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
+  --font-work: "Nanum";
   --font-size-head: 55px;
   --s: 8px;
   --m: 16px;
@@ -39,9 +46,10 @@ body {
   background-color: var(--color-main);
   font-family: var(--font-article);
 }
+// intro start
 
-.intro {
-  background-color: #fff;
+#intro {
+  background-color: var(--color-sub);
   position: absolute;
   top: 0;
   left: 0;
@@ -50,12 +58,12 @@ body {
   z-index: 200;
   overflow: hidden;
 }
-.intro_wrap {
+.introWrap {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.intro .intro_mo {
+.intro .introMain {
   position: absolute;
   width: 200%;
   left: -50%;
@@ -69,52 +77,53 @@ body {
   top: 50%;
   width: 100%;
   height: 0;
-  background-color: #101010;
+  background-color: var(--color-main);
   z-index: 10;
   transform: translate(0, -50%);
-  transition: 0.3s;
-  transition-delay: 1.7s;
+  transition: 0.4s;
+  transition-delay: 2.5s;
 }
-.intro .intro_mo .line {
+
+.intro .introMain .line {
   position: absolute;
   width: 100%;
   height: 1px;
   z-index: 10;
-  background-color: #fff;
+  background-color: var(--color-sub);
   transition: 0.2s;
-  transition-delay: 1.2s;
+  transition-delay: 2.1s;
   transition-timing-function: cubic-bezier(1, 1, 1, 1);
 }
-.intro .intro_mo .line span {
+.intro .introMain .line span {
   display: block;
   width: 100%;
   height: 100%;
 }
-.intro .intro_mo .line span::before {
+.intro .introMain .line span::before {
   content: "";
   position: absolute;
-  background-color: #e1e1e1;
+  background-color: var(--color-main);
   width: 0;
   height: 1px;
   transition: 0.8s;
 }
-.intro .intro_mo .line.top {
+.intro .introMain .line.top {
   top: 0;
   left: 0;
 }
-.intro .intro_mo .line.top span::before {
+.intro .introMain .line.top span::before {
   bottom: 0;
   left: 25%;
 }
-.intro .intro_mo .line.bot {
+.intro .introMain .line.bot {
   bottom: 0;
   right: 0;
 }
-.intro .intro_mo .line.bot span::before {
+.intro .introMain .line.bot span::before {
   top: 0;
   right: 25%;
 }
-.intro .intro_txt {
+.intro .introText {
   position: relative;
   padding: 20px 0 30px;
   text-align: center;
@@ -123,43 +132,39 @@ body {
   align-items: center;
   justify-content: center;
 }
-.intro .intro_txt p {
+.intro .introText p {
   font-size: 7rem;
   font-weight: 600;
-  color: #101010;
+  color: var(--color-im);
   display: inline-block;
   opacity: 0;
-  transition: 0.6s;
+  transition: 0.5s;
 }
-.intro .intro_txt p i {
-  -webkit-text-stroke: 2px #101010;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  font-style: normal;
+.intro .introText p:last-of-type {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-.intro .intro_txt p.typing {
-  opacity: 1;
-}
-.intro.op_on::after {
+.intro.open::after {
   height: 100%;
 }
-.intro.op_on .line {
+.intro.open .line {
   height: 50%;
 }
-.intro.op_on .line span::before {
+.intro.open .line span::before {
   width: 50%;
 }
-.intro.op_on .intro_txt {
-  animation: txtmove 2.8s;
-  animation-fill-mode: forwards;
-  animation-timing-function: cubic-bezier(1, 1, 1, 1);
-}
-.intro.op_on .intro_txt p {
+
+.intro.open .introText p:first-of-type {
   opacity: 1;
 }
 .intro.none {
   display: none;
 }
+
+// tab 누르면 화면 전환 도와주는 바
+
 #wallPaper {
   will-change: transform;
   position: fixed;
@@ -180,11 +185,21 @@ body {
     transform: scaleY(1.2);
   }
 }
+// tab에 1.3에 오드 넣고 2에 이븐 넣어서 클래스 명으로 추가 삭제
+
+// header 포지션 처음에는 fide라는 클래스로 숨겨놓고 인트로 끝나면 나오게 하기위해 hide 클래스 넣고 시작
+// tab2,3은 스크롤이 많기 때문에 active를 주고 숨겨놓기
 #header {
-  height: 10.4167vw;
+  height: 10vw;
   width: 100%;
   z-index: 9999;
   position: fixed;
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  &.active {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
   &.hide {
     display: none;
   }
@@ -195,20 +210,20 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    padding: 0 6.9444vw;
+    padding: 0 7vw;
     .tabs {
       opacity: 1;
       position: relative;
       display: flex;
       align-items: center;
-      height: 5.5556vw;
+      height: 4vw;
       perspective: 99999px;
       will-change: transform;
       transition: 0.35s;
       &:first-of-type,
       &:last-of-type {
         .tab:first-child {
-          padding: 0 1.6vw;
+          padding: 0 1.52vw;
         }
       }
       &:hover .tab {
@@ -219,15 +234,17 @@ body {
         display: flex;
         justify-content: center;
         font-family: var(--font-heading);
-        font-size: 4vw;
+        font-size: 3.5vw;
         color: var(--color-sub);
-        padding: 0 1.4vw;
+        line-height: 4vw;
+        padding: 0 1.25vw;
         height: 100%;
         position: relative;
         transform-style: preserve-3d;
         transform: translateZ(-30px);
         transition: transform 0.4s cubic-bezier(0.26, 1, 0.3, 1);
         will-change: transform;
+        // 헤더에 transition이 많이 일어나서 willchange 줌
         &:nth-of-type(2) {
           transition-delay: 0.0514s;
         }
@@ -275,6 +292,10 @@ main {
   font-family: var(--font-article);
 }
 
+// tab1은 원페이지에 tab1에 휠 이벤트 넣어서 슬라이드 텍스트는 위 아래로
+//  workbg는 좌우로 translate를 각각 중앙에 오게끔 위치했다.
+// 작업물 추가할 때 짝수갯수 씩 추가하는걸 지향
+//  작업물 추가하고 2n개 추가하면 .wrap에 n*100씩  증가 시키기 가운데 고정 **********
 #tab1 {
   color: var(--color-sub);
   &.active {
@@ -294,7 +315,7 @@ main {
     left: 0;
     z-index: 2;
     width: 40%;
-    height: 75%;
+    height: 70%;
     overflow: hidden;
     position: absolute;
   }
@@ -332,9 +353,9 @@ main {
     background-size: calc(100% - 1px) 100%;
     background-position: center bottom;
   }
-
+  // 텍스트 필 텍스트
   .workText p {
-    font-family: "Nanum";
+    font-family: var(--font-work);
     -webkit-text-stroke: 1px rgb(255, 255, 255);
     background-image: linear-gradient(
       0deg,
@@ -361,6 +382,9 @@ main {
   .workText.sub {
     opacity: 0.5;
     -webkit-text-stroke: 1px rgb(255, 255, 255);
+  }
+  .workText.sub p {
+    font-size: 3.5vw;
   }
 
   .bgSlide {
@@ -394,11 +418,40 @@ main {
     height: 506px;
     position: absolute;
     a {
+      position: relative;
       width: 100%;
       height: 100%;
+      &:hover .desc {
+        opacity: 1;
+      }
     }
   }
-
+  .bg a .desc {
+    transition: 0.35s cubic-bezier(1, 1, 1, 1);
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .desc p.response {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    height: 50px;
+    img {
+      width: 100%;
+    }
+  }
   .bg img {
     width: 100%;
     height: 100%;
@@ -413,10 +466,17 @@ main {
     opacity: 0.1;
   }
 }
+// tab2,tab3 는 스크롤이기에 위 헤더영역만큼 패딩 주기
+// margin주면 영역을 문다.
+
 #tab2 {
   padding-top: 15vw;
   color: var(--color-main);
 }
+
+// dataindex 주고 굳이 레이아웃이 바뀌는 느낌은 아니라 자체 에서 반응형 global-width로
+// 이미지도 크기에 맞게 끔 줄어들고 하게 했다.
+//  data-index로 말풍선 + 이미지 묶어서 갯수 같게 해서visible 빼고 넣기
 #tab3 {
   padding-top: 15vw;
   color: var(--color-sub);
@@ -508,38 +568,27 @@ footer {
 // animation
 
 @media screen and (max-width: 1124px) {
-  .intro .intro_txt {
+  .intro .introText {
     padding: 10px 0 15px;
   }
-  .intro .intro_txt p {
+  .intro .introText p {
     font-size: 4rem;
   }
-  .intro .intro_txt p i {
-    -webkit-text-stroke: 1px rgb(17, 17, 17);
-  }
-  @keyframes txtmove {
-    0% {
-      transform: translate(0, 0);
-    }
-    99% {
-      transform: translate(-100%, 0);
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
+
   #tab1 {
     .workSlide {
       flex-direction: column;
       .textSlide {
-        bottom: 0;
+        bottom: 5%;
         width: 100%;
         height: 30%;
         .textWrap {
           .workText {
             margin: 0;
             justify-content: center;
+            &.sub {
+              animation: opacityDown 0.3s linear forwards;
+            }
             p {
               font-size: 6.5vw;
             }
@@ -547,18 +596,19 @@ footer {
         }
       }
       .bgSlide {
+        top: 10%;
         height: 60%;
         width: 100%;
         .bgWrap {
           .bg {
             padding: 0 1rem;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -35%);
             width: 720px;
             height: 405px;
             transition: 0.5s;
             &.sub {
-              display: none;
+              opacity: 0.1;
             }
           }
         }
@@ -573,21 +623,29 @@ footer {
   }
 }
 @media screen and (max-width: 576px) {
+  #header nav.inner .tabs {
+    height: 5vw;
+    .tab {
+      font-size: 5vw;
+      padding: 0 1.7vw;
+      line-height: 5vw;
+    }
+  }
   #tab1 .workSlide .bgSlide .bgWrap .bg {
     width: 480px;
     height: 270px;
+  }
+  #tab1 .bg a .desc {
+    font-size: 20px;
   }
   #tab1 .workSlide .textSlide .textWrap .workText p {
     font-size: 9vw;
   }
 }
-@keyframes txtmove {
+
+@keyframes opacityDown {
   0% {
-    transform: translate(0, 0);
-  }
-  99% {
-    transform: translate(-50%, 0);
-    opacity: 1;
+    opacity: 0.3;
   }
   100% {
     opacity: 0;

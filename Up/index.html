@@ -9,17 +9,14 @@
   </head>
   <body>
     <div class="intro" id="intro">
-      <div class="intro_wrap">
-        <div class="intro_mo">
+      <div class="introWrap">
+        <div class="introMain">
           <div class="line top">
             <span></span>
           </div>
-          <div class="intro_txt">
-            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
-            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
-            <p class="typing" id="intro_txt"></p>
-            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
-            <p>탭1내용추가<i>st</i>프로젝트추가<i>이미지 바꾸기</i></p>
+          <div class="introText">
+            <p class="first">I Want Be No.1</p>
+            <p class="twice">Front-end Developer</p>
           </div>
           <div class="line bot">
             <span></span>
@@ -125,12 +122,12 @@
             <a href="#" data-index="12" class="workText"><p>청와대</p></a>
             <a href="#" data-index="13" class="workText"><p>ARTISTY</p></a>
             <a href="#" data-index="14" class="workText"><p>STX</p></a>
-            <a href="#" data-index="15" class="workText"
-              ><p>Round A Round</p></a
-            >
-            <a href="#" data-index="16" class="workText"
-              ><p>Perfume Graphy</p></a
-            >
+            <a href="#" data-index="15" class="workText">
+              <p>Round A Round</p>
+            </a>
+            <a href="#" data-index="16" class="workText">
+              <p>Perfume Graphy</p>
+            </a>
             <a href="#" data-index="17" class="workText"><p>위메프오</p></a>
             <a href="#" data-index="18" class="workText"><p>세븐브로이</p></a>
             <a href="#" data-index="19" class="workText"><p>칠성사이다</p></a>
@@ -147,112 +144,366 @@
             <div class="bg">
               <!-- ftp로 올려서 인덱스 추가하기 -->
               <!-- 짝수개 만큼 추가해서 X 100씩 추가하면 됨 -->
+              <!-- a에 링크만 걸어주면 끝 -->
               <a href="#">
-                <img src="./tab1-imges/tab1-pocari.jpg" alt="1.포카리스웨트"
-              /></a>
+                <img src="./tab1-imges/tab1-pocari.jpg" alt="1.포카리스웨트" />
+                <div class="desc">
+                  <h3>1. 포카리스웨트</h3>
+                  <br />
+                  <p>jquery index를 이용한 탭메뉴</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href="#"
-                ><img src="./tab1-imges/tab1-bmw.jpg" alt="2.bmw"
-              /></a>
-            </div>
-            <div class="bg">
-              <a href=""><img src="./tab1-imges/tab1-sdf.gif" alt="3.SDF" /></a>
-            </div>
-            <div class="bg">
-              <a href=""
-                ><img src="./tab1-imges/tab1-mugo.jpg" alt="4.MugoBox"
-              /></a>
-            </div>
-            <div class="bg">
-              <a href=""
-                ><img src="./tab1-imges/tab1-sulbing.jpg" alt="5.설빙"
-              /></a>
-            </div>
-            <div class="bg">
-              <a href=""
-                ><img src="./tab1-imges/tab1-jeep.jpg" alt="6.jeep"
-              /></a>
+                ><img src="./tab1-imges/tab1-bmw.jpg" alt="2.bmw" />
+                <div class="desc">
+                  <h3>2. BMW</h3>
+                  <br />
+                  <p>Traversing을 이용한 요소에 접근하기</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/mobile.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-incheon.png" alt="7.인천광역시"
-              /></a>
+                ><img src="./tab1-imges/tab1-sdf.gif" alt="3.SDF" />
+                <div class="desc">
+                  <h3>3. SDF</h3>
+                  <br />
+                  <p>동영상 제어 + 상세페이지 제작</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-star.jpg" alt="8.스타벅스"
-              /></a>
+                ><img src="./tab1-imges/tab1-mugo.jpg" alt="4.MugoBox" />
+                <div class="desc">
+                  <h3>4. MUGO BOX</h3>
+                  <br />
+                  <p>Smooth scroll 구현하기</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-ader.jpg" alt="9.아더에러"
-              /></a>
+                ><img src="./tab1-imges/tab1-sulbing.jpg" alt="5.설빙" />
+                <div class="desc">
+                  <h3>5. 설빙</h3>
+                  <br />
+                  <p>반응형 레이아웃 구현</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-hong.png" alt="10.홍루이젠"
-              /></a>
+                ><img src="./tab1-imges/tab1-jeep.jpg" alt="6.jeep" />
+                <div class="desc">
+                  <h3>6. JEEP</h3>
+                  <br />
+                  <p>반응형 레이아웃 구현</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-ace.jpg" alt="11.ACE BED"
-              /></a>
+                ><img src="./tab1-imges/tab1-incheon.png" alt="7.인천광역시" />
+                <div class="desc">
+                  <h3>7. 인천광역시</h3>
+                  <br />
+                  <p>perspective를 활용한 이미지 transform</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-chungwadae.jpg" alt="12.청와대"
-              /></a>
+                ><img src="./tab1-imges/tab1-star.jpg" alt="8.스타벅스" />
+                <div class="desc">
+                  <h3>8. 스타벅스</h3>
+                  <br />
+                  <p>백그라운드 이미지 제어 + 반응형 레이아웃</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-artisty.jpg" alt="13.ARTISTY"
-              /></a>
+                ><img src="./tab1-imges/tab1-ader.jpg" alt="9.아더에러" />
+                <div class="desc">
+                  <h3>9. Ader Error</h3>
+                  <br />
+                  <p>jquery를 이용한 탭메뉴 + perspective</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-stx.jpg" alt="14.STX"
-              /></a>
+                ><img src="./tab1-imges/tab1-hong.png" alt="10.홍루이젠" />
+                <div class="desc">
+                  <h3>10. 홍루이젠</h3>
+                  <br />
+                  <p>grid레이아웃 + 백그라운드 포지션 활용</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-round.jpg" alt="15.Round a round"
-              /></a>
+                ><img src="./tab1-imges/tab1-ace.jpg" alt="11.ACE BED" />
+                <div class="desc">
+                  <h3>11. ACE BED</h3>
+                  <br />
+                  <p>jquery 슬라이드 + index로 요소 접근하기</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
+            </div>
+            <div class="bg">
+              <a href=""
+                ><img src="./tab1-imges/tab1-chungwadae.jpg" alt="12.청와대" />
+                <div class="desc">
+                  <h3>12. 청와대</h3>
+                  <br />
+                  <p>청와대 메인 페이지 제작</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>clone-coding</p>
+                </div></a
+              >
+            </div>
+            <div class="bg">
+              <a href=""
+                ><img src="./tab1-imges/tab1-artisty.jpg" alt="13.ARTISTY" />
+                <div class="desc">
+                  <h3>13. ARTISTY</h3>
+                  <br />
+                  <p>Swiper-slide를 이용한 사이트 제작</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div>
+              </a>
+            </div>
+            <div class="bg">
+              <a href=""
+                ><img src="./tab1-imges/tab1-stx.jpg" alt="14.STX" />
+                <div class="desc">
+                  <h3>14. STX</h3>
+                  <br />
+                  <p>Customscroll 이용한 사이트 제작 + 이미지 포지션</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>clone-coding</p>
+                </div>
+              </a>
+            </div>
+            <div class="bg">
+              <a href=""
+                ><img
+                  src="./tab1-imges/tab1-round.jpg"
+                  alt="15.Round a round"
+                />
+                <div class="desc">
+                  <h3>15. Round a round</h3>
+                  <br />
+                  <p>포지션을 활용한 백그라운드 이미지 제어</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div>
+              </a>
             </div>
             <div class="bg">
               <a href=""
                 ><img
                   src="./tab1-imges/tab1-perfume.jpg"
                   alt="16.Perfume Graphy"
-              /></a>
+                />
+                <div class="desc">
+                  <h3>16. Perfume Graphy</h3>
+                  <br />
+                  <p>탭메뉴 + 슬라이드 구현</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div>
+              </a>
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-wmpo.jpg" alt="17.위메프오"
-              /></a>
+                ><img src="./tab1-imges/tab1-wmpo.jpg" alt="17.위메프오" />
+                <div class="desc">
+                  <h3>17. 위메프오</h3>
+                  <br />
+                  <p>원페이지 제어 + 스크롤 제어</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-seven.jpg" alt="18.seven"
-              /></a>
+                ><img src="./tab1-imges/tab1-seven.jpg" alt="18.seven" />
+                <div class="desc">
+                  <h3>18. 세븐브로이</h3>
+                  <br />
+                  <p>js로 멀티슬라이드 + each 순차적 애니메이션</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-chilseong.jpg" alt="19.칠성사이다"
-              /></a>
+                ><img
+                  src="./tab1-imges/tab1-chilseong.jpg"
+                  alt="19.칠성사이다"
+                />
+                <div class="desc">
+                  <h3>19. 칠성사이다</h3>
+                  <br />
+                  <p>ISOTOFE를 이용한 그리드 레이아웃</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-lotte.jpg" alt="20.롯데 호텔"
-              /></a>
+                ><img src="./tab1-imges/tab1-lotte.jpg" alt="20.롯데 호텔" />
+                <div class="desc">
+                  <h3>20. 롯데호텔</h3>
+                  <br />
+                  <p>jQuery Ajax을 활용한 이벤트</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/laptop.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""
-                ><img src="./tab1-imges/tab1-up&down.png" alt="21.넘버게임"
-              /></a>
+                ><img src="./tab1-imges/tab1-up&down.png" alt="21.넘버게임" />
+                <div class="desc">
+                  <h3>21. 넘버게임</h3>
+                  <br />
+                  <p>javascript를 이용한 업 다운 게임 만들기</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
-              <a href=""><img src="" alt="22.밤도깨비" /></a>
+              <a href=""
+                ><img src="" alt="22.밤도깨비" />
+                <div class="desc">
+                  <h3>22. 밤도깨비 야시장</h3>
+                  <br />
+                  <p>배열을 이용한 이미지 정보 바꾸기</p>
+                  <br />
+                  <p class="response">
+                    <img src="./tab1-imges/all.png" alt="#" />
+                  </p>
+                  <br />
+                  <p>메인페이지 제작</p>
+                </div></a
+              >
             </div>
             <div class="bg">
               <a href=""><img src="" alt="23.To Do list" /></a>
