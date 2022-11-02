@@ -45,12 +45,17 @@ section.project1 article:first-of-type::after {
   position: absolute;
   background-color: rgba(17, 17, 17, 0.2);
 }
+section.project2 h1 {
+  text-align: right;
+  padding-top: 150px;
+  color: #080d2a;
+}
 section.project2 strong {
   color: #2e4efe;
 }
 section.project2 article:first-of-type {
-  background: url(./tab2-imges/pro2-mainbg.jpeg) no-repeat center;
-  background-size: cover;
+  background: url(./tab2-imges/pro2-mainbg.png) no-repeat left;
+  background-size: contain;
 }
 section.project2 article:first-of-type::after {
   content: "";

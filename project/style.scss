@@ -51,13 +51,19 @@ section {
     }
   }
   &.project2 {
+    h1 {
+      text-align: right;
+      padding-top: 150px;
+      color: #080d2a;
+    }
+
     strong {
       color: #2e4efe;
     }
     article {
       &:first-of-type {
-        background: url(./tab2-imges/pro2-mainbg.jpeg) no-repeat center;
-        background-size: cover;
+        background: url(./tab2-imges/pro2-mainbg.png) no-repeat left;
+        background-size: contain;
         &::after {
           content: "";
           width: 100%;
