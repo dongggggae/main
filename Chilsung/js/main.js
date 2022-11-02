@@ -112,8 +112,13 @@ $(function () {
     });
   }
 })();
+
+
 // scroll
+
+
 let beforePosition = document.documentElement.scrollTop;
+
 window.addEventListener("scroll", (e) => {
   let fixTitle = document.querySelectorAll(".fixTitle"),
     scrollPos = window.scrollY || document.documentElement.scrollTop,
