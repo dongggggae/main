@@ -17,7 +17,63 @@ body {
 
 section {
   height: 100%;
+  padding-bottom: 50px;
+  &:last-of-type {
+    padding: 0;
+  }
+  &.project1 {
+    h1,
+    h2,
+    h3 {
+      color: rgb(190, 190, 255);
+    }
+    p {
+      strong {
+        font-size: 30px;
+        color: #c2508b;
+      }
+    }
+    article {
+      &:first-of-type {
+        background: url(./tab2-imges/pro1-mainbg.png) no-repeat center;
+        background-size: cover;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          display: block;
+          top: 0;
+          left: 0;
+          position: absolute;
+          background-color: rgba(17, 17, 17, 0.2);
+        }
+      }
+    }
+  }
+  &.project2 {
+    strong {
+      color: #2e4efe;
+    }
+    article {
+      &:first-of-type {
+        background: url(./tab2-imges/pro2-mainbg.jpeg) no-repeat center;
+        background-size: cover;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          display: block;
+          top: 0;
+          left: 0;
+          position: absolute;
+          background-color: rgba(17, 17, 17, 0.2);
+        }
+      }
+    }
+  }
 }
+
+// 이 클래스가 붙은 요소들은 화면에 보일때 효과 발생
 .proScroll {
   display: inline-block;
   position: relative;
@@ -35,19 +91,6 @@ article {
   width: 100%;
   height: 100vh;
   position: relative;
-  &:first-of-type {
-    background: url(./tab2-imges/001.png) no-repeat center;
-    background-size: cover;
-    &::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      display: block;
-      top: 0;
-      left: 0;
-      position: absolute;
-    }
-  }
   .inner {
     word-break: keep-all;
     padding: 0 1.5rem;
@@ -56,11 +99,6 @@ article {
     height: 100%;
     margin: 0 auto;
     text-align: center;
-    h1,
-    h2,
-    h3 {
-      color: #c6cdff;
-    }
     h1 {
       font-size: 60px;
     }
@@ -74,13 +112,12 @@ article {
     p {
       padding-top: 50px;
       font-size: 25px;
-      strong {
-        font-size: 30px;
-        color: #c2508b;
-      }
     }
   }
 }
+
+// 공통 레이아웃 ========================
+
 .pro1-art1 {
   .inner {
     z-index: 2;
@@ -108,23 +145,7 @@ article {
     }
   }
 }
-aside {
-  margin-top: 50px;
-  width: 100%;
-  height: 200px;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  position: relative;
-  h3 {
-    position: absolute;
-    left: 10%;
-    font-weight: 200;
-    font-size: 25px;
-  }
-}
+
 .pro1-art3 {
   height: 100%;
   padding-bottom: 100px;
@@ -155,6 +176,7 @@ aside {
   }
 }
 .pro1-art4 {
+  height: 100%;
   .sub-title {
     margin-top: 100px;
     display: flex;
@@ -172,7 +194,7 @@ aside {
       line-height: 25px;
       padding: 0;
       &:last-of-type strong {
-        color: #c6cdff;
+        color: rgb(190, 190, 255);
       }
     }
   }
@@ -193,7 +215,11 @@ aside {
       align-items: center;
       width: 250px;
       height: 100px;
-      background: linear-gradient(93.65deg, #c6cdff 28.81%, #f6f3ff 102.65%);
+      background: linear-gradient(
+        93.65deg,
+        rgb(190, 190, 255) 28.81%,
+        #f6f3ff 102.65%
+      );
       border-radius: 46.4286px;
       span {
         display: inline-block;
@@ -261,7 +287,7 @@ aside {
     height: 80px;
     line-height: 80px;
     &:first-of-type {
-      background-color: #c6cdff;
+      background-color: rgb(190, 190, 255);
     }
     &:nth-of-type(2) {
       background-color: #c2508b;
@@ -295,6 +321,133 @@ aside {
   }
 }
 
+.pro2-art2 {
+  height: 100%;
+  figure {
+    margin-top: 30px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.pro2-art3 {
+  .content {
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    .phone {
+      margin-right: -100px;
+      width: 60%;
+      display: flex;
+      figure {
+        position: relative;
+        &:first-of-type {
+          top: 100px;
+          margin-right: -230px;
+          z-index: 2;
+        }
+      }
+    }
+    .desc {
+      width: 40%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: left;
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+}
+.pro2-art4 {
+  height: 100%;
+
+  padding-bottom: 50px;
+  .concept {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    .contents {
+      figure {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .sub-title {
+        padding-left: 2rem;
+        text-align: left;
+        position: relative;
+        margin: 50px 0;
+        &::after {
+          content: "";
+          width: 50px;
+          height: 3px;
+          background-color: #2e4efe;
+          position: absolute;
+          bottom: 0;
+          left: 2rem;
+        }
+      }
+      width: 50%;
+      &:first-of-type {
+        width: 100%;
+      }
+      .colorItem {
+        margin-left: 50px;
+        display: flex;
+        gap: 100px;
+      }
+      .colorBox {
+        display: flex;
+        flex-direction: column;
+
+        .color {
+          position: relative;
+          width: 70px;
+          height: 70px;
+          border: 1px solid #2e4efe;
+          &:first-of-type {
+            background-color: #2e4efe;
+            border-bottom: none;
+          }
+          &:nth-of-type(2) {
+            border-bottom: none;
+            background-color: #080d2a;
+          }
+          &:last-of-type {
+            background-color: #fefefe;
+          }
+        }
+      }
+      .colorText {
+        line-height: 35px;
+        display: flex;
+        flex-direction: column;
+      }
+      .fonts {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+      }
+      .fonts,
+      .fontDesc {
+        margin-left: 50px;
+      }
+      .fontDesc {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.pro2-art5 {
+  padding: 30px 0;
+}
+// 반응형
 @media screen and (max-width: 1024px) {
   .pro1-art2 {
     .inner {
@@ -303,9 +456,64 @@ aside {
       }
     }
   }
+  .pro2-art3 {
+    height: 100%;
+    .content {
+      padding: 0.5rem;
+      width: 100%;
+      margin-top: 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .phone {
+        margin: auto;
+        justify-content: center;
+        width: 80%;
+        display: flex;
+        figure {
+          position: relative;
+          &:first-of-type {
+            top: 100px;
+            margin-right: -230px;
+            z-index: 2;
+          }
+        }
+      }
+      .desc {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p {
+          font-size: 30px;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 767px) {
+  .pro2-art4 {
+    .concept {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .contents {
+        width: 100%;
+        .sub-title {
+          padding: 0;
+          &::after {
+            left: 0;
+          }
+        }
+        .fonts,
+        .fontDesc {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 576px) {
   article {
@@ -317,21 +525,15 @@ aside {
     }
   }
   .pro1-art2 {
-    border: 1px solid #000;
     .inner {
       figure {
         padding-top: 100px;
       }
     }
   }
-  aside {
-    margin-top: 0;
-    h3 {
-      position: relative;
-      left: 0;
-    }
-  }
+
   .pro1-art3 {
+    margin-top: -100px;
     padding-bottom: 50px;
     .items {
       margin-top: 50px;
@@ -363,16 +565,25 @@ aside {
         }
       }
     }
+    .concept2 {
+      margin-top: 50px;
+    }
   }
-  .pro1-art5 {
-    margin-top: 50px;
+  .pro1-art4 {
+    padding-top: 50px;
     .descs {
+      margin: 50px 0;
       .desc {
         width: 45%;
       }
     }
     .result {
       margin-top: 50px;
+    }
+  }
+  .pro .pro2-art5 {
+    video {
+      margin: -100px;
     }
   }
 }

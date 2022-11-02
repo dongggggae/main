@@ -17,6 +17,50 @@ body {
 
 section {
   height: 100%;
+  padding-bottom: 50px;
+}
+section:last-of-type {
+  padding: 0;
+}
+section.project1 h1,
+section.project1 h2,
+section.project1 h3 {
+  color: rgb(190, 190, 255);
+}
+section.project1 p strong {
+  font-size: 30px;
+  color: #c2508b;
+}
+section.project1 article:first-of-type {
+  background: url(./tab2-imges/pro1-mainbg.png) no-repeat center;
+  background-size: cover;
+}
+section.project1 article:first-of-type::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(17, 17, 17, 0.2);
+}
+section.project2 strong {
+  color: #2e4efe;
+}
+section.project2 article:first-of-type {
+  background: url(./tab2-imges/pro2-mainbg.jpeg) no-repeat center;
+  background-size: cover;
+}
+section.project2 article:first-of-type::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: rgba(17, 17, 17, 0.2);
 }
 
 .proScroll {
@@ -37,19 +81,6 @@ article {
   height: 100vh;
   position: relative;
 }
-article:first-of-type {
-  background: url(./tab2-imges/001.png) no-repeat center;
-  background-size: cover;
-}
-article:first-of-type::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  display: block;
-  top: 0;
-  left: 0;
-  position: absolute;
-}
 article .inner {
   word-break: keep-all;
   padding: 0 1.5rem;
@@ -58,11 +89,6 @@ article .inner {
   height: 100%;
   margin: 0 auto;
   text-align: center;
-}
-article .inner h1,
-article .inner h2,
-article .inner h3 {
-  color: #c6cdff;
 }
 article .inner h1 {
   font-size: 60px;
@@ -77,10 +103,6 @@ article .inner h3 {
 article .inner p {
   padding-top: 50px;
   font-size: 25px;
-}
-article .inner p strong {
-  font-size: 30px;
-  color: #c2508b;
 }
 
 .pro1-art1 .inner {
@@ -104,24 +126,6 @@ article .inner p strong {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-aside {
-  margin-top: 50px;
-  width: 100%;
-  height: 200px;
-  background-color: #f2f2f2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  position: relative;
-}
-aside h3 {
-  position: absolute;
-  left: 10%;
-  font-weight: 200;
-  font-size: 25px;
 }
 
 .pro1-art3 {
@@ -153,6 +157,9 @@ aside h3 {
   font-size: 18px;
 }
 
+.pro1-art4 {
+  height: 100%;
+}
 .pro1-art4 .sub-title {
   margin-top: 100px;
   display: flex;
@@ -172,7 +179,7 @@ aside h3 {
   padding: 0;
 }
 .pro1-art4 .sub-title p:last-of-type strong {
-  color: #c6cdff;
+  color: rgb(190, 190, 255);
 }
 .pro1-art4 .concept {
   position: relative;
@@ -192,7 +199,7 @@ aside h3 {
   align-items: center;
   width: 250px;
   height: 100px;
-  background: linear-gradient(93.65deg, #c6cdff 28.81%, #f6f3ff 102.65%);
+  background: linear-gradient(93.65deg, rgb(190, 190, 255) 28.81%, #f6f3ff 102.65%);
   border-radius: 46.4286px;
 }
 .pro1-art4 .concept .contents span {
@@ -258,7 +265,7 @@ aside h3 {
   line-height: 80px;
 }
 .pro1-art5 .color:first-of-type {
-  background-color: #c6cdff;
+  background-color: rgb(190, 190, 255);
 }
 .pro1-art5 .color:nth-of-type(2) {
   background-color: #c2508b;
@@ -290,29 +297,199 @@ aside h3 {
   height: 100%;
 }
 
+.pro2-art2 {
+  height: 100%;
+}
+.pro2-art2 figure {
+  margin-top: 30px;
+}
+.pro2-art2 figure img {
+  width: 100%;
+}
+
+.pro2-art3 .content {
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.pro2-art3 .content .phone {
+  margin-right: -100px;
+  width: 60%;
+  display: flex;
+}
+.pro2-art3 .content .phone figure {
+  position: relative;
+}
+.pro2-art3 .content .phone figure:first-of-type {
+  top: 100px;
+  margin-right: -230px;
+  z-index: 2;
+}
+.pro2-art3 .content .desc {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+.pro2-art3 .content .desc p {
+  font-size: 30px;
+}
+
+.pro2-art4 {
+  height: 100%;
+  padding-bottom: 50px;
+}
+.pro2-art4 .concept {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pro2-art4 .concept .contents {
+  width: 50%;
+}
+.pro2-art4 .concept .contents figure {
+  width: 100%;
+}
+.pro2-art4 .concept .contents figure img {
+  width: 100%;
+}
+.pro2-art4 .concept .contents .sub-title {
+  padding-left: 2rem;
+  text-align: left;
+  position: relative;
+  margin: 50px 0;
+}
+.pro2-art4 .concept .contents .sub-title::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #2e4efe;
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+}
+.pro2-art4 .concept .contents:first-of-type {
+  width: 100%;
+}
+.pro2-art4 .concept .contents .colorItem {
+  margin-left: 50px;
+  display: flex;
+  gap: 100px;
+}
+.pro2-art4 .concept .contents .colorBox {
+  display: flex;
+  flex-direction: column;
+}
+.pro2-art4 .concept .contents .colorBox .color {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #2e4efe;
+}
+.pro2-art4 .concept .contents .colorBox .color:first-of-type {
+  background-color: #2e4efe;
+  border-bottom: none;
+}
+.pro2-art4 .concept .contents .colorBox .color:nth-of-type(2) {
+  border-bottom: none;
+  background-color: #080d2a;
+}
+.pro2-art4 .concept .contents .colorBox .color:last-of-type {
+  background-color: #fefefe;
+}
+.pro2-art4 .concept .contents .colorText {
+  line-height: 35px;
+  display: flex;
+  flex-direction: column;
+}
+.pro2-art4 .concept .contents .fonts {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.pro2-art4 .concept .contents .fonts,
+.pro2-art4 .concept .contents .fontDesc {
+  margin-left: 50px;
+}
+.pro2-art4 .concept .contents .fontDesc {
+  font-size: 18px;
+}
+
+.pro2-art5 {
+  padding: 30px 0;
+}
+
 @media screen and (max-width: 1024px) {
   .pro1-art2 .inner figure {
     padding-top: 100px;
+  }
+  .pro2-art3 {
+    height: 100%;
+  }
+  .pro2-art3 .content {
+    padding: 0.5rem;
+    width: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .pro2-art3 .content .phone {
+    margin: auto;
+    justify-content: center;
+    width: 80%;
+    display: flex;
+  }
+  .pro2-art3 .content .phone figure {
+    position: relative;
+  }
+  .pro2-art3 .content .phone figure:first-of-type {
+    top: 100px;
+    margin-right: -230px;
+    z-index: 2;
+  }
+  .pro2-art3 .content .desc {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .pro2-art3 .content .desc p {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .pro2-art4 .concept {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .pro2-art4 .concept .contents {
+    width: 100%;
+  }
+  .pro2-art4 .concept .contents .sub-title {
+    padding: 0;
+  }
+  .pro2-art4 .concept .contents .sub-title::after {
+    left: 0;
+  }
+  .pro2-art4 .concept .contents .fonts,
+.pro2-art4 .concept .contents .fontDesc {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 576px) {
   article:nth-of-type(2) .inner, article:last-of-type .inner {
     padding: 0;
   }
-  .pro1-art2 {
-    border: 1px solid #000;
-  }
   .pro1-art2 .inner figure {
     padding-top: 100px;
   }
-  aside {
-    margin-top: 0;
-  }
-  aside h3 {
-    position: relative;
-    left: 0;
-  }
   .pro1-art3 {
+    margin-top: -100px;
     padding-bottom: 50px;
   }
   .pro1-art3 .items {
@@ -339,13 +516,22 @@ aside h3 {
   .pro1-art4 .concept .contents:nth-of-type(even) {
     margin-right: 100px;
   }
-  .pro1-art5 {
+  .pro1-art4 .concept2 {
     margin-top: 50px;
   }
-  .pro1-art5 .descs .desc {
+  .pro1-art4 {
+    padding-top: 50px;
+  }
+  .pro1-art4 .descs {
+    margin: 50px 0;
+  }
+  .pro1-art4 .descs .desc {
     width: 45%;
   }
-  .pro1-art5 .result {
+  .pro1-art4 .result {
     margin-top: 50px;
+  }
+  .pro .pro2-art5 video {
+    margin: -100px;
   }
 }

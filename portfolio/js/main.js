@@ -25,7 +25,7 @@
 
 // intro\
 
-(() => {
+window.addEventListener("load", function () {
   var intro = document.getElementById("intro");
   var header = document.getElementById("header");
   let firstMain = document.getElementById("tab1");
@@ -38,7 +38,7 @@
   function introRe2() {
     intro.querySelector(".twice").style.opacity = "1";
   }
-  function introRe3() { 
+  function introRe3() {
     intro.querySelector(".twice").style.opacity = "0";
   }
   function intro2() {
@@ -54,7 +54,9 @@
   setTimeout(() => introRe3(), 2300);
   setTimeout(() => intro2(), 3400);
   setTimeout(() => intro3(), 3400);
-})();
+});
+ 
+
 
 // header
 
