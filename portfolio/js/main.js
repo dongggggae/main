@@ -55,8 +55,6 @@ window.addEventListener("load", function () {
   setTimeout(() => intro2(), 3400);
   setTimeout(() => intro3(), 3400);
 });
- 
-
 
 // header
 
@@ -139,7 +137,7 @@ window.addEventListener("load", function () {
         activeTitle();
         activeBg();
       }
-    }, 35);
+    }, 50);
   });
 
   slideTexts.forEach((text) => {
@@ -236,11 +234,12 @@ window.addEventListener("load", function () {
     slideTexts[i].style.top = i * 100 + "%";
     slideBgs[i].style.left = i * 100 + 50 + "%";
   }
-  // jquery
+
   slideTexts[11].classList.add("sub");
   slideTexts[13].classList.add("sub");
   slideTexts[12].classList.add("on");
   slideBgs[12].classList.add("on");
+  slideBgs[11].classList.add("sub");
 })();
 
 // tab3

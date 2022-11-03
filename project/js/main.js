@@ -1,4 +1,4 @@
-let proObserver = new IntersectionObserver((e) => {
+let observer = new IntersectionObserver((e) => {
   e.forEach((Item, j) => {
     setTimeout(() => {
       if (Item.isIntersecting) {
@@ -8,9 +8,9 @@ let proObserver = new IntersectionObserver((e) => {
       }
     }, j * 300);
   });
+  threshold: 0.5;
 });
-let proScroll = document.querySelectorAll(".proScroll");
 
-proScroll.forEach((scrollItem, i) => {
-  proObserver.observe(scrollItem);
-});
+document
+  .querySelectorAll(".proScroll")
+  .forEach((elem) => observer.observe(elem));

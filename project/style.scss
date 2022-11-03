@@ -51,15 +51,6 @@ section {
     }
   }
   &.project2 {
-    h1 {
-      text-align: right;
-      padding-top: 150px;
-      color: #080d2a;
-    }
-
-    strong {
-      color: #2e4efe;
-    }
     article {
       &:first-of-type {
         background: url(./tab2-imges/pro2-mainbg.png) no-repeat left;
@@ -75,6 +66,12 @@ section {
           background-color: rgba(17, 17, 17, 0.2);
         }
       }
+      h1 {
+        text-align: right;
+        padding-top: 150px;
+        color: #2e4efe;
+        z-index: 2;
+      }
     }
   }
 }
@@ -86,7 +83,7 @@ section {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.1s;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
   &.active {
     opacity: 1;
     transform: translateY(0);
@@ -370,7 +367,6 @@ article {
 }
 .pro2-art4 {
   height: 100%;
-
   padding-bottom: 50px;
   .concept {
     margin-top: 50px;
@@ -501,6 +497,7 @@ article {
 
 @media screen and (max-width: 767px) {
   .pro2-art4 {
+    margin-top: 100px;
     .concept {
       flex-direction: column;
       justify-content: center;
@@ -587,7 +584,7 @@ article {
       margin-top: 50px;
     }
   }
-  .pro .pro2-art5 {
+  .pro2-art5 {
     video {
       margin: -100px;
     }

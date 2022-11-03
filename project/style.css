@@ -45,14 +45,6 @@ section.project1 article:first-of-type::after {
   position: absolute;
   background-color: rgba(17, 17, 17, 0.2);
 }
-section.project2 h1 {
-  text-align: right;
-  padding-top: 150px;
-  color: #080d2a;
-}
-section.project2 strong {
-  color: #2e4efe;
-}
 section.project2 article:first-of-type {
   background: url(./tab2-imges/pro2-mainbg.png) no-repeat left;
   background-size: contain;
@@ -67,6 +59,12 @@ section.project2 article:first-of-type::after {
   position: absolute;
   background-color: rgba(17, 17, 17, 0.2);
 }
+section.project2 article h1 {
+  text-align: right;
+  padding-top: 150px;
+  color: #2e4efe;
+  z-index: 2;
+}
 
 .proScroll {
   display: inline-block;
@@ -74,7 +72,7 @@ section.project2 article:first-of-type::after {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.1s;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 }
 .proScroll.active {
   opacity: 1;
@@ -467,6 +465,9 @@ article .inner p {
   }
 }
 @media screen and (max-width: 767px) {
+  .pro2-art4 {
+    margin-top: 100px;
+  }
   .pro2-art4 .concept {
     flex-direction: column;
     justify-content: center;
@@ -536,7 +537,7 @@ article .inner p {
   .pro1-art4 .result {
     margin-top: 50px;
   }
-  .pro .pro2-art5 video {
+  .pro2-art5 video {
     margin: -100px;
   }
 }

@@ -135,7 +135,7 @@ body {
 .intro .introText p {
   font-size: 7rem;
   font-weight: 600;
-  color: var(--color-im);
+  color: var(--color-point);
   display: inline-block;
   opacity: 0;
   transition: 0.5s;
@@ -190,7 +190,8 @@ body {
 // header 포지션 처음에는 fide라는 클래스로 숨겨놓고 인트로 끝나면 나오게 하기위해 hide 클래스 넣고 시작
 // tab2,3은 스크롤이 많기 때문에 active를 주고 숨겨놓기
 #header {
-  height: 10vw;
+  height: 8vw;
+  border: 1px solid #fff;
   width: 100%;
   z-index: 9999;
   position: fixed;
@@ -391,7 +392,7 @@ main {
     overflow: hidden;
     position: absolute;
     right: 0;
-    width: 90%;
+    width: 100%;
     height: 100%;
   }
 
@@ -410,10 +411,9 @@ main {
   .bg {
     z-index: 1;
     opacity: 0;
-    transition: 0.1s;
+    transition: 0.4s cubic-bezier(1, 1, 1, 1);
     top: 50%;
-    left: 10%;
-    transform: translate(-45%, -50%);
+    transform: translate(-30%, -50%);
     width: 900px;
     height: 506px;
     position: absolute;
@@ -463,6 +463,7 @@ main {
   }
 
   .bg.sub {
+    scale: 0.6;
     opacity: 0.1;
   }
 }
@@ -598,17 +599,15 @@ footer {
       .bgSlide {
         top: 10%;
         height: 60%;
-        width: 100%;
         .bgWrap {
           .bg {
             padding: 0 1rem;
-            left: 50%;
             transform: translate(-50%, -35%);
             width: 720px;
             height: 405px;
             transition: 0.5s;
             &.sub {
-              opacity: 0.1;
+              opacity: 0;
             }
           }
         }
@@ -617,12 +616,18 @@ footer {
   }
 }
 @media screen and (max-width: 767px) {
+  #header {
+    height: calc(8vw + 25px);
+  }
   #tab1 .workSlide .bgSlide .bgWrap .bg {
     width: 640px;
     height: 360px;
   }
 }
 @media screen and (max-width: 576px) {
+  #header {
+    height: calc(8vw + 50px);
+  }
   #header nav.inner .tabs {
     height: 5vw;
     .tab {
