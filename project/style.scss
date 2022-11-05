@@ -74,6 +74,14 @@ section {
       }
     }
   }
+  &.project3 {
+    article {
+      &:first-of-type {
+        background: url(./tab2-imges/pro3-mainbg.png) no-repeat right;
+        background-size: contain;
+      }
+    }
+  }
 }
 
 // 이 클래스가 붙은 요소들은 화면에 보일때 효과 발생

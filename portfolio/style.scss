@@ -162,7 +162,7 @@ body {
 .intro.none {
   display: none;
 }
-
+// 인트로 끝
 // tab 누르면 화면 전환 도와주는 바
 
 #wallPaper {
@@ -185,21 +185,20 @@ body {
     transform: scaleY(1.2);
   }
 }
-// tab에 1.3에 오드 넣고 2에 이븐 넣어서 클래스 명으로 추가 삭제
+// tab에 1.3에 odd 넣고 2에 even 넣어서 클래스 명으로 추가 삭제
 
 // header 포지션 처음에는 fide라는 클래스로 숨겨놓고 인트로 끝나면 나오게 하기위해 hide 클래스 넣고 시작
 // tab2,3은 스크롤이 많기 때문에 active를 주고 숨겨놓기
 #header {
   height: 8vw;
-  border: 1px solid #fff;
   width: 100%;
   z-index: 9999;
   position: fixed;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s cubic-bezier(1, 1, 1, 1);
   opacity: 1;
   &.active {
-    transform: translateY(-100%);
-    opacity: 0;
+    transform: translateY(-95%);
+    border-bottom: 2px solid var(--color-sup);
   }
   &.hide {
     display: none;
@@ -298,6 +297,7 @@ main {
 // 작업물 추가할 때 짝수갯수 씩 추가하는걸 지향
 //  작업물 추가하고 2n개 추가하면 .wrap에 n*100씩  증가 시키기 가운데 고정 **********
 #tab1 {
+  padding-top: 4vw;
   color: var(--color-sub);
   &.active {
     display: block;
@@ -305,54 +305,79 @@ main {
   .workSlide {
     height: 100%;
     width: 100%;
+    padding: 0 15px;
+    max-width: 1280px;
+    margin: 0 auto;
     position: relative;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .textSlide {
-    left: 0;
+    background-color: var(--color-main);
     z-index: 2;
-    width: 40%;
+    width: 500px;
     height: 70%;
     overflow: hidden;
-    position: absolute;
+    position: relative;
   }
 
   .textWrap {
-    transition: 0.1s;
-    transform: translateY(-1100%);
-    position: absolute;
-    width: 100%;
-    height: 33.333333%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .textWrap.animate {
-    transition: 0.6s cubic-bezier(1, 1, 1, 1);
-  }
-
-  .workText {
-    z-index: 99;
-    cursor: pointer;
-    margin-left: 3rem;
-    opacity: 0;
-    color: rgb(255, 255, 255);
-    text-align: center;
+    transform: translateY(-1200%);
     position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
   }
 
-  .workText.on p {
-    background-size: calc(100% - 1px) 100%;
-    background-position: center bottom;
+  .workText {
+    padding-left: 4rem;
+    z-index: 99;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .textExp {
+      span {
+        line-height: 1.3;
+        display: block;
+        margin-top: 20px;
+        &:nth-of-type(1) {
+          font-size: 20px;
+          transition-delay: 0.2s;
+        }
+        &:nth-of-type(2) {
+          font-size: 18px;
+          color: var(--color-sup);
+          transition-delay: 0.3s;
+        }
+        &:nth-of-type(3) {
+          transition-delay: 0.4s;
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+      & > * {
+        transition: all 0.7s;
+        opacity: 0;
+        transform: translateY(50px);
+      }
+    }
+  }
+
+  .workText.on {
+    p {
+      background-size: calc(100% - 1px) 100%;
+      background-position: center bottom;
+    }
+    .textExp > * {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
   // 텍스트 필 텍스트
   .workText p {
@@ -363,7 +388,8 @@ main {
       rgb(255, 255, 255) 0%,
       rgb(255, 255, 255) 100%
     );
-    font-size: 4vw;
+    font-size: 45px;
+    margin-top: 150px;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -371,28 +397,16 @@ main {
     background-repeat: no-repeat;
     background-position: 100% 100%;
     background-size: 100% 0%;
-    transition: 0.8s cubic-bezier(1, 1, 1, 1);
+    transition: 0.6s cubic-bezier(1, 1, 1, 1);
     letter-spacing: -2px;
     white-space: nowrap;
   }
 
-  .workText.on {
-    opacity: 1;
-  }
-
-  .workText.sub {
-    opacity: 0.5;
-    -webkit-text-stroke: 1px rgb(255, 255, 255);
-  }
-  .workText.sub p {
-    font-size: 3.5vw;
-  }
-
   .bgSlide {
-    overflow: hidden;
-    position: absolute;
-    right: 0;
+    order: -1;
+    position: relative;
     width: 100%;
+    margin-right: -500px;
     height: 100%;
   }
 
@@ -405,53 +419,23 @@ main {
   }
 
   .bgWrap.animate {
-    transition: 0.8s cubic-bezier(1, 1, 1, 1);
+    transition: 0.7s cubic-bezier(1, 1, 1, 1);
   }
 
   .bg {
     z-index: 1;
     opacity: 0;
-    transition: 0.4s cubic-bezier(1, 1, 1, 1);
+    transition: 0.7s cubic-bezier(1, 1, 1, 1);
     top: 50%;
-    transform: translate(-30%, -50%);
-    width: 900px;
-    height: 506px;
+    transform: translateY(-50%);
+    width: 70vw;
+    height: 35vw;
+    max-width: 750px;
+    max-height: 375px;
     position: absolute;
-    a {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      &:hover .desc {
-        opacity: 1;
-      }
-    }
+    transform-origin: center -50%;
   }
-  .bg a .desc {
-    transition: 0.35s cubic-bezier(1, 1, 1, 1);
-    font-size: 25px;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    padding: 1.5rem;
-    text-align: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  .desc p.response {
-    display: flex;
-    justify-content: center;
-    width: 120px;
-    height: 50px;
-    img {
-      width: 100%;
-    }
-  }
+
   .bg img {
     width: 100%;
     height: 100%;
@@ -463,8 +447,8 @@ main {
   }
 
   .bg.sub {
-    scale: 0.6;
-    opacity: 0.1;
+    transform: scaleY(0.6);
+    opacity: 0.5;
   }
 }
 // tab2,tab3 는 스크롤이기에 위 헤더영역만큼 패딩 주기
@@ -483,10 +467,11 @@ main {
   color: var(--color-sub);
   .introduce {
     h2.title {
-      font-size: var(--l);
+      font-size: var(--xxl);
+      padding-bottom: 15px;
     }
     p {
-      line-height: 25px;
+      line-height: 1.5;
     }
   }
   .content-box {
@@ -537,8 +522,8 @@ main {
       position: relative;
       .text {
         color: var(--color-main);
-        font-size: var(--m);
-        line-height: 20px;
+        font-size: var(--l);
+        line-height: 1.5;
         background-color: rgba(255, 255, 255, 0.9);
         box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
         border-radius: 10px;
@@ -579,32 +564,48 @@ footer {
   #tab1 {
     .workSlide {
       flex-direction: column;
+      align-items: center;
       .textSlide {
-        bottom: 5%;
         width: 100%;
         height: 30%;
         .textWrap {
           .workText {
-            margin: 0;
-            justify-content: center;
-            &.sub {
-              animation: opacityDown 0.3s linear forwards;
-            }
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
             p {
-              font-size: 6.5vw;
+              margin: 0;
+              font-size: 5.5vw;
+            }
+            .textExp {
+              text-align: left;
+              span {
+                margin-bottom: 15px;
+                &:nth-of-type(1) {
+                  font-size: 18px;
+                }
+                &:nth-of-type(2) {
+                  font-size: 16px;
+                }
+                &:nth-of-type(3) {
+                  display: none;
+                }
+              }
             }
           }
         }
       }
       .bgSlide {
-        top: 10%;
+        margin: 0;
+        overflow: hidden;
+        width: 100%;
         height: 60%;
         .bgWrap {
           .bg {
-            padding: 0 1rem;
-            transform: translate(-50%, -35%);
-            width: 720px;
-            height: 405px;
+            margin: 0 12vw 0 8vw;
+            width: 80vw;
+            height: 40vw;
             transition: 0.5s;
             &.sub {
               opacity: 0;
@@ -619,10 +620,6 @@ footer {
   #header {
     height: calc(8vw + 25px);
   }
-  #tab1 .workSlide .bgSlide .bgWrap .bg {
-    width: 640px;
-    height: 360px;
-  }
 }
 @media screen and (max-width: 576px) {
   #header {
@@ -636,23 +633,25 @@ footer {
       line-height: 5vw;
     }
   }
-  #tab1 .workSlide .bgSlide .bgWrap .bg {
-    width: 480px;
-    height: 270px;
-  }
   #tab1 .bg a .desc {
     font-size: 20px;
   }
+  #tab1 .workSlide .bgSlide .bgWrap .bg {
+    margin: 0 8vw 0 2vw;
+    width: 90vw;
+    height: 45vw;
+  }
+  #tab1 .workSlide .textSlide {
+    margin-top: -100px;
+  }
+  #tab1 .workSlide .textSlide .textWrap .workText {
+    flex-direction: column;
+    justify-content: center;
+    .textExp {
+      text-align: center;
+    }
+  }
   #tab1 .workSlide .textSlide .textWrap .workText p {
-    font-size: 9vw;
-  }
-}
-
-@keyframes opacityDown {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0;
+    font-size: 6.5vw;
   }
 }

@@ -21,7 +21,6 @@
 //     wallPaper.className = bgChange;
 //   }
 // }
-// 제이쿼리 자바스크립트로 바꿀거임
 
 // intro\
 
@@ -76,9 +75,9 @@ window.addEventListener("load", function () {
 
   function tabOpen(i) {
     let showTabs = $tabs.eq(i).attr("href");
-    $("main").fadeOut();
+    $($main).fadeOut().removeClass("scrollItem");
     setTimeout(() => {
-      $(`${showTabs}`).stop().fadeIn(500);
+      $(`${showTabs}`).stop().fadeIn(500).addClass("scrollItem");
     }, 1000);
   }
 
@@ -111,7 +110,7 @@ window.addEventListener("load", function () {
 (() => {
   let slideTexts = document.querySelectorAll(".workText"),
     textWrap = document.querySelector(".textWrap"),
-    workSlide = document.querySelector(".workSlide"),
+    tabslide = document.getElementById("tab1"),
     slideBgs = document.querySelectorAll(".bg"),
     bgWrap = document.querySelector(".bgWrap"),
     bgCount = slideBgs.length,
@@ -119,12 +118,11 @@ window.addEventListener("load", function () {
     number,
     wheelTimer;
 
-  workSlide.addEventListener("wheel", (e) => {
+  tabslide.addEventListener("wheel", (e) => {
     e.preventDefault();
     clearTimeout(wheelTimer);
     wheelTimer = setTimeout(() => {
       if (e.deltaY > 0) {
-        console.log(e);
         currentIndex++;
         goToBack();
         moveSLide(currentIndex);
@@ -137,70 +135,34 @@ window.addEventListener("load", function () {
         activeTitle();
         activeBg();
       }
-    }, 50);
-  });
-
-  slideTexts.forEach((text) => {
-    text.addEventListener("click", (e) => {
-      e.preventDefault();
-      let index = e.currentTarget.dataset.index * 1 - 1;
-      activeTitle();
-      activeBg();
-      if (index < number) {
-        currentIndex--;
-        moveSLide(currentIndex);
-        activeTitle();
-        activeBg();
-      } else if (index > number) {
-        currentIndex++;
-        moveSLide(currentIndex);
-        activeTitle();
-        activeBg();
-      }
-      console.log(number, "num");
-      console.log(index, "in");
-      console.log(currentIndex, "cur");
-    });
+    }, 100);
   });
 
   function goToBack() {
     if (currentIndex == 13) {
       bgWrap.classList.remove("animate");
-      textWrap.classList.remove("animate");
       currentIndex = 0;
       setTimeout(() => {
         bgWrap.classList.add("animate");
-        textWrap.classList.add("animate");
       }, 150);
     } else if (currentIndex == -13) {
       bgWrap.classList.remove("animate");
-      textWrap.classList.remove("animate");
       currentIndex = 0;
       setTimeout(() => {
         bgWrap.classList.add("animate");
-        textWrap.classList.add("animate");
       }, 150);
     }
   }
 
   function activeTitle() {
     number = currentIndex + 12;
-    slideTexts.forEach((text, number) => {
+    slideTexts.forEach((text) => {
       text.classList.remove("on");
-      text.classList.remove("sub");
     });
     if (number < 0 || number > 24) {
       currentIndex = 0;
     } else {
       slideTexts[number].classList.add("on");
-    }
-    if (number == 0) {
-      slideTexts[number + 1].classList.add("sub");
-    } else if (number == 24) {
-      slideTexts[number - 1].classList.add("sub");
-    } else {
-      slideTexts[number - 1].classList.add("sub");
-      slideTexts[number + 1].classList.add("sub");
     }
   }
 
@@ -209,7 +171,7 @@ window.addEventListener("load", function () {
 
   function activeBg() {
     number = currentIndex + 12;
-    slideBgs.forEach((bg, number) => {
+    slideBgs.forEach((bg) => {
       bg.classList.remove("on");
       bg.classList.remove("sub");
     });
@@ -219,27 +181,24 @@ window.addEventListener("load", function () {
     } else if (number == 24) {
       slideBgs[number - 1].classList.add("sub");
     } else {
-      slideBgs[number - 1].classList.add("sub");
       slideBgs[number + 1].classList.add("sub");
     }
   }
 
   function moveSLide(i) {
     currentIndex = i;
-    textWrap.style.top = -i * 33.3333 + "%";
+    textWrap.style.top = -i * 100 + "%";
     bgWrap.style.left = -i * 100 + "%";
   }
 
   for (let i = 0; i < bgCount; i++) {
     slideTexts[i].style.top = i * 100 + "%";
-    slideBgs[i].style.left = i * 100 + 50 + "%";
+    slideBgs[i].style.left = i * 100 + "%";
   }
 
-  slideTexts[11].classList.add("sub");
-  slideTexts[13].classList.add("sub");
   slideTexts[12].classList.add("on");
   slideBgs[12].classList.add("on");
-  slideBgs[11].classList.add("sub");
+  slideBgs[13].classList.add("sub");
 })();
 
 // tab3
@@ -333,4 +292,25 @@ window.addEventListener("load", function () {
   // 새로고침 했을 때 상단으로 돌아가기
   // 화면이 보여 졌을 때 첫 이미지는 보여야 하니 활성화 첫 이미지 활성화
   activate();
+})();
+
+// tab2,tab3 scroll
+(() => {
+  let beforePosition = document.documentElement.scrollTop;
+
+  window.addEventListener("scroll", () => {
+    let header = document.getElementById("header"),
+      afterPosition = document.documentElement.scrollTop;
+
+    if (afterPosition > 50) {
+      if (beforePosition < afterPosition) {
+        header.classList.add("active");
+        console.log("object");
+      } else {
+        header.classList.remove("active");
+        console.log("dd");
+      }
+    }
+    beforePosition = afterPosition;
+  });
 })();

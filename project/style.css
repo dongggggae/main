@@ -65,6 +65,10 @@ section.project2 article h1 {
   color: #2e4efe;
   z-index: 2;
 }
+section.project3 article:first-of-type {
+  background: url(./tab2-imges/pro3-mainbg.png) no-repeat right;
+  background-size: contain;
+}
 
 .proScroll {
   display: inline-block;
