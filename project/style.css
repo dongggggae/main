@@ -5,6 +5,7 @@
 }
 body,
 html {
+  background-color: rgb(255, 255, 255);
   width: 100%;
   height: 100%;
 }
@@ -34,6 +35,7 @@ section.project1 p strong {
 section.project1 article:first-of-type {
   background: url(./tab2-imges/pro1-mainbg.png) no-repeat center;
   background-size: cover;
+  background-attachment: fixed;
 }
 section.project1 article:first-of-type::after {
   content: "";
@@ -48,6 +50,7 @@ section.project1 article:first-of-type::after {
 section.project2 article:first-of-type {
   background: url(./tab2-imges/pro2-mainbg.png) no-repeat left;
   background-size: contain;
+  background-attachment: fixed;
 }
 section.project2 article:first-of-type::after {
   content: "";
@@ -65,9 +68,13 @@ section.project2 article h1 {
   color: #2e4efe;
   z-index: 2;
 }
+section.project3 article:not(:first-of-type) .inner {
+  max-width: 1350px;
+  text-align: left;
+}
 section.project3 article:first-of-type {
-  background: url(./tab2-imges/pro3-mainbg.png) no-repeat right;
-  background-size: contain;
+  background: url(./tab2-imges/pro3-mainbg.jpg) no-repeat center;
+  background-attachment: fixed;
 }
 
 .proScroll {
@@ -428,6 +435,73 @@ article .inner p {
   padding: 30px 0;
 }
 
+.pro3-art1 .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  color: rgb(25, 101, 254);
+}
+.pro3-art1 h1 {
+  font-size: 40px;
+  letter-spacing: -1px;
+  z-index: 2;
+  position: relative;
+}
+.pro3-art1 h1::after {
+  display: block;
+  content: "";
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pro3-art2 .overview {
+  margin-top: 150px;
+  display: flex;
+}
+.pro3-art2 .overview .frame {
+  position: relative;
+  width: 24%;
+  margin: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff, inset -0.2rem -0.2rem 0.5rem #ffffff;
+}
+.pro3-art2 .overview .frame h3 {
+  display: inline-block;
+  padding: 1rem;
+  border-radius: 15px;
+  position: relative;
+  top: -50px;
+}
+.pro3-art2 .overview .frame p {
+  padding-top: 15px;
+}
+.pro3-art2 .overview .frame:nth-of-type(even) {
+  top: 50px;
+}
+.pro3-art2 .overview .frame:first-of-type h3 {
+  background-color: rgb(25, 101, 254);
+}
+.pro3-art2 .overview .frame:nth-of-type(2) h3 {
+  color: rgb(255, 255, 255);
+  background-color: rgb(17, 17, 17);
+}
+.pro3-art2 .overview .frame:nth-of-type(3) h3 {
+  background-color: rgb(232, 232, 232);
+}
+.pro3-art2 .overview .frame:last-of-type h3 {
+  background-color: rgb(254, 218, 25);
+}
+
 @media screen and (max-width: 1024px) {
   .pro1-art2 .inner figure {
     padding-top: 100px;
@@ -467,6 +541,23 @@ article .inner p {
   .pro2-art3 .content .desc p {
     font-size: 30px;
   }
+  .pro3-art2 {
+    border: 1px solid #000;
+    height: 100%;
+  }
+  .pro3-art2 .inner h2,
+.pro3-art2 .inner p {
+    text-align: center;
+  }
+  .pro3-art2 .overview {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .pro3-art2 .overview .frame {
+    position: relative;
+    width: 45%;
+  }
 }
 @media screen and (max-width: 767px) {
   .pro2-art4 {
@@ -489,6 +580,22 @@ article .inner p {
   .pro2-art4 .concept .contents .fonts,
 .pro2-art4 .concept .contents .fontDesc {
     margin-left: 0;
+  }
+  .pro3-art2 .overview {
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .pro3-art2 .overview .frame {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .pro3-art2 .overview .frame:nth-of-type(even) {
+    top: 0px;
+    left: 40px;
+  }
+  .pro3-art2 .overview .frame p {
+    padding-bottom: 15px;
   }
 }
 @media screen and (max-width: 576px) {

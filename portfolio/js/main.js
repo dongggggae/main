@@ -305,10 +305,8 @@ window.addEventListener("load", function () {
     if (afterPosition > 50) {
       if (beforePosition < afterPosition) {
         header.classList.add("active");
-        console.log("object");
       } else {
         header.classList.remove("active");
-        console.log("dd");
       }
     }
     beforePosition = afterPosition;
