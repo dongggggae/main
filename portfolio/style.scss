@@ -990,10 +990,13 @@ main {
     }
   }
 }
+// tab2 =========end
 
 // dataindex 주고 굳이 레이아웃이 바뀌는 느낌은 아니라 자체 에서 반응형 global-width로
 // 이미지도 크기에 맞게 끔 줄어들고 하게 했다.
 //  data-index로 말풍선 + 이미지 묶어서 갯수 같게 해서visible 빼고 넣기
+// tab3 start
+
 #tab3 {
   padding-top: 20vw;
   color: var(--color-sub);
@@ -1134,7 +1137,7 @@ main {
           p {
             span {
               font-size: 13px;
-              color: rgba(0, 0, 0, 0.6);
+              color: var(--color-sup);
               margin-left: 10px;
             }
           }
@@ -1147,6 +1150,7 @@ main {
             border-radius: 10px;
             padding-bottom: 5px;
             span {
+              will-change: width;
               position: absolute;
               left: 0;
               top: 0;

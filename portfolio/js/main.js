@@ -75,9 +75,9 @@ window.addEventListener("load", function () {
 
   function tabOpen(i) {
     let showTabs = $tabs.eq(i).attr("href");
-    $($main).fadeOut().removeClass("scrollItem");
+    $($main).fadeOut();
     setTimeout(() => {
-      $(`${showTabs}`).stop().fadeIn(500).addClass("scrollItem");
+      $(`${showTabs}`).stop().fadeIn(500);
     }, 1000);
   }
 
@@ -228,6 +228,8 @@ window.addEventListener("load", function () {
   const graphicElems = document.querySelectorAll(".graphic-item");
   let currentItem = graphicElems[0]; //현재 활성화 된 visible붙은 이미지
   let ioIndex;
+  
+  
 
   const io = new IntersectionObserver((entries) => {
     ioIndex = entries[0].target.dataset.index * 1;
@@ -253,12 +255,14 @@ window.addEventListener("load", function () {
   window.addEventListener("scroll", () => {
     let text;
     let boundingRect;
+
     // for 문 남용을 방지 하기 위해 ioINdext 이거는 최대 3 개까지 만 for문이 돈다 내용이 많아 졌을 때의 대비
 
     for (let i = ioIndex - 1; i < ioIndex + 2; i++) {
       text = textElems[i];
       if (!text) continue;
       boundingRect = text.getBoundingClientRect();
+
       //   x,y크기,탑 값을 알기 위해
       if (
         boundingRect.top > window.innerHeight * 0.1 &&
@@ -267,7 +271,7 @@ window.addEventListener("load", function () {
         // == graphicElems[i].classList.add("visible");
         inactivate();
         currentItem = graphicElems[text.dataset.index];
-        activate(currentItem.dataset.action);
+        activate();
       }
     }
 
@@ -282,6 +286,31 @@ window.addEventListener("load", function () {
   activate();
 })();
 
+// tab3skill 변수
+(() => {
+  let skill = document.getElementById("skillBox"),
+    skillAni = document.querySelectorAll(".skillAni"),
+    skillPer = document.querySelectorAll(".skill"),
+    skillWidth = new Array();
+
+  window.addEventListener("scroll", () => {
+    let skillBoundingRect;
+    skillBoundingRect = skill.getBoundingClientRect();
+    if (
+      skillBoundingRect.top > window.innerHeight * 0.2 &&
+      skillBoundingRect.top < window.innerHeight * 0.8
+    ) {
+      skillAni.forEach((bar, j) => {
+        skillWidth[j] = bar.dataset.width * 1;
+        setTimeout(() => {
+          skillAni[j].style.width = `${skillWidth[j]}%`;
+          skillPer[j].textContent = `${skillWidth[j]}%`;
+          console.log(j);
+        }, j * 100);
+      });
+    }
+  });
+})();
 // tab2,tab3 scroll
 (() => {
   let beforePosition = document.documentElement.scrollTop;
