@@ -201,41 +201,35 @@ window.addEventListener("load", function () {
   slideBgs[13].classList.add("sub");
 })();
 
+// tab2
+
+(() => {
+  let observer = new IntersectionObserver((e) => {
+    e.forEach((Item, j) => {
+      setTimeout(() => {
+        if (Item.isIntersecting) {
+          Item.target.classList.add("active");
+        } else {
+          Item.target.classList.remove("active");
+        }
+      }, j * 300);
+    });
+    threshold: 0.5;
+  });
+
+  document
+    .querySelectorAll(".proScroll")
+    .forEach((elem) => observer.observe(elem));
+})();
+
 // tab3
 (() => {
-  const actions = {
-    birdFlies(go) {
-      if (go) {
-        document.querySelector(
-          '[data-index="2"] .bird'
-        ).style.transform = `translateX(${window.innerWidth}px)`;
-      } else {
-        document.querySelector(
-          '[data-index="2"] .bird'
-        ).style.transform = `translateX(-100%)`;
-      }
-    },
-
-    birdFlies2(go) {
-      if (go) {
-        document.querySelector(
-          '[data-index="5"] .bird'
-        ).style.transform = `translate(${window.innerWidth}px ,${
-          -window.innerHeight * 0.7
-        }px )`;
-      } else {
-        document.querySelector(
-          '[data-index="5"] .bird'
-        ).style.transform = `translateX(-100%)`;
-      }
-    },
-  };
-
   const textElems = document.querySelectorAll(".text");
   const graphicElems = document.querySelectorAll(".graphic-item");
   let currentItem = graphicElems[0]; //현재 활성화 된 visible붙은 이미지
   let ioIndex;
-  const io = new IntersectionObserver((entries, observer) => {
+
+  const io = new IntersectionObserver((entries) => {
     ioIndex = entries[0].target.dataset.index * 1;
     //   console 창에 검정색으로 표시된다 . ==> 문자열
     //   index는 숫자열로 하는게 사용하기 좋다 *1을 하는게 제일 쉽다
@@ -248,18 +242,12 @@ window.addEventListener("load", function () {
   }
 
   // action이라는 변수 받아와서 활성화 비활성화
-  function activate(action) {
+  function activate() {
     currentItem.classList.add("visible");
-    if (action) {
-      actions[action](true);
-    }
   }
 
-  function inactivate(action) {
+  function inactivate() {
     currentItem.classList.remove("visible");
-    if (action) {
-      actions[action](false);
-    }
   }
 
   window.addEventListener("scroll", () => {
