@@ -544,7 +544,7 @@ main {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1.1s;
-    transition-delay: 0.2s;
+    transition-delay: 0.1s;
     &.active {
       opacity: 1;
       transform: translateY(0);
