@@ -135,7 +135,7 @@ body {
 .intro .introText p {
   font-size: 7rem;
   font-weight: 600;
-  color: var(--color-point);
+  color: linear-gradient(90deg, #04a1f6, #04f8fe);
   display: inline-block;
   opacity: 0;
   transition: 0.5s;

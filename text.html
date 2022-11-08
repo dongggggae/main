@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .skillBar {
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        height: 10px;
+        background-color: #eee;
+        border-radius: 10px;
+        padding-bottom: 5px;
+      }
+      .skillBar span {
+        transition: all 0.6s linear;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+        width: 0;
+        height: 100%;
+        background-color: cornflowerblue;
+      }
+      button {
+        width: 500px;
+        background-color: antiquewhite;
+        height: 100px;
+      }
+      .vvv {
+        height: 150vh;
+      }
+      .inner {
+        display: flex;
+        gap: 100px;
+      }
+      #skillLotate {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vvv"></div>
+    <div id="skillLotate" class="col2 col">
+      <h3>Skill</h3>
+      <div class="inner">
+        <div class="infoL">
+          <p>Photoshop <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="60"></span
+          ></span>
+          <p>Illustrator <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="65"></span
+          ></span>
+          <p>Figma <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="85"></span
+          ></span>
+          <p>HTML <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="95"></span
+          ></span>
+        </div>
+        <div class="infoR">
+          <p>CSS <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="90"></span
+          ></span>
+          <p>JAVASCRIPT <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="55"></span
+          ></span>
+          <p>j-Query <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="75"></span
+          ></span>
+          <p>Git <span class="skill"></span></p>
+          <span class="skillBar"
+            ><span class="skillAni" data-width="80"></span
+          ></span>
+        </div>
+      </div>
+    </div>
+    <div class="vvv"></div>
+    <script>
+      (() => {
+        let skill = document.getElementById("skillLotate"),
+          skillAni = document.querySelectorAll(".skillAni"),
+          skillPer = document.querySelectorAll(".skill"),
+          skillWidth = new Array();
+
+        window.addEventListener("scroll", () => {
+          let skillBoundingRect;
+          skillBoundingRect = skill.getBoundingClientRect();
+          if (
+            skillBoundingRect.top > window.innerHeight * 0.2 &&
+            skillBoundingRect.top < window.innerHeight * 0.8
+          ) {
+            skillAni.forEach((bar, j) => {
+              skillWidth[j] = bar.dataset.width * 1;
+              setTimeout(() => {
+                skillAni[j].style.width = `${skillWidth[j]}%`;
+                skillPer[j].textContent = `${skillWidth[j]}%`;
+              }, j * 200);
+            });
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
