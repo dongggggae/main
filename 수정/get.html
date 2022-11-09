@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>text scroll animation</title>
+  </head>
+  <style>
+    
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+      background-color: rgb(17, 17, 17);
+    }
+
+    html,
+    body {
+      width: 100%;
+      
+    }
+    @font-face {
+      font-family: aa;
+      src: url(./fonts/Cafe24Ohsquare.woff);
+    }
+    .cover {
+      position: relative;
+      transition: all 1s cubic-bezier(1, 1, 1, 1);
+      font-family: aa;
+      width: 100vw;
+      margin-bottom: 5rem;
+      display: flex;
+      opacity: 0;
+      transform: translate(-40.188%, 0%) translate3d(0px, 0px, 0px);
+    }
+
+    .cover:nth-child(1) {
+      margin-top: 10vh;
+      transform: rotate(-2deg);
+      background-color: rgb(17, 17, 17);
+      border-bottom: 1px solid #ff96ff;
+      border-top: 1px solid #ff96ff;
+    }
+    .cover:nth-child(1) p {
+      background-image: linear-gradient(180deg, #ff96ff, #e400ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+    .cover:nth-child(2) {
+      transform: rotate(2deg);
+      justify-content: flex-end;
+      background-color: rgb(17, 17, 17);
+      border-bottom: 1px solid #7ac5f9;
+      border-top: 1px solid #7ac5f9;
+    }
+
+    .cover:nth-child(2) p {
+      background-image: linear-gradient(180deg, #04a1f6, #7ac5f9);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .cover:nth-child(3) {
+      border-bottom: 1px solid #ffff8e;
+      border-top: 1px solid #ffff8e;
+      transform: rotate(-2deg);
+    }
+    .cover:nth-child(3) p {
+      background-image: linear-gradient(180deg, #e4f12e, #ffff8e);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p {
+      display: flex;
+      padding: 1.5rem 0;
+      font-size: 5rem;
+    }
+    body {
+      height: 200vh;
+    }
+  </style>
+  <body>
+    <div class="cover">
+      <p class="first-parallel"></p>
+    </div>
+    <div class="cover">
+      <p class="second-parallel"></p>
+    </div>
+    <div class="cover">
+      <p class="third-parallel"></p>
+    </div>
+    <div class="cover">
+      <p class="forth-parallel"></p>
+    </div>
+
+    <script>
+      const pTag1 = document.querySelector(".first-parallel");
+      const pTag2 = document.querySelector(".second-parallel");
+      const pTag3 = document.querySelector(".third-parallel");
+
+      const textArr1 =
+        "WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK".split(" ");
+      const textArr2 =
+        "PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT".split(
+          " "
+        );
+      const textArr3 =
+        "ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT".split(
+          " "
+        );
+
+      let count1 = 0;
+      let count2 = 0;
+      let count3 = 0;
+
+      initTexts(pTag1, textArr1);
+      initTexts(pTag2, textArr2);
+      initTexts(pTag3, textArr3);
+
+      function initTexts(element, textArray) {
+        textArray.push(...textArray);
+        for (let i = 0; i < textArray.length; i++) {
+          element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`;
+        }
+      }
+
+      function marqueeText(count, element, direction) {
+        if (count > element.scrollWidth / 2.5) {
+          element.style.transform = `translate3d(0, 0, 0)`;
+          count = 0;
+        }
+        element.style.transform = `translate3d(${direction * count}px, 0, 0)`;
+
+        return count;
+      }
+
+      function animate() {
+        count1++;
+        count2++;
+        count3++;
+
+        count1 = marqueeText(count1, pTag1, -1);
+        count2 = marqueeText(count2, pTag2, 1);
+        count3 = marqueeText(count3, pTag3, -1);
+
+        window.requestAnimationFrame(animate);
+      }
+
+      function scrollHandler() {
+        count1 += 15;
+        count2 += 15;
+        count3 += 15;
+      }
+
+      window.addEventListener("scroll", scrollHandler);
+      animate();
+      window.addEventListener("load", () => {
+        let introElems = document.querySelectorAll(".cover");
+        introElems.forEach((elem, i) => {
+          setTimeout(() => {
+            elem.style.opacity = 1;
+          }, (i + 1) * 700);
+        });
+      });
+    </script>
+  </body>
+</html>
