@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>김동현의 Portfolio</title>
+    <title>김동현의 포토폴리오</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./tab1-imges/favicon.ico"
+    />
     <link rel="stylesheet" href="./style.css" />
     <style>
-      /* 속성값을 부르기 */
+      /* tab3 about skillBar */
       .skillBar span {
         transition: width 1s linear;
       }
@@ -30,10 +35,9 @@
         </div>
       </div>
     </div>
-    <div id="wallPaper" class="even"></div>
-    <header id="header" class="hide">
+    <header id="header" class="hidea">
       <nav class="inner">
-        <a href="#tab1" class="tabs odd">
+        <a href="#work" class="tabs">
           <div class="tab">
             <div class="top">W</div>
             <div class="bottom">W</div>
@@ -55,7 +59,7 @@
             <div class="bottom">S</div>
           </div>
         </a>
-        <a href="#tab2" class="tabs even">
+        <a href="#project" class="tabs">
           <div class="tab">
             <div class="top">P</div>
             <div class="bottom">P</div>
@@ -85,7 +89,7 @@
             <div class="bottom">T</div>
           </div>
         </a>
-        <a href="#tab3" class="tabs odd">
+        <a href="#about" class="tabs">
           <div class="tab">
             <div class="top">A</div>
             <div class="bottom">A</div>
@@ -109,947 +113,783 @@
         </a>
       </nav>
     </header>
-    <main id="tab1">
-      <div class="workSlide">
-        <div class="textSlide">
-          <!-- 짝수개 만큼 추가하고 Y값 100씩 증가시키면 됨 -->
-          <div class="textWrap">
-            <a href="#" data-index="1" class="workText"
-              ><p>1. 포카리스웨트</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  j-Query index를 이용한 탭 메뉴<br />
-                  +메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="2" class="workText"
-              ><p>2. BMW</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  Traversing을 이용한 요소에 접근하기<br />
-                  +메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/mobile.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="3" class="workText"
-              ><p>3. SDF</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  동영상 제어 + 상세페이지 제작<br />
-                  +메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="4" class="workText"
-              ><p>4. 뮤고박스</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  Smooth scroll 구현하기<br />
-                  +애니메이션을 이용한 메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="5" class="workText"
-              ><p>5. 설빙</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  반응형 레이아웃 구현을 통한 메인페이지 제작
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="6" class="workText"
-              ><p>6. JEEP</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  반응형 레이아웃 구현을 통한 메인페이지 제작
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="7" class="workText"
-              ><p>7. 인천광역시</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  Perspective를 활용한 이미지 transform<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="8" class="workText"
-              ><p>8. STARBUCKS</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  Background img 제어 + 반응형 레이아웃<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="9" class="workText"
-              ><p>9. Ader Error</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  j-Query를 이용한 탭메뉴 + perspective를<br />
-                  활용한 메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="10" class="workText"
-              ><p>10. 홍루이젠</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  Grid 레이아웃 + Background position 활욜을 통한<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="11" class="workText"
-              ><p>11. ACE BED</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  j-Query슬라이드 + index로 요소에 접근하기<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="12" class="workText"
-              ><p>12. 청와대</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  반응형 레이아웃을 통한 청와대 메인 페이지 제작
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="13" class="workText">
-              <p>13. ARTISTY</p>
-              <div class="textExp">
-                <span>
-                  Swiper-slide를 이용한 메인페이지 제작<br />
-                  + marquee 애니메이션</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span>
+    <div class="wallpaper"></div>
+    <div class="wrap">
+      <div class="title">
+        <h1 class="first-title"></h1>
+      </div>
+      <main id="work">
+        <div class="workSlide">
+          <div class="textSlide">
+            <!-- 짝수개 만큼 추가하고 Y값 100씩 증가시키면 됨 -->
+            <div class="textWrap">
+              <a href="#" data-index="1" class="workText"
+                ><p>1. 포카리스웨트</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    j-Query index를 이용한 탭 메뉴<br />
+                    +메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="2" class="workText"
+                ><p>2. BMW</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    Traversing을 이용한 요소에 접근하기<br />
+                    +메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="3" class="workText"
+                ><p>3. SDF</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    동영상 제어 + 상세페이지 제작<br />
+                    +메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="4" class="workText"
+                ><p>4. 뮤고박스</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    Smooth scroll 구현하기<br />
+                    +애니메이션을 이용한 메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="5" class="workText"
+                ><p>5. 설빙</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    반응형 레이아웃 구현을 통한 메인페이지 제작
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="6" class="workText"
+                ><p>6. JEEP</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    반응형 레이아웃 구현을 통한 메인페이지 제작
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="7" class="workText"
+                ><p>7. 인천광역시</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    Perspective를 활용한 이미지 transform<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="8" class="workText"
+                ><p>8. STARBUCKS</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    Background img 제어 + 반응형 레이아웃<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="9" class="workText"
+                ><p>9. Ader Error</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    j-Query를 이용한 탭메뉴 + perspective를<br />
+                    활용한 메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="10" class="workText"
+                ><p>10. 홍루이젠</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    Grid 레이아웃 + Background position 활욜을 통한<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="11" class="workText"
+                ><p>11. ACE BED</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    j-Query슬라이드 + index로 요소에 접근하기<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="12" class="workText"
+                ><p>12. 청와대</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    반응형 레이아웃을 통한 청와대 메인 페이지 제작
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="13" class="workText">
+                <p>13. ARTISTY</p>
+                <div class="textExp">
+                  <span>
+                    Swiper-slide를 이용한 메인페이지 제작<br />
+                    + marquee 애니메이션</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div>
+              </a>
+              <a href="#" data-index="14" class="workText"
+                ><p>14. STX</p>
+                <div class="textExp">
+                  <span>
+                    Customscroll 이용한 메인페이지 제작 <br />
+                    + 이미지 포지션을 이용한 탭 메뉴
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="15" class="workText">
+                <p>15. Round A Round</p>
+                <div class="textExp">
+                  <span>
+                    Background Position을 이용한<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div>
+              </a>
+              <a href="#" data-index="16" class="workText">
+                <p>16. Perfume Graphy</p>
+                <div class="textExp">
+                  <span>
+                    j-Query를 이용한 탭메뉴 + 슬라이드 구현<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div>
+              </a>
+              <a href="#" data-index="17" class="workText"
+                ><p>17. 위메프오</p>
+                <div class="textExp">
+                  <span>
+                    원페이지 제어 + 스크롤 제어를 통한<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="18" class="workText"
+                ><p>18. 세븐브로이</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    멀티슬라이드 + 배열로 순차적 애니메이션 <br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="19" class="workText"
+                ><p>19. 칠성사이다</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    ISOTOFE를 이용한 그리드 레이아웃<br />
+                    +스크롤 위치 제어를 통한 메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="20" class="workText"
+                ><p>20. 롯데호텔</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    j-Query Ajax를 활용한 이벤트<br />
+                    메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="21" class="workText"
+                ><p>21. 넘버게임</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    js를 이용한 나만의 업 다운 게임 만들기<br />
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="22" class="workText"
+                ><p>22. 밤도깨비</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    스크롤의 위치에 따른 이미지 제어하기(Attribute)<br />
+                    +메인페이지 제작</span
+                  >
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="23" class="workText"
+                ><p>23. To Do List</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    js를 이용한 나만의 To Do List 만들기
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="24" class="workText"
+                ><p>24. 추가해야함</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    js를 이용한 나만의 To Do List 만들기
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+              <a href="#" data-index="25" class="workText"
+                ><p>25. 추가해야함</p>
+                <div class="textExp">
+                  <span>
+                    <br />
+                    js를 이용한 나만의 To Do List 만들기
+                  </span>
+                  <span>2022. 08 . 22</span>
+                </div></a
+              >
+            </div>
+          </div>
+          <!-- ftp로 올려서 인덱스 추가하기 -->
+          <!-- 짝수개 만큼 추가해서 X 100씩 추가하면 됨 -->
+          <div class="bgSlide">
+            <div class="bgWrap animate">
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img
+                    src="./tab1-imges/tab1-pocari.jpg"
+                    alt="1.포카리스웨트"
+                  />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
               </div>
-            </a>
-            <a href="#" data-index="14" class="workText"
-              ><p>14. STX</p>
-              <div class="textExp">
-                <span>
-                  Customscroll 이용한 메인페이지 제작 <br />
-                  + 이미지 포지션을 이용한 탭 메뉴
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="15" class="workText">
-              <p>15. Round A Round</p>
-              <div class="textExp">
-                <span>
-                  Background Position을 이용한<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-bmw.jpg" alt="2.bmw" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
               </div>
-            </a>
-            <a href="#" data-index="16" class="workText">
-              <p>16. Perfume Graphy</p>
-              <div class="textExp">
-                <span>
-                  j-Query를 이용한 탭메뉴 + 슬라이드 구현<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-sdf.gif" alt="3.SDF" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
               </div>
-            </a>
-            <a href="#" data-index="17" class="workText"
-              ><p>17. 위메프오</p>
-              <div class="textExp">
-                <span>
-                  원페이지 제어 + 스크롤 제어를 통한<br />
-                  메인페이지 제작</span
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-mugo.jpg" alt="4.MugoBox" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-sulbing.jpg" alt="5.설빙" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-jeep.jpg" alt="6.jeep" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-incheon.jpg" alt="7.인천광역시" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-star.jpg" alt="8.스타벅스" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-ader.jpg" alt="9.아더에러" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-hong.jpg" alt="10.홍루이젠" />
+                </div>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-ace.jpg" alt="11.ACE BED" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-chungwadae.jpg" alt="12.청와대" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div
+                  class="imgwrap"
+                  style="background-image: url(./tab1-imges/tab1-aristy.jpg)"
                 >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="18" class="workText"
-              ><p>18. 세븐브로이</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  멀티슬라이드 + 배열로 순차적 애니메이션 <br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="19" class="workText"
-              ><p>19. 칠성사이다</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  ISOTOFE를 이용한 그리드 레이아웃<br />
-                  +스크롤 위치 제어를 통한 메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="20" class="workText"
-              ><p>20. 롯데호텔</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  j-Query Ajax를 활용한 이벤트<br />
-                  메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/laptop.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="21" class="workText"
-              ><p>21. 넘버게임</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  js를 이용한 나만의 업 다운 게임 만들기<br />
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="22" class="workText"
-              ><p>22. 밤도깨비</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  스크롤의 위치에 따른 이미지 제어하기(Attribute)<br />
-                  +메인페이지 제작</span
-                >
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="23" class="workText"
-              ><p>23. To Do List</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  js를 이용한 나만의 To Do List 만들기
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="24" class="workText"
-              ><p>24. 추가해야함</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  js를 이용한 나만의 To Do List 만들기
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
-            <a href="#" data-index="25" class="workText"
-              ><p>25. 추가해야함</p>
-              <div class="textExp">
-                <span>
-                  <br />
-                  js를 이용한 나만의 To Do List 만들기
-                </span>
-                <span>2022. 08 . 22</span>
-                <span>
-                  <img src="./tab1-imges/all.png" alt="#" />
-                </span></div
-            ></a>
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-stx.jpg" alt="14.STX" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img
+                    src="./tab1-imges/tab1-round.jpg"
+                    alt="15.Round a round"
+                  />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img
+                    src="./tab1-imges/tab1-perfume.jpg"
+                    alt="16.Perfume Graphy"
+                  />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-wmpo.jpg" alt="17.위메프오" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-seven.jpg" alt="18.seven" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img
+                    src="./tab1-imges/tab1-chilseong.jpg"
+                    alt="19.칠성사이다"
+                  />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-lotte.jpg" alt="20.롯데 호텔" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="./tab1-imges/tab1-up&down.jpg" alt="21.넘버게임" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="" alt="22.밤도깨비" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="" alt="23.To Do list" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="" alt="24.lst" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+              <div class="bg">
+                <div class="imgwrap">
+                  <span class="liner tl"></span><span class="liner rt"></span
+                  ><span class="liner rb"></span><span class="liner lb"></span>
+                  <img src="" alt="25.last" />
+                </div>
+                <span class="thum"><span>MOBILE</span><span>WEB</span></span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="bgSlide">
-          <div class="bgWrap animate">
-            <div class="bg">
-              <!-- ftp로 올려서 인덱스 추가하기 -->
-              <!-- 짝수개 만큼 추가해서 X 100씩 추가하면 됨 -->
-              <img src="./tab1-imges/tab1-pocari.jpg" alt="1.포카리스웨트" />
+      </main>
+      <div class="title">
+        <h1 class="second-title"></h1>
+      </div>
+      <main id="project">
+        <div class="inner">
+          <div class="projectWrap">
+            <div class="projectTit">
+              <a href="#"
+                ><span class="subTit">Identity Design</span>
+                <h2 class="on">identity</h2>
+                <span class="pLine"></span
+              ></a>
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-bmw.jpg" alt="2.bmw" />
+            <div class="projectTit">
+              <a href="#"
+                ><span class="subTit">UX / UI Design</span>
+                <h2>our home</h2>
+                <span class="pLine"></span
+              ></a>
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-sdf.gif" alt="3.SDF" />
+            <div class="projectTit">
+              <a href="#"
+                ><span class="subTit">Web publishing</span>
+                <h2>portfolio</h2>
+                <span class="pLine"></span
+              ></a>
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-mugo.jpg" alt="4.MugoBox" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-sulbing.jpg" alt="5.설빙" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-jeep.jpg" alt="6.jeep" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-incheon.png" alt="7.인천광역시" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-star.jpg" alt="8.스타벅스" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-ader.jpg" alt="9.아더에러" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-hong.png" alt="10.홍루이젠" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-ace.jpg" alt="11.ACE BED" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-chungwadae.jpg" alt="12.청와대" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-artisty.jpg" alt="13.ARTISTY" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-stx.jpg" alt="14.STX" />
-            </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-round.jpg" alt="15.Round a round" />
-            </div>
-            <div class="bg">
+          </div>
+          <div class="projectImgWrap">
+            <figure class="active">
+              <img src="./tab2-imges/pro1-mainbg.png" alt="project1 img" />
+            </figure>
+            <figure>
+              <img src="./tab2-imges/pro2-mainbg.png" alt="project2 img" />
+            </figure>
+            <figure>
+              <img src="./tab2-imges/pro3-mainbg.jpg" alt="project3 img" />
+            </figure>
+          </div>
+        </div>
+      </main>
+      <div class="title">
+        <h1 class="third-title"></h1>
+      </div>
+      <main id="about">
+        <section class="introduce">
+          <div class="content-box">
+            <h2 class="introTitle">김동현을 소개합니다.</h2>
+            <p>
+              저는 하루를 생각 없이 보내기보단 하루를 이끌어 갈 수 있는 사람이
+              되고 싶습니다. <br />
+              저는 주어진 환경 속에서 탓하지 않고 원인을 저에게서 찾으려고
+              노력합니다. <br />
+              또한 환경은 내가 만들어 나아가는 것이기에 주어진 환경 속에서
+              최선을 다할 것입니다.
+            </p>
+          </div>
+        </section>
+        <section class="scroll-content">
+          <div class="scroll-graphic">
+            <div class="graphic-item">
               <img
-                src="./tab1-imges/tab1-perfume.jpg"
-                alt="16.Perfume Graphy"
+                class="scene-img"
+                src="./tab3-imges/00.png"
+                alt="김동현을 나타내는 일러스트"
               />
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-wmpo.jpg" alt="17.위메프오" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/01.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-seven.jpg" alt="18.seven" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/02.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-chilseong.jpg" alt="19.칠성사이다" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/03.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-lotte.jpg" alt="20.롯데 호텔" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/04.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="./tab1-imges/tab1-up&down.png" alt="21.넘버게임" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/05.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="" alt="22.밤도깨비" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/05.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="" alt="23.To Do list" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/06.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="" alt="24.lst" />
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/07.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
-            <div class="bg">
-              <img src="" alt="25.last" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <main id="tab2">
-      <section class="project1">
-        <article class="pro1-art1">
-          <div class="inner">
-            <h1>IDENTITY SYMBOL DESIGN</h1>
-            <p>
-              나를 분석하고 나를 브랜딩하는 <br />
-              나만의 심볼을 디자인 하였습니다.
-            </p>
-          </div>
-        </article>
-        <article class="pro1-art2">
-          <div class="inner">
-            <h2>Over View</h2>
-            <p>
-              새로운 도전에 대해 호기심을 가지고 문제 해결에 대한 저의 애착,
-              <br />
-              긍정적인 모습을 함축하여
-              <strong class="proScroll">Personal branding</strong> 하였습니다.
-            </p>
-            <figure>
-              <img src="./tab2-imges/pro1-mindmap.png" alt="brainstroming" />
-            </figure>
-          </div>
-        </article>
-        <article class="pro1-art3">
-          <div class="inner">
-            <h2>Analysis of Me</h2>
-            <p>
-              Brainstorming 단계에서 키워드를 도출하여 <strong>컨셉</strong>을
-              정하였습니다.
-            </p>
-            <div class="items">
-              <div class="item proScroll">
-                <p>
-                  새로운 것에 <br />
-                  도전하는 것을 <br />
-                  좋아한다.
-                </p>
-              </div>
-              <div class="item proScroll">
-                <p>
-                  매사에 <br />
-                  긍정적이다.
-                </p>
-              </div>
-              <div class="item proScroll">
-                <p>
-                  문제해결에 대한 <br />
-                  호기심이 강하다.
-                </p>
-              </div>
+            <div class="graphic-item">
+              <img
+                class="scene-img"
+                src="./tab3-imges/08.png"
+                alt="김동현을 나타내는 일러스트"
+              />
             </div>
           </div>
-        </article>
-        <article class="pro1-art4">
-          <div class="inner">
-            <h2>Brand Concept</h2>
-            <div class="sub-title">
-              <p><strong>key</strong> concept</p>
-              <span><img src="./tab2-imges/Arrow.png" alt="화살표" /></span>
-              <p><strong> Brand</strong> concept</p>
-            </div>
-            <div class="concept">
-              <div class="contents proScroll">
-                <span>도전적</span><span>용기</span>
-              </div>
-              <div class="contents proScroll">
-                <span>긍정적</span><span>어울림</span>
-              </div>
-              <div class="contents proScroll">
-                <span>호기심</span><span>해결력</span>
-              </div>
-            </div>
-            <div class="concept2">
-              <div class="contents">
-                <span>Fighting</span><span>Fix Up</span><span>Fall In</span>
-              </div>
-              <div class="contents">
-                <img src="./tab2-imges/pro1-item.png" alt="구상 이미지" />
-              </div>
-              <div class="contents">
-                <img src="./tab2-imges/ArrowG.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="pro1-art5">
-          <div class="inner">
-            <h2>STYLE GUIDE</h2>
-            <div class="descs">
-              <div class="desc proScroll">
-                <p>How to</p>
-                <span
-                  >Key concept을 통해 brand concept 도출 <br />
-                  그 의미가 전달 되게끔 심볼 제작</span
-                >
-              </div>
-              <div class="desc proScroll">
-                <p>Typograrhy</p>
-                <span>
-                  가독성이 높고 깔끔한 'Pretendard'를 사용하였습니다.</span
-                >
-              </div>
-              <div class="desc proScroll">
-                <p>Color</p>
-                <span class="colorBox">
-                  <span class="color">#C6CDFF</span>
-                  <span class="color">#C2508B</span>
-                  <span class="color">#F2F2F2</span>
-                </span>
-              </div>
-            </div>
-            <div class="result">
-              <h2 class="proScroll">LOGO DESIGN</h2>
-              <figure class="proScroll">
-                <img src="./tab2-imges/pro1-symbol.png" alt="sybol-logo" />
-              </figure>
-              <p class="proScroll">
-                나의 이니셜인 D와 나의 특징을 나타내는 F를 합쳐 표현하였고,
-                <br />
-                나는 앞으로 나아갈 것이라는 포부를 방향성이 느껴지게끔
-                표현하였다.
+          <div class="scroll-text content-box">
+            <div class="text">
+              <p>
+                전역 후, 내가 <strong>정말 하고 싶은 일</strong>이 무엇인지를
+                알기 위해 학교를 자퇴했다.
               </p>
             </div>
-          </div>
-        </article>
-      </section>
-      <!-- project2  -->
-      <section class="project2">
-        <article class="pro2-art1">
-          <div class="inner">
-            <h1>
-              APPLICATION
-              <br />
-              PROJECT
-            </h1>
-          </div>
-        </article>
-        <article class="pro2-art2">
-          <div class="inner">
-            <h2>MENU FRAME</h2>
-            <figure>
-              <img src="./tab2-imges/pro2-menufame.png" alt="pro2-menufame" />
-            </figure>
-          </div>
-        </article>
-        <article class="pro2-art3">
-          <div class="inner">
-            <h2>OVERVIEW</h2>
-            <div class="content">
-              <div class="desc">
-                <p>
-                  <strong>자취가 서툰 이용자</strong>들에게 <br />
-                  유용한 정보와 편의를 제공한다. <br />
-                  이용자들에게 <strong>공감대를 형성</strong> <br />
-                  할 수 있는 커뮤니티를 제공한다.
-                </p>
-              </div>
-              <div class="phone">
-                <figure class="proScroll">
-                  <img
-                    src="./tab2-imges/pro2-phone2.png"
-                    alt="휴대폰 목업 이미지"
-                  />
-                </figure>
-                <figure class="proScroll">
-                  <img
-                    src="./tab2-imges/pro2-phone1.png"
-                    alt="휴대폰 목업 이미지"
-                  />
-                </figure>
-              </div>
+            <div class="text">
+              <p>
+                남자라면 <strong>큰 물</strong>에서 놀아야한다는 마음으로 서울로
+                상경을 했다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                서울에 와서 예전부터 하고 싶었던 미용을 시작했다.<br />
+                일을 하면서 사람들과 보다 나은 소통을 할 수 있는 법을 배웠다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                2년간의 했던 미용을 그만두고,<br />
+                문제를 해결하는 것을 좋아하던 나는 새로운 도전을 위해,<br />
+                <strong>코딩</strong>을 배우기로 마음먹었다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                처음에는 사람 만나는 일을 하다가 그래서인지 어색했지만, <br />
+                안 되는 것을 해결했을 때의 느낌은 잊을 수 없었다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                배우는 기간 동안 누가 보아도 얘는 <strong>노력</strong>했구나를
+                보여주고 싶었다. <br />
+                그런 마음으로 하루를 계획하다 보니, 시간이 정말 빠르게 지나갔다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                나의 <strong>최종 목표</strong>는 프론트엔드개발자가 되는 것
+                이다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                그래서 목표를 이루기 위해 취업을 하고도 계속 공부를 할 것이다.
+              </p>
+            </div>
+            <div class="text">
+              <p>
+                <strong>No Shooting is No Goal</strong><br />
+                골을 넣기 위해 최선을 다 할 것이다.
+              </p>
+            </div>
+            <div class="text">
+              <p>읽어주셔서 감사합니다.</p>
             </div>
           </div>
-        </article>
-        <article class="pro2-art4">
-          <div class="inner">
-            <h2>STYLE GUIDE</h2>
-            <div class="concept">
-              <div class="contents proScroll">
-                <h3 class="sub-title">Logo Design</h3>
-                <figure>
-                  <img
-                    src="./tab2-imges/pro2-logodesign.png"
-                    alt="logodesign이미지"
-                  />
-                </figure>
-              </div>
-              <div class="contents proScroll">
-                <h3 class="sub-title">Color</h3>
-                <div class="colorItem">
-                  <div class="colorBox">
-                    <span class="color"></span><span class="color"></span
-                    ><span class="color"></span>
-                  </div>
-                  <div class="colorText">
-                    <span>
-                      Main Color<br />
-                      #2E4EFE
-                    </span>
-                    <span>
-                      Secondary Color<br />
-                      #080D2A
-                    </span>
-                    <span>
-                      Auxiliary color<br />
-                      #FEFEFE
-                    </span>
-                  </div>
+        </section>
+        <section class="normal-content">
+          <div class="profileLeft">
+            <h2>WHO AM I</h2>
+            <figure><img src="./tab3-imges/photo.png" alt="" /></figure>
+            <h3>안녕하세요 , 김동현입니다.</h3>
+            <p>도전하는 것을 좋아하고,<br />잘 스며들 수 있는 사람입니다.</p>
+          </div>
+          <div class="profileRight">
+            <div class="col1 col">
+              <h3>Information</h3>
+              <div class="inner">
+                <div class="infoL">
+                  <p>Name : 김동현</p>
+                  <p>Birth : 1997 / 08 / 22</p>
+                  <address>Address : 서울시 관악구</address>
+                </div>
+                <div class="infoR">
+                  <p>E-mail : k01077584867@gmail.com</p>
+                  <p>Phone : 010-7758-4867</p>
+                  <a target="_blank" href="https://github.com/dongggggae"
+                    >Git : https://github.com/dongggggae</a
+                  >
                 </div>
               </div>
-              <div class="contents proScroll">
-                <h3 class="sub-title">Font</h3>
-                <div class="fonts">
-                  <div class="font">
-                    <span>Semi Bold</span><br />
-                    애플산돌고딕
-                  </div>
-                  <div class="font">
-                    <span>Medium</span><br />
-                    애플산돌고딕
-                  </div>
-                  <div class="font">
-                    <span>Regular</span><br />
-                    애플산돌고딕
-                  </div>
+            </div>
+            <div id="skillBox" class="col2 col">
+              <h3>Skill</h3>
+              <div class="inner">
+                <div class="infoL">
+                  <p>Photoshop <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="60"></span
+                  ></span>
+                  <p>Illustrator <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="65"></span
+                  ></span>
+                  <p>Figma <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="85"></span
+                  ></span>
+                  <p>HTML <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="95"></span
+                  ></span>
                 </div>
-                <p class="fontDesc">
-                  앱 사용자의 편리한 정보 습득을 위해, 가독성이 높고 깔끔한
-                  <br />
-                  '애플산돌고딕(AppleSDGothic)' 를 사용하였습니다.
-                </p>
+                <div class="infoR">
+                  <p>CSS <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="90"></span
+                  ></span>
+                  <p>JAVASCRIPT <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="55"></span
+                  ></span>
+                  <p>j-Query <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="75"></span
+                  ></span>
+                  <p>Git <span class="skill"></span></p>
+                  <span class="skillBar"
+                    ><span class="skillAni" data-width="80"></span
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="col3 col">
+              <h3>Education</h3>
+              <div class="inner">
+                <div class="infoL">
+                  <p>무학고등학교 졸업</p>
+                  <p>안동대학교 응용화학과 자퇴</p>
+                  <p>이젠 컴퓨터 아카데미 졸업</p>
+                </div>
               </div>
             </div>
           </div>
-        </article>
-        <article class="pro2-art5">
-          <div class="inner">
-            <h2>DETAIL VIEW</h2>
-            <video
-              width="100%"
-              height="100%"
-              autoplay
-              loop
-              muted
-              src="./tab2-imges/pro2-video.mp4"
-            ></video>
-          </div>
-        </article>
-      </section>
-      <!-- project3 -->
-      <section class="project3">
-        <article class="pro3-art1">
-          <div class="inner">
-            <h1>portfolio Process</h1>
-          </div>
-        </article>
-        <article class="pro3-art2">
-          <div class="inner">
-            <h2>OVERVIEW</h2>
-            <p>각각의 메뉴에서 전하고자 하는 것을 효과적으로 전달한다.</p>
-            <div class="overview">
-              <div class="frame proScroll">
-                <h3>INTRO</h3>
-                <p>나의 목표를 간단하게 소개한다.</p>
-              </div>
-              <div class="frame proScroll">
-                <h3>WORK</h3>
-                <p>
-                  나의 작업물들에 대해 설명을 하고,<br />
-                  나의 노력을 보여준다.
-                </p>
-              </div>
-              <div class="frame proScroll">
-                <h3>PROJECT</h3>
-                <p>
-                  내가 한 프로젝트를 소개하며,<br />
-                  어떠한 의도를 가지고 진행했는지에 대해 설명한다.
-                </p>
-              </div>
-              <div class="frame proScroll">
-                <h3>ABOUT</h3>
-                <p>
-                  내가 어떤 사람인지에 대해 소개를 하며,<br />
-                  내가 가진 스킬에 대해 설명을 한다.
-                </p>
-              </div>
-            </div>
-          </div>
-        </article>
-        <article class="pro3-art3">
-          <div class="inner"></div>
-        </article>
-      </section>
-    </main>
-    <main id="tab3">
-      <section class="introduce">
-        <div class="content-box">
-          <h2 class="title">김동현을 소개합니다.</h2>
-          <p>
-            저는 하루를 생각 없이 보내기보단 하루를 이끌어 갈 수 있는 사람이
-            되고 싶습니다. <br />
-            저는 주어진 환경 속에서 탓하지 않고 원인을 저에게서 찾으려고
-            노력합니다. <br />
-            또한 환경은 내가 만들어 나아가는 것이기에 주어진 환경 속에서 최선을
-            다할 것입니다.
-          </p>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">
+      <div class="inner">
+        <div class="col1">2022 Designed & Developed By KimDongHyun</div>
+        <div class="col2">
+          이 웹사이트는 개인 포토폴리오로, 모든 작업물은 상업적 이용 목적이
+          없습니다. Chrome에 최적화되어 있습니다.
         </div>
-      </section>
-      <section class="scroll-content">
-        <div class="scroll-graphic">
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/00.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/01.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/02.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/03.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/04.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/05.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/05.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/06.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/07.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-          <div class="graphic-item">
-            <img
-              class="scene-img"
-              src="./tab3-imges/08.png"
-              alt="김동현을 나타내는 일러스트"
-            />
-          </div>
-        </div>
-        <div class="scroll-text content-box">
-          <div class="text">
-            <p>
-              전역 후, 내가 <strong>정말 하고 싶은 일</strong>이 무엇인지를 알기
-              위해 학교를 자퇴했다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              남자라면 <strong>큰 물</strong>에서 놀아야한다는 마음으로 서울로
-              상경을 했다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              서울에 와서 예전부터 하고 싶었던 미용을 시작했다.<br />
-              일을 하면서 사람들과 보다 나은 소통을 할 수 있는 법을 배웠다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              2년간의 했던 미용을 그만두고,<br />
-              문제를 해결하는 것을 좋아하던 나는 새로운 도전을 위해,<br />
-              <strong>코딩</strong>을 배우기로 마음먹었다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              처음에는 사람 만나는 일을 하다가 그래서인지 어색했지만, <br />
-              안 되는 것을 해결했을 때의 느낌은 잊을 수 없었다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              배우는 기간 동안 누가 보아도 얘는 <strong>노력</strong>했구나를
-              보여주고 싶었다. <br />
-              그런 마음으로 하루를 계획하다 보니, 시간이 정말 빠르게 지나갔다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              나의 <strong>최종 목표</strong>는 프론트엔드개발자가 되는 것 이다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              그래서 목표를 이루기 위해 취업을 하고도 계속 공부를 할 것이다.
-            </p>
-          </div>
-          <div class="text">
-            <p>
-              <strong>No Shooting is No Goal</strong><br />
-              골을 넣기 위해 최선을 다 할 것이다.
-            </p>
-          </div>
-          <div class="text">
-            <p>읽어주셔서 감사합니다.</p>
-          </div>
-        </div>
-      </section>
-      <section class="normal-content">
-        <div class="profileLeft">
-          <h2>WHO AM I</h2>
-          <figure><img src="./tab3-imges/photo.png" alt="" /></figure>
-          <h3>안녕하세요 , 김동현입니다.</h3>
-          <p>도전하는 것을 좋아하고,<br />잘 스며들 수 있는 사람입니다.</p>
-        </div>
-        <div class="profileRight">
-          <div class="col1 col">
-            <h3>Information</h3>
-            <div class="inner">
-              <div class="infoL">
-                <p>Name : 김동현</p>
-                <p>Birth : 1997 / 08 / 22</p>
-                <address>Address : 서울시 관악구</address>
-              </div>
-              <div class="infoR">
-                <p>E-mail : k01077584867@gmail.com</p>
-                <p>Phone : 010-7758-4867</p>
-                <a target="_blank" href="https://github.com/dongggggae"
-                  >Git : https://github.com/dongggggae</a
-                >
-              </div>
-            </div>
-          </div>
-          <div id="skillBox" class="col2 col">
-            <h3>Skill</h3>
-            <div class="inner">
-              <div class="infoL">
-                <p>Photoshop <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="60"></span
-                ></span>
-                <p>Illustrator <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="65"></span
-                ></span>
-                <p>Figma <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="85"></span
-                ></span>
-                <p>HTML <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="95"></span
-                ></span>
-              </div>
-              <div class="infoR">
-                <p>CSS <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="90"></span
-                ></span>
-                <p>JAVASCRIPT <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="55"></span
-                ></span>
-                <p>j-Query <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="75"></span
-                ></span>
-                <p>Git <span class="skill"></span></p>
-                <span class="skillBar"
-                  ><span class="skillAni" data-width="80"></span
-                ></span>
-              </div>
-            </div>
-          </div>
-          <div class="col3 col">
-            <h3>Education</h3>
-            <div class="inner">
-              <div class="infoL">
-                <p>무학고등학교 졸업</p>
-                <p>안동대학교 응용화학과 자퇴</p>
-                <p>이젠 컴퓨터 아카데미 졸업</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="inner">
-          <div class="col1">2022 Designed & Developed By KimDongHyun</div>
-          <div class="col2">
-            이 웹사이트는 개인 포토폴리오로, 모든 작업물은 상업적 이용 목적이
-            없습니다. Chrome에 최적화되어 있습니다.
-          </div>
-        </div>
-      </footer>
-    </main>
-    <script src="./js/jquery.min.js"></script>
+      </div>
+    </footer>
     <script src="./js/main.js"></script>
   </body>
 </html>

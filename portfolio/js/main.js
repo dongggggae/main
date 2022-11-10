@@ -1,33 +1,11 @@
-// let tabs = document.querySelectorAll(".tabs"),
-//   wallPaper = document.getElementById("wallPaper");
-// tabs.forEach((tab, i) => {
-//   tab.addEventListener("click", function (e) {
-//     e.preventDefault();
-//     openPage(i);
-//   });
-// });
-
-// function openPage(i) {
-//   tabs.forEach((tab) => {
-//     tab.classList.remove("on");
-//   });
-//   tabs[i].classList.add("on");
-//   let currentTab = tabs[i].getAttribute("class");
-//   let change = currentTab.replace("tabs", "");
-//   let bgChange = change.replace("on", "");
-//   if (i == 0 || i == 2) {
-//     wallPaper.className = bgChange;
-//   } else {
-//     wallPaper.className = bgChange;
-//   }
-// }
-
-// intro\
+// intro
 
 window.addEventListener("load", function () {
-  var intro = document.getElementById("intro");
-  var header = document.getElementById("header");
-  let firstMain = document.getElementById("tab1");
+  let intro = document.getElementById("intro"),
+    header = document.getElementById("header"),
+    workSec = document.getElementById("work"),
+    body = document.querySelector("body");
+
   function intro1() {
     intro.classList.add("open");
   }
@@ -42,10 +20,13 @@ window.addEventListener("load", function () {
   }
   function intro2() {
     intro.classList.add("none");
+    header.classList.add("active");
     header.classList.remove("hide");
   }
   function intro3() {
-    firstMain.classList.add("active");
+    body.style.overflowY = "auto";
+    let workSecLocation = workSec.offsetTop;
+    window.scrollTo({ top: workSecLocation, behavior: "smooth" });
   }
   setTimeout(() => intro1(), 500);
   setTimeout(() => introRe1(), 1100);
@@ -55,62 +36,99 @@ window.addEventListener("load", function () {
   setTimeout(() => intro3(), 3400);
 });
 
-// header
-
+// header scroll
 (() => {
-  let $tabs = $(".tabs"),
-    $wallPaper = $("#wallPaper"),
-    $main = $("main"),
-    currentTab;
+  let beforePosition = document.documentElement.scrollTop;
 
-  $tabs.click(function (e) {
-    e.preventDefault();
-    let idx = $(this).index();
-    $tabs.removeClass("on");
-    $(this).addClass("on");
-    changeBg(idx);
-    tabShow(idx);
-    tabOpen(idx);
+  window.addEventListener("scroll", () => {
+    let header = document.getElementById("header"),
+      afterPosition = document.documentElement.scrollTop;
+
+    if (afterPosition > 50) {
+      if (beforePosition < afterPosition) {
+        header.classList.add("active");
+      } else {
+        header.classList.remove("active");
+      }
+    }
+    beforePosition = afterPosition;
   });
-
-  function tabOpen(i) {
-    let showTabs = $tabs.eq(i).attr("href");
-    $($main).fadeOut();
-    setTimeout(() => {
-      $(`${showTabs}`).stop().fadeIn(500);
-    }, 1000);
-  }
-
-  function changeBg(i) {
-    // bg색상 바꾸기
-    if (i % 2 == 0) {
-      currentTab = "even";
-      $wallPaper.attr("class", currentTab);
-    } else {
-      currentTab = "odd";
-      $wallPaper.attr("class", currentTab);
-    }
-  }
-
-  function tabShow(i) {
-    // bg가 바뀌고 나서 탭 보여주기
-    if (i % 2 == 0) {
-      setTimeout(function () {
-        $tabs.find(".tab").css({ color: "rgb(255, 255, 255)" });
-      }, 1150);
-    } else {
-      setTimeout(function () {
-        $tabs.find(".tab").css({ color: "rgb(17, 17, 17)" });
-      }, 1150);
-    }
-  }
 })();
+// section1,2,3 title
+(() => {
+  const pTag1 = document.querySelector(".first-title");
+  const pTag2 = document.querySelector(".second-title");
+  const pTag3 = document.querySelector(".third-title");
 
-// tab1
+  const textArr1 = "WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK".split(
+    " "
+  );
+  const textArr2 =
+    "PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT".split(
+      " "
+    );
+  const textArr3 =
+    "ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT".split(" ");
+
+  let count1 = 0;
+  let count2 = 0;
+  let count3 = 0;
+
+  initTexts(pTag1, textArr1);
+  initTexts(pTag2, textArr2);
+  initTexts(pTag3, textArr3);
+
+  function initTexts(element, textArray) {
+    textArray.push(...textArray);
+    for (let i = 0; i < textArray.length; i++) {
+      element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`;
+    }
+  }
+
+  function marqueeText(count, element, direction) {
+    if (count > element.scrollWidth / 2) {
+      element.style.transform = `translate3d(0, 0, 0)`;
+      count = 0;
+    }
+    element.style.transform = `translate3d(${direction * count}px, 0, 0)`;
+
+    return count;
+  }
+
+  function animate() {
+    count1++;
+    count2++;
+    count3++;
+
+    count1 = marqueeText(count1, pTag1, -1);
+    count2 = marqueeText(count2, pTag2, 1);
+    count3 = marqueeText(count3, pTag3, -1);
+
+    window.requestAnimationFrame(animate);
+  }
+
+  function scrollHandler() {
+    count1 += 20;
+    count2 += 20;
+    count3 += 20;
+  }
+
+  window.addEventListener("scroll", scrollHandler);
+  animate();
+  window.addEventListener("load", () => {
+    let introElems = document.querySelectorAll(".title");
+    introElems.forEach((elem, i) => {
+      setTimeout(() => {
+        elem.style.opacity = 1;
+      }, (i + 1) * 700);
+    });
+  });
+})();
+// title===================================
+// work slide
 (() => {
   let slideTexts = document.querySelectorAll(".workText"),
     textWrap = document.querySelector(".textWrap"),
-    tabslide = document.getElementById("tab1"),
     slideBgs = document.querySelectorAll(".bg"),
     bgWrap = document.querySelector(".bgWrap"),
     bgCount = slideBgs.length,
@@ -118,7 +136,7 @@ window.addEventListener("load", function () {
     number,
     wheelTimer;
 
-  tabslide.addEventListener("wheel", (e) => {
+  bgWrap.addEventListener("wheel", (e) => {
     e.preventDefault();
     clearTimeout(wheelTimer);
     wheelTimer = setTimeout(() => {
@@ -135,7 +153,7 @@ window.addEventListener("load", function () {
         activeTitle();
         activeBg();
       }
-    }, 100);
+    }, 70);
   });
 
   function goToBack() {
@@ -200,36 +218,31 @@ window.addEventListener("load", function () {
   slideBgs[12].classList.add("on");
   slideBgs[13].classList.add("sub");
 })();
-
-// tab2
-
+// workslide ==================================
+// project section tab menu
 (() => {
-  let observer = new IntersectionObserver((e) => {
-    e.forEach((Item, j) => {
-      setTimeout(() => {
-        if (Item.isIntersecting) {
-          Item.target.classList.add("active");
-        } else {
-          Item.target.classList.remove("active");
-        }
-      }, j * 300);
+  let TitElems = document.querySelectorAll(".projectTit h2"),
+    figureElems = document.querySelectorAll(".projectImgWrap figure");
+
+  TitElems.forEach((elem, i) => {
+    elem.addEventListener("mouseover", () => {
+      for (let i = 0; i < figureElems.length; i++) {
+        figureElems[i].classList.remove("active");
+        TitElems[i].classList.remove("on");
+      }
+      figureElems[i].classList.add("active");
+      TitElems[i].classList.add("on");
     });
-    threshold: 0.5;
   });
-
-  document
-    .querySelectorAll(".proScroll")
-    .forEach((elem) => observer.observe(elem));
 })();
+// project section tab menu===============================
+// about scroll + skillbar
 
-// tab3
 (() => {
   const textElems = document.querySelectorAll(".text");
   const graphicElems = document.querySelectorAll(".graphic-item");
   let currentItem = graphicElems[0]; //현재 활성화 된 visible붙은 이미지
   let ioIndex;
-  
-  
 
   const io = new IntersectionObserver((entries) => {
     ioIndex = entries[0].target.dataset.index * 1;
@@ -285,8 +298,7 @@ window.addEventListener("load", function () {
   // 화면이 보여 졌을 때 첫 이미지는 보여야 하니 활성화 첫 이미지 활성화
   activate();
 })();
-
-// tab3skill 변수
+// skill bar
 (() => {
   let skill = document.getElementById("skillBox"),
     skillAni = document.querySelectorAll(".skillAni"),
@@ -311,21 +323,4 @@ window.addEventListener("load", function () {
     }
   });
 })();
-// tab2,tab3 scroll
-(() => {
-  let beforePosition = document.documentElement.scrollTop;
-
-  window.addEventListener("scroll", () => {
-    let header = document.getElementById("header"),
-      afterPosition = document.documentElement.scrollTop;
-
-    if (afterPosition > 50) {
-      if (beforePosition < afterPosition) {
-        header.classList.add("active");
-      } else {
-        header.classList.remove("active");
-      }
-    }
-    beforePosition = afterPosition;
-  });
-})();
+// about scroll + skillbar================================
