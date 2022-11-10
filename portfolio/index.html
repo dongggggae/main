@@ -16,6 +16,26 @@
       .skillBar span {
         transition: width 1s linear;
       }
+      .frame {
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        position: fixed;
+        transition: 0.5s;
+      }
+      #frameBtn.close {
+        position: fixed;
+        background-color: blue;
+        width: 10px;
+        height: 10px;
+        top: 2%;
+        right: 2%;
+        opacity: 0;
+        z-index: 99999;
+      }
+      #frameBtn.on {
+        opacity: 1;
+      }
     </style>
   </head>
   <body>
@@ -37,7 +57,7 @@
     </div>
     <header id="header" class="hidea">
       <nav class="inner">
-        <a href="#work" class="tabs">
+        <a href="#work" class="tabs on">
           <div class="tab">
             <div class="top">W</div>
             <div class="bottom">W</div>
@@ -806,7 +826,11 @@
             <h2>WHO AM I</h2>
             <figure><img src="./tab3-imges/photo.png" alt="" /></figure>
             <h3>안녕하세요 , 김동현입니다.</h3>
-            <p>도전하는 것을 좋아하고,<br />잘 스며들 수 있는 사람입니다.</p>
+            <p>
+              새로운 기술을 배우는 것에 흥미를 느끼며, 어느 환경에서나 잘
+              스며드는 웹 퍼블리서가 되길 희망합니다. 이후엔 공부를 하여
+              프론트엔드개발자가 되고 싶습니다.
+            </p>
           </div>
           <div class="profileRight">
             <div class="col1 col">
@@ -890,6 +914,59 @@
         </div>
       </div>
     </footer>
+    <a href="#" id="frameBtn" class="close"></a>
+    <div class="frame"></div>
+    <script src="./js/jquery.min.js"></script>
     <script src="./js/main.js"></script>
+
+    <!-- box -->
+    <script>
+      // js로 바꾸기
+      $(".projectTit")
+        .filter(":first-of-type")
+        .find("a")
+        .click(function (e) {
+          e.preventDefault();
+          $(".frame").animate({ top: "0" });
+          $("#frameBtn").addClass("on");
+          $("#frameBtn").css({ cursor: "pointer" });
+          $(".frame").load("./project1.html");
+          $(".frame").css({ width: "100vw" });
+          $(".frame").css({ height: "100vh" });
+          $(".frame").css({ "z-index": "999" });
+          $(".frame").css({ overflow: "auto" });
+        });
+      $("#frameBtn.close").click(function (e) {
+        e.preventDefault();
+        $(".frame").animate({ top: "110%" });
+        $("#frameBtn").removeClass("on");
+        $(".frame").css({ "z-index": 0 });
+        $(this).css({ cursor: "default" });
+        $("html").css({ overflow: "scroll" });
+      });
+
+      $(".projectTit")
+        .filter(":nth-of-type(2)")
+        .find("a")
+        .click(function (e) {
+          e.preventDefault();
+          $(".frame").animate({ top: "0" });
+          $("#frameBtn").addClass("on");
+          $("#frameBtn").css({ cursor: "pointer" });
+          $(".frame").load("./project2.html");
+          $(".frame").css({ width: "100vw" });
+          $(".frame").css({ height: "100vh" });
+          $(".frame").css({ "z-index": "999" });
+          $(".frame").css({ overflow: "auto" });
+        });
+      $("#frameBtn.close").click(function (e) {
+        e.preventDefault();
+        $(".frame").animate({ top: "110%" });
+        $("#frameBtn").removeClass("on");
+        $(".frame").css({ "z-index": 0 });
+        $(this).css({ cursor: "default" });
+        $("html").css({ overflow: "scroll" });
+      });
+    </script>
   </body>
 </html>

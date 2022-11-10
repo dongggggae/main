@@ -217,8 +217,24 @@ body {
   will-change: transform;
   transition: 0.35s;
 }
+#header nav.inner .tabs:nth-of-type(1).on .tab .top {
+  background-image: linear-gradient(0deg, #04a1f6, #7ac5f9);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+}
 #header nav.inner .tabs:nth-of-type(1) .tab .bottom {
   background-image: linear-gradient(0deg, #04a1f6, #7ac5f9);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+}
+#header nav.inner .tabs:nth-of-type(2).on .tab .top {
+  background-image: linear-gradient(0deg, #e4f12e, #ffff8e);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -230,6 +246,14 @@ body {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+}
+#header nav.inner .tabs:nth-of-type(3).on .tab .top {
+  background-image: linear-gradient(0deg, #ff96ff, #e400ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   background-repeat: no-repeat;
 }
@@ -769,7 +793,7 @@ body {
   text-align: center;
   width: 35%;
   height: 100%;
-  padding: 10% 0;
+  padding: 10% 1%;
   border-right: 1px solid #000;
 }
 #about .normal-content .profileLeft h3 {

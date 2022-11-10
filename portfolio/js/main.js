@@ -38,18 +38,40 @@ window.addEventListener("load", function () {
 
 // header scroll
 (() => {
-  let beforePosition = document.documentElement.scrollTop;
+  let beforePosition = document.documentElement.scrollTop,
+    scrTop = window.scrollY,
+    tabsElems = document.querySelectorAll(".tabs"),
+    work = document.getElementById("work").offsetTop,
+    project = document.getElementById("project").offsetTop,
+    about = document.getElementById("about").offsetTop,
+    secPos = new Array(work, project, about);
+
+  activeHeader();
+
+  function activeHeader() {
+    tabsElems.forEach((elem, i) => {
+      elem.addEventListener("click", (e) => {
+        e.preventDefault();
+        for (let i = 0; i < tabsElems.length; i++) {
+          tabsElems[i].classList.remove("on");
+        }
+        tabsElems[i].classList.add("on");
+        goToSec(i);
+      });
+    });
+  }
+  function goToSec(i) {
+    window.scrollTo({ top: secPos[i], behavior: "smooth" });
+  }
 
   window.addEventListener("scroll", () => {
     let header = document.getElementById("header"),
       afterPosition = document.documentElement.scrollTop;
 
     if (afterPosition > 50) {
-      if (beforePosition < afterPosition) {
-        header.classList.add("active");
-      } else {
-        header.classList.remove("active");
-      }
+      beforePosition < afterPosition
+        ? header.classList.add("active")
+        : header.classList.remove("active");
     }
     beforePosition = afterPosition;
   });
@@ -124,8 +146,8 @@ window.addEventListener("load", function () {
     });
   });
 })();
-// title===================================
-// work slide
+// marqueetitle===================================
+// work slide===============
 (() => {
   let slideTexts = document.querySelectorAll(".workText"),
     textWrap = document.querySelector(".textWrap"),
@@ -157,13 +179,7 @@ window.addEventListener("load", function () {
   });
 
   function goToBack() {
-    if (currentIndex == 13) {
-      bgWrap.classList.remove("animate");
-      currentIndex = 0;
-      setTimeout(() => {
-        bgWrap.classList.add("animate");
-      }, 150);
-    } else if (currentIndex == -13) {
+    if (currentIndex == 13 || currentIndex == -13) {
       bgWrap.classList.remove("animate");
       currentIndex = 0;
       setTimeout(() => {
@@ -317,7 +333,6 @@ window.addEventListener("load", function () {
         setTimeout(() => {
           skillAni[j].style.width = `${skillWidth[j]}%`;
           skillPer[j].textContent = `${skillWidth[j]}%`;
-          console.log(j);
         }, j * 100);
       });
     }
