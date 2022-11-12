@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* 10/25 시작 */
+/* 메뉴 구성 큐브 효과로 하기로 하고 탭123 으로 연결 탭 애니메이션 + 화면 전환 10/28 */
+/* tab3 반응형 끝 이지만 수정하면됨 10/30 */
+/* tab1 work desc만 추가 하면 끝 11/1 */
+/* tab2 프로젝트 이제 추가하면 됨  */
+
+@import url(./css/reset.css);
+
+@font-face {
+  font-family: "Cafesquare";
+  src: url(./fonts/Cafe24Ohsquare.woff);
+}
+@font-face {
+  font-family: "pretendard";
+  src: url(./fonts/Pretendard-Regular.woff);
+}
+@font-face {
+  font-family: "Nanum";
+  src: url(./fonts/NanumSquareOTF_acEB.woff);
+}
+:root {
+  --color-main: rgb(17, 17, 17);
+  --color-sub: rgb(255, 255, 255);
+  --color-sup: rgb(232, 232, 232);
+  --color-blue: rgb(0, 115, 229);
+  --color-green: rgb(135, 220, 31);
+  --color-pro1: rgb(190, 190, 255);
+  --color-gray: rgb(68, 68, 68);
+  --font-heading: "Cafesquare";
+  --font-article: "pretendard";
+  --font-work: "Nanum";
+  --font-size-head: 55px;
+  --s: 8px;
+  --m: 16px;
+  --l: 20px;
+  --xl: 24px;
+  --xxl: 32px;
+  --xxxl: 40px;
+}
+
+@mixin flex-r-c {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+@mixin flex-c-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body,
+html {
+  height: 100%;
+}
+body {
+  overflow: hidden;
+  background-color: var(--color-main);
+  font-family: var(--font-article);
+}
+#intro {
+  background-color: var(--color-sub);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  overflow: hidden;
+}
+.introWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.intro .introMain {
+  position: absolute;
+  width: 200%;
+  left: -50%;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+.intro::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 0;
+  background-color: var(--color-main);
+  z-index: 10;
+  transform: translate(0, -50%);
+  transition: 0.4s;
+  transition-delay: 2.5s;
+}
+
+.intro .introMain .line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  z-index: 10;
+  background-color: var(--color-sub);
+  transition: 0.2s;
+  transition-delay: 2.1s;
+  transition-timing-function: cubic-bezier(1, 1, 1, 1);
+}
+.intro .introMain .line span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.intro .introMain .line span::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color-main);
+  width: 0;
+  height: 1px;
+  transition: 0.8s;
+}
+.intro .introMain .line.top {
+  top: 0;
+  left: 0;
+}
+.intro .introMain .line.top span::before {
+  bottom: 0;
+  left: 25%;
+}
+.intro .introMain .line.bot {
+  bottom: 0;
+  right: 0;
+}
+.intro .introMain .line.bot span::before {
+  top: 0;
+  right: 25%;
+}
+.intro .introText {
+  position: relative;
+  padding: 20px 0 30px;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro .introText p {
+  font-size: 7rem;
+  font-weight: 600;
+  color: var(--color-blue);
+  display: inline-block;
+  opacity: 0;
+  transition: 0.5s;
+}
+.intro .introText p:last-of-type {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.intro.open::after {
+  height: 100%;
+}
+.intro.open .line {
+  height: 50%;
+}
+.intro.open .line span::before {
+  width: 50%;
+}
+
+.intro.open .introText p:first-of-type {
+  opacity: 1;
+}
+.intro.none {
+  display: none;
+}

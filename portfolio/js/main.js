@@ -39,7 +39,6 @@ window.addEventListener("load", function () {
 // header scroll
 (() => {
   let beforePosition = document.documentElement.scrollTop,
-    scrTop = window.scrollY,
     tabsElems = document.querySelectorAll(".tabs"),
     work = document.getElementById("work").offsetTop,
     project = document.getElementById("project").offsetTop,

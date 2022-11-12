@@ -82,9 +82,7 @@ body {
 // intro start===============
 #intro {
   background-color: var(--color-sub);
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 100%;
   z-index: 9999;
@@ -195,7 +193,7 @@ body {
 // intro start===============end
 // header start===============
 #header {
-  height: 7vw;
+  height: 6vw;
   width: 100%;
   z-index: 99;
   position: fixed;
