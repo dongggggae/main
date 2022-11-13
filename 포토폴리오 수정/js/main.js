@@ -44,7 +44,8 @@ window.addEventListener("load", function () {
     project = document.getElementById("project").offsetTop,
     about = document.getElementById("about").offsetTop,
     secPos = new Array(work, project, about),
-    bg = document.querySelector(".wrap");
+    bg = document.querySelector(".wrap"),
+    secIntroElems = document.querySelectorAll(".secIntro");
 
   tabsElems.forEach((elem, i) => {
     elem.addEventListener("click", (e) => {
@@ -63,7 +64,8 @@ window.addEventListener("load", function () {
 
     // bg change
 
-    if (afterPosition > secPos[1]) {
+    console.log(afterPosition);
+    if (afterPosition + 50 > secIntroElems[1].offsetTop) {
       bg.style.backgroundColor = "rgb(242,242,242)";
     } else {
       bg.style.backgroundColor = "rgb(17,17,17)";
@@ -77,19 +79,20 @@ window.addEventListener("load", function () {
     beforePosition = afterPosition;
   });
 
-  let observer = new IntersectionObserver((e) => {
-    e.forEach((Item, j) => {
-      console.log(j);
-      setTimeout(() => {
-        if (Item.isIntersecting) {
-          Item.target.classList.add("active");
-        } else {
-          Item.target.classList.remove("active");
-        }
-      }, j * 300);
-    });
-    threshold: 0.5;
-  });
+  let observer = new IntersectionObserver(
+    (e) => {
+      e.forEach((Item, j) => {
+        setTimeout(() => {
+          if (Item.isIntersecting) {
+            Item.target.classList.add("active");
+          }
+        }, j * 500);
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
 
   document
     .querySelectorAll(".proScroll")
