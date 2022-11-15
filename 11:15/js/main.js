@@ -44,8 +44,7 @@ window.addEventListener("load", function () {
     bg = document.querySelector(".wrap"),
     secIntroElems = document.querySelectorAll(".secIntro"),
     sectElems = document.querySelectorAll("section"),
-    bgColor = ["rgb(255,255,255)", "rgb(17,17,17)"],
-    headerColor = ["rgba(255,255,255,0.1)", "rgba(17,17,17,0.1)"];
+    bgColor = ["rgb(255,255,255)", "rgb(30,31,33)"];
 
   // 각 섹션위치 찾아가기
   tabsElems.forEach((tab) => {
@@ -71,11 +70,9 @@ window.addEventListener("load", function () {
         if (i == 2) {
           console.log("aaaaaaaaaaa");
           bg.style.backgroundColor = bgColor[0];
-          header.style.backgroundColor = headerColor[1];
           header.classList.add("on");
         } else {
           bg.style.backgroundColor = bgColor[1];
-          header.style.backgroundColor = headerColor[0];
           header.classList.remove("on");
         }
       }
@@ -92,37 +89,69 @@ window.addEventListener("load", function () {
 })();
 
 // work random filter
+// 섹션의 위치에 도달하면 랜덤 배열로 content에 on 클래서 넣어서 보여지게한다 << 한번만 실행
+// 스크롤로 하던가 아니면 기존에는 그냥 배치가 되어있다가 보여주기?
+// 각각의 버튼을 누르게 되면 그 해당하는 classlist를 받아와서 실행 시킨다.
+// removeclass를 하고 난 뒤에 settimeOut으로 none 넣고 다시 랜덤배열로 on 넣는다.
+// 반복 하면 될 것이다.
+// all responsive renew clone
 (() => {
   const allBtn = document.getElementById("all");
   const responBtn = document.getElementById("responsive");
+  const renewBtn = document.getElementById("renew");
+  const cloneBtn = document.getElementById("clone");
   const liElems = document.querySelectorAll("li.content");
-  responBtn.addEventListener("click", () => {
-    for (let j = 0; j < liElems.length; j++) {
-      liElems[j].classList.remove("on");
-      console.log(j);
-    }
+  // let btnElems = document.querySelectorAll(".btnArea button");
+  let array = [];
+  window.addEventListener("load", () => {
+    liElems.forEach((elem) => {
+      elem.classList.add("on");
+    });
   });
 
-  allBtn.addEventListener("click", function () {
-    let array = [];
-    function randomNum() {
-      while (array.length < 20) {
-        let random = Math.trunc(Math.random() * 20);
-
-        if (array.indexOf(random) < 0) {
-          array.push(random);
-        }
+  function randomNum() {
+    while (array.length < liElems.length) {
+      let ramdom = Math.trunc(Math.random() * liElems.length);
+      if (array.indexOf(ramdom) < 0) {
+        array.push(ramdom);
       }
     }
-
-    randomNum();
+  }
+  function activeFilter(filter) {
     liElems.forEach((elem, i) => {
+      liElems[i].classList.remove("on");
       let j = array[i];
+      elemClass = elem.classList;
+      if (elemClass.contains(filter)) {
+        elem.style.display = "block";
+      } else {
+        elem.style.display = "none";
+      }
       setTimeout(() => {
         elem.classList.add("on");
-        console.log(j);
-      }, j * 200);
+      }, j * 150);
     });
+  }
+  randomNum();
+
+  allBtn.addEventListener("click", () => {
+    liElems.forEach((elem, i) => {
+      let j = array[i];
+      liElems[i].classList.remove("on");
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.classList.add("on");
+      }, j * 150);
+    });
+  });
+  responBtn.addEventListener("click", () => {
+    activeFilter("responsive");
+  });
+  renewBtn.addEventListener("click", () => {
+    activeFilter("renew");
+  });
+  cloneBtn.addEventListener("click", () => {
+    activeFilter("clone");
   });
 })();
 

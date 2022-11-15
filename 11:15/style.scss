@@ -19,13 +19,13 @@
   src: url(./fonts/NanumSquareOTF_acEB.woff);
 }
 :root {
-  --color-main: rgb(17, 17, 17);
+  --color-main: rgb(30, 31, 33);
   --color-sub: rgb(255, 255, 255);
   --color-sup: rgb(232, 232, 232);
   --color-blue: rgb(0, 115, 229);
-  --color-green: rgb(135, 220, 31);
+  --color-green: rgb(25, 206, 96);
   --color-pro1: rgb(190, 190, 255);
-  --color-gray: rgb(68, 68, 68);
+  --color-gray: rgb(121, 123, 128);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
   --font-work: "Nanum";
@@ -334,21 +334,31 @@ body {
     justify-content: center;
     gap: 20px;
     button {
-      width: 100px;
-      height: 60px;
-      border-radius: 5px;
-      font-size: 18px;
+      transition: 0.35s ease-in;
+      padding: 10px 20px;
+      font-size: var(--l);
       cursor: pointer;
+      border-radius: 30px;
+      background-color: var(--color-sub);
+      color: var(--color-green);
       border: none;
+      &.on {
+        background-color: var(--color-green);
+        color: var(--color-sub);
+      }
+      &:hover {
+        background-color: var(--color-green);
+        color: var(--color-sub);
+      }
     }
   }
   .contents {
     min-height: 100%;
     display: flex;
     flex-flow: row wrap;
-    max-width: 1260px;
+    max-width: 1480px;
     margin: 0 auto;
-    gap: 30px;
+    gap: 20px;
     padding: 10vh 0;
     justify-content: center;
     .content {
@@ -360,7 +370,7 @@ body {
           img {
             opacity: 1;
             transition: 0.15s ease-in-out;
-            transition-delay: 0.35s;
+            transition-delay: 0.2s;
           }
         }
       }
@@ -420,7 +430,7 @@ body {
         background-color: var(--color-sub);
         border-radius: 5px;
         position: absolute;
-        transition: 0.35s ease-in-out;
+        transition: 0.25s ease-in-out;
         @include flex-c-c();
         img {
           opacity: 0;
@@ -549,7 +559,7 @@ body {
 // project====end
 #about {
   padding: 10vh 0 3vh;
-  color: var(--color-gray);
+  color: var(--color-main);
   .introduce {
     h2.introTitle {
       font-size: var(--xxl);
