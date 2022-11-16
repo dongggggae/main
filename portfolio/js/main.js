@@ -3,8 +3,8 @@
 window.addEventListener("load", function () {
   let intro = document.getElementById("intro"),
     header = document.getElementById("header"),
-    workSec = document.getElementById("work"),
-    body = document.querySelector("body");
+    pageStart = document.querySelectorAll(".secIntro");
+  body = document.querySelector("body");
 
   function intro1() {
     intro.classList.add("open");
@@ -25,8 +25,8 @@ window.addEventListener("load", function () {
   }
   function intro3() {
     body.style.overflowY = "auto";
-    let workSecLocation = workSec.offsetTop;
-    window.scrollTo({ top: workSecLocation, behavior: "smooth" });
+    let start = pageStart[0].offsetTop;
+    window.scrollTo({ top: start - 150, behavior: "smooth" });
   }
   setTimeout(() => intro1(), 500);
   setTimeout(() => introRe1(), 1100);
@@ -36,37 +36,49 @@ window.addEventListener("load", function () {
   setTimeout(() => intro3(), 3400);
 });
 
-// header scroll
+// header scroll + observar
 (() => {
+  const header = document.getElementById("header");
   let beforePosition = document.documentElement.scrollTop,
     tabsElems = document.querySelectorAll(".tabs"),
-    work = document.getElementById("work").offsetTop,
-    project = document.getElementById("project").offsetTop,
-    about = document.getElementById("about").offsetTop,
-    secPos = new Array(work, project, about);
+    bg = document.querySelector(".wrap"),
+    secIntroElems = document.querySelectorAll(".secIntro"),
+    sectElems = document.querySelectorAll("section"),
+    bgColor = ["rgb(255,255,255)", "rgb(30,31,33)"];
 
-  activeHeader();
-
-  function activeHeader() {
-    tabsElems.forEach((elem, i) => {
-      elem.addEventListener("click", (e) => {
-        e.preventDefault();
-        for (let i = 0; i < tabsElems.length; i++) {
-          tabsElems[i].classList.remove("on");
-        }
-        tabsElems[i].classList.add("on");
-        goToSec(i);
-      });
+  // 각 섹션위치 찾아가기
+  tabsElems.forEach((tab) => {
+    tab.addEventListener("click", (e) => {
+      e.preventDefault();
+      let href = tab.getAttribute("href");
+      let sectTop = document.querySelector(href).offsetTop;
+      window.scrollTo({ top: sectTop, behavior: "smooth" });
     });
-  }
-  function goToSec(i) {
-    window.scrollTo({ top: secPos[i], behavior: "smooth" });
-  }
+  });
 
   window.addEventListener("scroll", () => {
     let header = document.getElementById("header"),
       afterPosition = document.documentElement.scrollTop;
+    // section 높이마다 헤더 on//off
+    sectElems.forEach((section, i) => {
+      let sectTop = section.offsetTop;
+      if (afterPosition + 150 >= sectTop) {
+        tabsElems.forEach((tab) => {
+          tab.classList.remove("on");
+        });
+        tabsElems[i].classList.add("on");
+        if (i == 2) {
+          console.log("aaaaaaaaaaa");
+          bg.style.backgroundColor = bgColor[0];
+          header.classList.add("on");
+        } else {
+          bg.style.backgroundColor = bgColor[1];
+          header.classList.remove("on");
+        }
+      }
+    });
 
+    // header on//off
     if (afterPosition > 50) {
       beforePosition < afterPosition
         ? header.classList.add("active")
@@ -75,182 +87,109 @@ window.addEventListener("load", function () {
     beforePosition = afterPosition;
   });
 })();
-// section1,2,3 title
+
+// work random filter
+// 섹션의 위치에 도달하면 랜덤 배열로 content에 on 클래서 넣어서 보여지게한다 << 한번만 실행
+// 스크롤로 하던가 아니면 기존에는 그냥 배치가 되어있다가 보여주기?
+// 각각의 버튼을 누르게 되면 그 해당하는 classlist를 받아와서 실행 시킨다.
+// removeclass를 하고 난 뒤에 settimeOut으로 none 넣고 다시 랜덤배열로 on 넣는다.
+// 반복 하면 될 것이다.
+// all responsive renew clone
 (() => {
-  const pTag1 = document.querySelector(".first-title");
-  const pTag2 = document.querySelector(".second-title");
-  const pTag3 = document.querySelector(".third-title");
-
-  const textArr1 = "WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK".split(
-    " "
-  );
-  const textArr2 =
-    "PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT PROJECT".split(
-      " "
-    );
-  const textArr3 =
-    "ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT".split(" ");
-
-  let count1 = 0;
-  let count2 = 0;
-  let count3 = 0;
-
-  initTexts(pTag1, textArr1);
-  initTexts(pTag2, textArr2);
-  initTexts(pTag3, textArr3);
-
-  function initTexts(element, textArray) {
-    textArray.push(...textArray);
-    for (let i = 0; i < textArray.length; i++) {
-      element.innerText += `${textArray[i]}\u00A0\u00A0\u00A0\u00A0`;
-    }
-  }
-
-  function marqueeText(count, element, direction) {
-    if (count > element.scrollWidth / 2) {
-      element.style.transform = `translate3d(0, 0, 0)`;
-      count = 0;
-    }
-    element.style.transform = `translate3d(${direction * count}px, 0, 0)`;
-
-    return count;
-  }
-
-  function animate() {
-    count1++;
-    count2++;
-    count3++;
-
-    count1 = marqueeText(count1, pTag1, -1);
-    count2 = marqueeText(count2, pTag2, 1);
-    count3 = marqueeText(count3, pTag3, -1);
-
-    window.requestAnimationFrame(animate);
-  }
-
-  function scrollHandler() {
-    count1 += 20;
-    count2 += 20;
-    count3 += 20;
-  }
-
-  window.addEventListener("scroll", scrollHandler);
-  animate();
+  const allBtn = document.getElementById("all");
+  const responBtn = document.getElementById("responsive");
+  const renewBtn = document.getElementById("renew");
+  const cloneBtn = document.getElementById("clone");
+  const liElems = document.querySelectorAll("li.content");
+  // let btnElems = document.querySelectorAll(".btnArea button");
+  let array = [];
   window.addEventListener("load", () => {
-    let introElems = document.querySelectorAll(".title");
-    introElems.forEach((elem, i) => {
-      setTimeout(() => {
-        elem.style.opacity = 1;
-      }, (i + 1) * 700);
+    liElems.forEach((elem) => {
+      elem.classList.add("on");
     });
   });
-})();
-// marqueetitle===================================
-// work slide===============
-(() => {
-  let slideTexts = document.querySelectorAll(".workText"),
-    textWrap = document.querySelector(".textWrap"),
-    slideBgs = document.querySelectorAll(".bg"),
-    bgWrap = document.querySelector(".bgWrap"),
-    bgCount = slideBgs.length,
-    currentIndex = 0,
-    number,
-    wheelTimer;
 
-  bgWrap.addEventListener("wheel", (e) => {
-    e.preventDefault();
-    clearTimeout(wheelTimer);
-    wheelTimer = setTimeout(() => {
-      if (e.deltaY > 0) {
-        currentIndex++;
-        goToBack();
-        moveSLide(currentIndex);
-        activeTitle();
-        activeBg();
+  function randomNum(n) {
+    while (array.length < liElems.length) {
+      let ramdom = Math.trunc(Math.random() * liElems.length);
+      if (array.indexOf(ramdom) < 0) {
+        array.push(ramdom);
+      }
+    }
+  }
+  function activeFilter(filter) {
+    liElems.forEach((elem, i) => {
+      liElems[i].classList.remove("on");
+      let j = array[i];
+      elemClass = elem.classList;
+      if (elemClass.contains(filter)) {
+        elem.style.display = "block";
       } else {
-        currentIndex--;
-        goToBack();
-        moveSLide(currentIndex);
-        activeTitle();
-        activeBg();
+        elem.style.display = "none";
       }
-    }, 70);
-  });
-
-  function goToBack() {
-    if (currentIndex == 13 || currentIndex == -13) {
-      bgWrap.classList.remove("animate");
-      currentIndex = 0;
       setTimeout(() => {
-        bgWrap.classList.add("animate");
-      }, 150);
-    }
-  }
-
-  function activeTitle() {
-    number = currentIndex + 12;
-    slideTexts.forEach((text) => {
-      text.classList.remove("on");
+        elem.classList.add("on");
+      }, j * 150);
     });
-    if (number < 0 || number > 24) {
-      currentIndex = 0;
-    } else {
-      slideTexts[number].classList.add("on");
-    }
   }
+  randomNum();
 
-  // number +10 한 이유는 21%2 10.5 인데 인덱스는 0부터 시작하니까 중간위치 10번을 햔재 번호로 지정하기 위해
-  // 2n 개 추가하면 number 은 current + 10+n
-
-  function activeBg() {
-    number = currentIndex + 12;
-    slideBgs.forEach((bg) => {
-      bg.classList.remove("on");
-      bg.classList.remove("sub");
+  allBtn.addEventListener("click", () => {
+    liElems.forEach((elem, i) => {
+      let j = array[i];
+      liElems[i].classList.remove("on");
+      elem.style.display = "block";
+      setTimeout(() => {
+        elem.classList.add("on");
+      }, j * 150);
     });
-    slideBgs[number].classList.add("on");
-    if (number == 0) {
-      slideBgs[number + 1].classList.add("sub");
-    } else if (number == 24) {
-      slideBgs[number - 1].classList.add("sub");
-    } else {
-      slideBgs[number + 1].classList.add("sub");
-    }
-  }
-
-  function moveSLide(i) {
-    currentIndex = i;
-    textWrap.style.top = -i * 100 + "%";
-    bgWrap.style.left = -i * 100 + "%";
-  }
-
-  for (let i = 0; i < bgCount; i++) {
-    slideTexts[i].style.top = i * 100 + "%";
-    slideBgs[i].style.left = i * 100 + "%";
-  }
-
-  slideTexts[12].classList.add("on");
-  slideBgs[12].classList.add("on");
-  slideBgs[13].classList.add("sub");
+  });
+  responBtn.addEventListener("click", () => {
+    activeFilter("responsive");
+  });
+  renewBtn.addEventListener("click", () => {
+    activeFilter("renew");
+  });
+  cloneBtn.addEventListener("click", () => {
+    activeFilter("clone");
+  });
 })();
-// workslide ==================================
-// project section tab menu
+// projectShadow
 (() => {
-  let TitElems = document.querySelectorAll(".projectTit h2"),
-    figureElems = document.querySelectorAll(".projectImgWrap figure");
+  let projectElems = document.querySelectorAll(".project");
+  let shadow = document.querySelectorAll(".shadow");
 
-  TitElems.forEach((elem, i) => {
-    elem.addEventListener("mouseover", () => {
-      for (let i = 0; i < figureElems.length; i++) {
-        figureElems[i].classList.remove("active");
-        TitElems[i].classList.remove("on");
+  window.addEventListener("scroll", () => {
+    projectElems.forEach((elem, i) => {
+      let projectPos = elem.getBoundingClientRect().y / window.innerHeight;
+      if (1 - projectPos <= 1) {
+        shadow[i].style.opacity = projectPos;
       }
-      figureElems[i].classList.add("active");
-      TitElems[i].classList.add("on");
     });
   });
 })();
-// project section tab menu===============================
+
+// observe
+(() => {
+  let observer = new IntersectionObserver(
+    (e) => {
+      e.forEach((Item, j) => {
+        setTimeout(() => {
+          if (Item.isIntersecting) {
+            Item.target.classList.add("active");
+          }
+        }, j * 500);
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  document
+    .querySelectorAll(".proScroll")
+    .forEach((elem) => observer.observe(elem));
+})();
 // about scroll + skillbar
 
 (() => {
@@ -296,7 +235,6 @@ window.addEventListener("load", function () {
         boundingRect.top > window.innerHeight * 0.1 &&
         boundingRect.top < window.innerHeight * 0.8
       ) {
-        // == graphicElems[i].classList.add("visible");
         inactivate();
         currentItem = graphicElems[text.dataset.index];
         activate();

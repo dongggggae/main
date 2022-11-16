@@ -5,53 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./project.css" />
+    <link rel="stylesheet" href="./css/project.css" />
   </head>
   <body>
     <main id="tab2">
       <section class="project3">
-        <article class="pro3-art1">
+        <article
+          class="pro3-art1"
+          style="
+            background: url(./projectImges/pro3-mainbg.jpg) no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+          "
+        >
           <div class="inner">
-            <h1>portfolio Process</h1>
+            <div class="title proScroll">
+              <span>2022</span>
+              <h1>Kim dong hyun</h1>
+              <p>Portfloio</p>
+            </div>
           </div>
         </article>
         <article class="pro3-art2">
           <div class="inner">
             <h2>OVERVIEW</h2>
-            <p>각각의 메뉴에서 전하고자 하는 것을 효과적으로 전달한다.</p>
-            <div class="overview">
-              <div class="frame proScroll">
-                <h3>INTRO</h3>
-                <p>나의 목표를 간단하게 소개한다.</p>
-              </div>
-              <div class="frame proScroll">
-                <h3>WORK</h3>
-                <p>
-                  나의 작업물들에 대해 설명을 하고,<br />
-                  나의 노력을 보여준다.
-                </p>
-              </div>
-              <div class="frame proScroll">
-                <h3>PROJECT</h3>
-                <p>
-                  내가 한 프로젝트를 소개하며,<br />
-                  어떠한 의도를 가지고 진행했는지에 대해 설명한다.
-                </p>
-              </div>
-              <div class="frame proScroll">
-                <h3>ABOUT</h3>
-                <p>
-                  내가 어떤 사람인지에 대해 소개를 하며,<br />
-                  내가 가진 스킬에 대해 설명을 한다.
-                </p>
-              </div>
-            </div>
+            <p>
+              홈페이지 방문자들이 보는데 불편함이 없도록 하고, <br />
+              정보를 쉽게 알 수 있도록 한다.
+            </p>
+            <h3>strategy</h3>
+            <ul class="strategy proScroll">
+              <li>
+                <span>
+                  각각의 페이지에서 <br />
+                  <span class="point">이질감이 들지 않게</span><br />
+                  디자인을 한다.
+                </span>
+              </li>
+              <li>
+                <span>
+                  보는동안 <span class="point">지루하지 않게,</span> <br />
+                  인터랙티브 요소들을 <br />
+                  넣어준다.</span
+                >
+              </li>
+              <li>
+                <span>
+                  나를 알리는 페이지에서 <br />
+                  <span class="point">편하게 읽을 수 있게</span><br />
+                  웹툰처럼 표현한다.</span
+                >
+              </li>
+            </ul>
           </div>
         </article>
         <article class="pro3-art3">
-          <div class="inner"></div>
+          <div class="inner">
+            <h2>STYLE GUIDE</h2>
+            <ul class="guide">
+              <li class="proScroll">
+                <h3>Color</h3>
+                <div class="color">
+                  <div class="col1"><span>rgb(30, 31, 33)</span></div>
+                  <div class="col2"><span>rgb(255, 255, 2 55)</span></div>
+                  <div class="col3"><span>rgb(0, 115, 229)</span></div>
+                  <div class="col4"><span>rgb(25, 206, 96)</span></div>
+                  <div class="col5"><span>rgb(121, 123, 128)</span></div>
+                </div>
+              </li>
+              <li class="proScroll">
+                <h3>Typo</h3>
+                <div class="desc">
+                  <p>
+                    본문에는 가독성이 좋은 "Pretendard"를 사용하였고,<br />
+                    Title,Header에는 "Cafesquare"로 강조하는 느낌을 주었다.
+                  </p>
+                </div>
+              </li>
+              <li class="proScroll">
+                <h3>Concept</h3>
+                <div class="desc">
+                  <span>접근성</span><span>전문적인</span><span>깔끔함</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <article
+          class="pro3-art4"
+          style="
+            background: url(./projectImges/pro3-mockup.png) no-repeat center;
+            background-size: cover;
+            background-attachment: fixed;
+          "
+        >
+          <div class="inner"><h2>DETAIL VIEW</h2></div>
         </article>
       </section>
     </main>
+    <script>
+      // project 공통 스크롤 funtion
+      (() => {
+        let observer = new IntersectionObserver(
+          (e) => {
+            e.forEach((Item, j) => {
+              setTimeout(() => {
+                if (Item.isIntersecting) {
+                  Item.target.classList.add("active");
+                }
+              }, j * 500);
+            });
+          },
+          {
+            threshold: 0.5,
+          }
+        );
+
+        document
+          .querySelectorAll(".proScroll")
+          .forEach((elem) => observer.observe(elem));
+      })();
+    </script>
   </body>
 </html>

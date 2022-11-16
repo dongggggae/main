@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* 10/25 시작 */
 /* 메뉴 구성 큐브 효과로 하기로 하고 탭123 으로 연결 탭 애니메이션 + 화면 전환 10/28 */
 /* tab3 반응형 끝 이지만 수정하면됨 10/30 */
@@ -20,9 +19,13 @@
   src: url(./fonts/NanumSquareOTF_acEB.woff);
 }
 :root {
-  --color-main: rgb(17, 17, 17);
+  --color-main: rgb(30, 31, 33);
   --color-sub: rgb(255, 255, 255);
   --color-sup: rgb(232, 232, 232);
+  --color-blue: rgb(0, 115, 229);
+  --color-green: rgb(25, 206, 96);
+  --color-pro1: rgb(190, 190, 255);
+  --color-gray: rgb(121, 123, 128);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
   --font-work: "Nanum";
@@ -45,41 +48,17 @@
   justify-content: center;
   align-items: center;
 }
-@mixin graTitle1 {
-  background-image: linear-gradient(0deg, #04a1f6, #7ac5f9);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-repeat: no-repeat;
-}
-@mixin graTitle2 {
-  background-image: linear-gradient(0deg, #e4f12e, #ffff8e);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  background-repeat: no-repeat;
-}
-@mixin graTitle3 {
-  background-image: linear-gradient(0deg, #ff96ff, #e400ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  background-repeat: no-repeat;
-}
+
 body,
 html {
   height: 100%;
 }
 body {
+  line-height: 1;
   overflow-y: hidden;
   background-color: var(--color-main);
   font-family: var(--font-article);
 }
-
-// intro start===============
 #intro {
   background-color: var(--color-sub);
   position: relative;
@@ -167,7 +146,7 @@ body {
   display: inline-block;
   opacity: 0;
   transition: 0.5s;
-  @include graTitle1();
+  color: var(--color-blue);
 }
 .intro .introText p:last-of-type {
   position: absolute;
@@ -224,36 +203,6 @@ body {
   perspective: 99999px;
   will-change: transform;
   transition: 0.35s;
-  &:nth-of-type(1) {
-    &.on {
-      .tab .top {
-        @include graTitle1();
-      }
-    }
-    .tab .bottom {
-      @include graTitle1();
-    }
-  }
-  &:nth-of-type(2) {
-    &.on {
-      .tab .top {
-        @include graTitle2();
-      }
-    }
-    .tab .bottom {
-      @include graTitle2();
-    }
-  }
-  &:nth-of-type(3) {
-    &.on {
-      .tab .top {
-        @include graTitle3();
-      }
-    }
-    .tab .bottom {
-      @include graTitle3();
-    }
-  }
 }
 #header nav.inner .tabs:first-of-type .tab:first-child,
 #header nav.inner .tabs:last-of-type .tab:first-child {
@@ -261,6 +210,16 @@ body {
 }
 #header nav.inner .tabs:hover .tab {
   transform: rotateX(90deg);
+}
+#header.on {
+  nav.inner .tabs .tab {
+    color: var(--color-main);
+  }
+}
+#header nav.inner .tabs.on {
+  .tab {
+    color: var(--color-green);
+  }
 }
 #header nav.inner .tabs .tab {
   display: flex;
@@ -312,370 +271,307 @@ body {
 // header end===================
 // 빈공간 scroll===================
 .wallpaper {
-  height: 50vh;
-}
-// marquee title===================
-.title {
-  position: relative;
-  transition: all 1s cubic-bezier(1, 1, 1, 1);
-  width: 100vw;
-  margin: 5vh 0;
-  display: flex;
-  transform: translate(-40.188%, 0%) translate3d(0px, 0px, 0px);
-  &:first-of-type {
-    transform: rotate(-2deg);
-    background-color: var(--color-main);
-    border-bottom: 1px solid #7ac5f9;
-    border-top: 1px solid #7ac5f9;
-    h1 {
-      @include graTitle1();
-    }
-  }
-  &:nth-of-type(2) {
-    justify-content: flex-end;
-    transform: rotate(2deg);
-    background-color: var(--color-main);
-    border-bottom: 1px solid #ffff8e;
-    border-top: 1px solid #ffff8e;
-    h1 {
-      @include graTitle2();
-    }
-  }
-  &:last-of-type {
-    transform: rotate(-2deg);
-    background-color: var(--color-main);
-    border-bottom: 1px solid #ff96ff;
-    border-top: 1px solid #ff96ff;
-    h1 {
-      @include graTitle3();
-    }
-  }
-  h1 {
-    display: flex;
-    padding: 1rem 0;
-    font-size: 5rem;
-  }
-}
-// marqueetext=======end=======
-// work start===============================
-#work {
   height: 100vh;
-  width: 100%;
-  padding-top: 4vw;
-  color: var(--color-sub);
+}
+.wrap {
+  background-color: var(--color-main);
+  transition: 0.5s cubic-bezier(1, 1, 1, 1);
+}
+.proScroll {
+  will-change: transform;
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  transform: translate3d(0px, 45px, 0px);
+  transition: all 1s ease-in-out 0.25s;
   &.active {
-    display: block;
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
   }
-  .workSlide {
-    height: 100%;
-    width: 100%;
-    padding: 0 15px;
-    max-width: 1280px;
-    margin: 0 auto;
-    position: relative;
+}
+
+.pageStart {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    color: var(--color-sup);
+    line-height: 1.2;
+    font-size: 2.5vw;
+    span {
+      color: var(--color-green);
+      font-size: 3vw;
+    }
+  }
+}
+
+.secIntro {
+  text-align: right;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 30vh;
+  color: var(--color-gray);
+  font-size: var(--xxl);
+  padding: 0 1.5rem;
+  h2 {
+    display: inline-block;
+    border-bottom: 2px solid var(--color-green);
+    padding: 3vh 0;
+  }
+  p {
+    padding: 4vh 0 0 0;
+  }
+  span {
+    color: var(--color-green);
+  }
+}
+#work {
+  min-height: 100%;
+  .btnArea {
+    margin: 5vh auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 20px;
+    button {
+      transition: 0.35s ease-in;
+      padding: 10px 20px;
+      font-size: var(--l);
+      cursor: pointer;
+      border-radius: 30px;
+      background-color: var(--color-sub);
+      color: var(--color-green);
+      border: none;
+      &.on {
+        background-color: var(--color-green);
+        color: var(--color-sub);
+      }
+      &:hover {
+        background-color: var(--color-green);
+        color: var(--color-sub);
+      }
+    }
   }
-
-  .textSlide {
-    background-color: var(--color-main);
-    z-index: 2;
-    width: 500px;
-    height: 70%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .textWrap {
-    transform: translateY(-1200%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  .contents {
+    min-height: 100%;
     display: flex;
-    flex-direction: column;
-  }
-
-  .workText {
-    padding-left: 4rem;
-    z-index: 99;
-    color: rgb(255, 255, 255);
-    text-align: left;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    .textExp {
-      span {
-        line-height: 1.3;
-        display: block;
-        margin-top: 20px;
-        &:nth-of-type(1) {
-          font-size: 20px;
-          transition-delay: 0.2s;
-        }
-        &:nth-of-type(2) {
-          font-size: 18px;
-          color: var(--color-sup);
-          transition-delay: 0.3s;
-        }
-        &:nth-of-type(3) {
-          transition-delay: 0.4s;
+    flex-flow: row wrap;
+    max-width: 1480px;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 10vh 0;
+    justify-content: center;
+    .content {
+      position: relative;
+      width: 240px;
+      height: 200px;
+      &.on {
+        .item {
           img {
-            object-fit: contain;
+            opacity: 1;
+            transition: 0.15s ease-in-out;
+            transition-delay: 0.2s;
           }
         }
       }
-      & > * {
-        transition: all 0.7s;
-        opacity: 0;
-        transform: translateY(50px);
+      &:nth-of-type(4n) {
+        .item {
+          right: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+        }
+        &.on {
+          .item {
+            width: 100%;
+          }
+        }
       }
-    }
-  }
-
-  .workText.on {
-    p {
-      background-size: calc(100% - 1px) 100%;
-      background-position: left center;
-    }
-    .textExp > * {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-  // 텍스트 필 텍스트
-  .workText p {
-    font-family: var(--font-work);
-    font-size: 45px;
-    margin-top: 150px;
-    @include graTitle1();
-    background-position: 0% 50%;
-    background-size: 0% 100%;
-    transition: 0.6s cubic-bezier(1, 1, 1, 1);
-    letter-spacing: -2px;
-    white-space: nowrap;
-  }
-
-  .bgSlide {
-    order: -1;
-    position: relative;
-    width: 100%;
-    margin-right: -500px;
-    height: 100%;
-  }
-
-  .bgWrap {
-    height: 100%;
-    width: 100%;
-    transform: translateX(-1200%);
-    position: absolute;
-    display: flex;
-  }
-
-  .bgWrap.animate {
-    transition: 0.7s cubic-bezier(1, 1, 1, 1);
-  }
-
-  .bg {
-    z-index: 1;
-    opacity: 0;
-    transition: 0.7s cubic-bezier(1, 1, 1, 1);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 750px;
-    height: 375px;
-    position: absolute;
-    transform-origin: center -50%;
-    .thum {
-      position: relative;
-      left: 25px;
-      bottom: 10px;
-      & > * {
-        opacity: 0;
-        transition-delay: 1s;
+      &:nth-of-type(4n + 1) {
+        .item {
+          right: 0;
+          bottom: 0;
+          height: 0;
+          width: 100%;
+        }
+        &.on {
+          .item {
+            height: 100%;
+          }
+        }
       }
-      span {
-        background-image: linear-gradient(180deg, #04a1f6, #7ac5f9);
-        padding: 0.2rem;
-        color: var(--color-sub);
-        font-weight: bold;
-        font-size: 14px;
-        &:first-of-type {
-          margin-right: 12.5px;
+      &:nth-of-type(4n + 2) {
+        .item {
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 100%;
+        }
+        &.on {
+          .item {
+            width: 100%;
+          }
+        }
+      }
+      &:nth-of-type(4n + 3) {
+        .item {
+          left: 0;
+          top: 0;
+          height: 0;
+          width: 100%;
+        }
+        &.on {
+          .item {
+            height: 100%;
+          }
+        }
+      }
+      .item {
+        background-color: var(--color-sub);
+        border-radius: 5px;
+        position: absolute;
+        transition: 0.25s ease-in-out;
+        @include flex-c-c();
+        img {
+          opacity: 0;
         }
       }
     }
   }
-
-  .bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .bg.on {
-    opacity: 0.9;
-    .thum > * {
-      opacity: 1;
-    }
-    & .liner.tl {
-      opacity: 1;
-      width: 100%;
-      transition: all 0.25s linear;
-      transition-delay: 0.55s;
-    }
-    & .liner.rt {
-      opacity: 1;
-      height: 100%;
-      transition: all 0.25s linear;
-      transition-delay: 0.8s;
-    }
-    & .liner.rb {
-      opacity: 1;
-      width: 100%;
-      transition: all 0.25s linear;
-      transition-delay: 1.05s;
-    }
-
-    & .liner.lb {
-      opacity: 1;
-      height: 100%;
-      transition: all 0.25s linear;
-      transition-delay: 1.3s;
-    }
-  }
-
-  .bg.sub {
-    transform: scaleY(0.6);
-    opacity: 0.5;
-  }
-
-  .imgwrap {
-    background: no-repeat center;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .imgwrap .liner {
-    border-radius: 5px;
-    opacity: 0;
-    position: absolute;
-    background-image: linear-gradient(180deg, #04a1f6, #7ac5f9);
-  }
-  .bg.sub {
-    border: 1px solid rgba(255, 255, 255, 0.5);
-  }
-
-  .liner.tl {
-    height: 2px;
-    left: 0;
-    top: 0;
-  }
-  .liner.rt {
-    right: 0;
-    top: 0;
-    width: 2px;
-  }
-  .liner.rb {
-    right: 0;
-    bottom: 0;
-    height: 2px;
-  }
-  .liner.lb {
-    left: 0;
-    bottom: 0;
-    width: 2px;
-  }
 }
-// work end-----------------------------------
-// project====================================
+// project===========
 #project {
-  height: 100vh;
-  .inner {
-    max-width: 1250px;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-  }
+  height: 300vh;
+  width: 100%;
   .projectWrap {
-    height: 80%;
-    width: 40%;
-  }
-  .projectImgWrap {
-    height: 80%;
-    width: 50%;
-    position: relative;
-    figure {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      opacity: 0;
-      transition: 0.5s cubic-bezier(1, 1, 1, 1);
-      &.active {
-        opacity: 1;
+    height: 100%;
+    width: 100%;
+    .project {
+      &:last-of-type {
+        figure {
+          width: 50vw;
+        }
       }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-  .projectTit {
-    height: 33.3333%;
-    padding: 2rem 0;
-    gap: 30px;
-    z-index: 2;
-    @include flex-c-c();
-    align-items: flex-start;
-    a {
+      color: var(--color-sub);
+      display: flex;
       width: 100%;
-      position: relative;
-      height: 100%;
-    }
-    h2 {
-      margin-top: 20px;
-      text-transform: uppercase;
-      @include graTitle2();
-      background-position: 0% 50%;
-      background-size: 0% 100%;
-      transition: 0.5s cubic-bezier(1, 1, 1, 1);
-      -webkit-text-stroke: #e4f12e 1px;
-      color: transparent;
-      font-size: 70px;
-      letter-spacing: -1px;
-      &.on {
-        background-size: calc(100% - 1px) 100%;
-        background-position: left center;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      left: 0;
+      .shadow {
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
       }
-    }
-    span.subTit {
-      color: var(--color-sup);
-      font-size: 20px;
-    }
-    & .pLine {
-      transition: 0.5s cubic-bezier(1, 1, 1, 1);
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #e4f12e;
+      .projectImg {
+        width: 55%;
+        @include flex-c-c();
+        figure {
+          width: 45vw;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .projectDesc {
+        width: 45%;
+        @include flex-c-c();
+        .info {
+          z-index: 2;
+          word-break: keep-all;
+          width: 100%;
+          padding: 0 8vw;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .pageNumber {
+            font-size: 6vw;
+            color: var(--color-sup);
+          }
+          .proTit {
+            font-size: var(--xxxl);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+          }
+          .subTit {
+            font-size: var(--l);
+            color: var(--color-sup);
+          }
+          .desc {
+            font-size: var(--l);
+            line-height: 1.5;
+            br {
+              display: none;
+            }
+          }
+          .link {
+            padding: 1rem 1.5rem;
+            border: 1px solid #fff;
+            border-radius: 1.5rem;
+            transition: 0.35s cubic-bezier(1, 1, 1, 1);
+          }
+        }
+      }
+      &:first-of-type {
+        background-color: var(--color-blue);
+        .info {
+          align-items: flex-end;
+          text-align: right;
+          .link {
+            &:hover {
+              background-color: var(--color-sub);
+              color: var(--color-blue);
+            }
+          }
+        }
+      }
+      &:nth-of-type(2) {
+        background-color: var(--color-pro1);
+        .projectDesc {
+          order: -1;
+        }
+        .info {
+          align-items: flex-start;
+          .link {
+            &:hover {
+              background-color: var(--color-sub);
+              color: var(--color-pro1);
+            }
+          }
+        }
+      }
+      &:last-of-type {
+        background-color: var(--color-main);
+        color: var(--color-sub);
+        .info {
+          text-align: right;
+          align-items: flex-end;
+          .subTit {
+            color: var(--color-sup);
+          }
+          .link {
+            border: 1px solid var(--color-sub);
+            &:hover {
+              background-color: var(--color-sub);
+              color: var(--color-main);
+            }
+          }
+        }
+      }
     }
   }
 }
-// project ============================end=======
-// about==========================start
-// dataindex 주고 굳이 레이아웃이 바뀌는 느낌은 아니라 자체 에서 반응형 global-width로
-// 이미지도 크기에 맞게 끔 줄어들고 하게 했다.
-//  data-index로 말풍선 + 이미지 묶어서 갯수 같게 해서visible 빼고 넣기
-
+// project====end
 #about {
-  padding-top: 10vh;
-  color: var(--color-sub);
+  padding: 10vh 0 3vh;
+  color: var(--color-main);
   .introduce {
     h2.introTitle {
       font-size: var(--xxl);
@@ -683,6 +579,7 @@ body {
     }
     p {
       line-height: 1.5;
+      font-size: 18px;
     }
   }
   .content-box {
@@ -735,10 +632,9 @@ body {
         margin-bottom: 60vh;
         strong {
           font-size: var(--xl);
+          color: var(--color-blue);
           letter-spacing: 1px;
-          color: #e400ff;
         }
-
         &:last-child {
           margin-bottom: 40vh;
         }
@@ -747,11 +643,10 @@ body {
   }
   .normal-content {
     padding: 2rem 1.5rem;
-    background-color: rgb(255, 255, 255);
-    margin-bottom: 2rem;
+    background-color: var(--color-sub);
     max-width: 1250px;
     width: 100%;
-    margin: 2rem auto;
+    margin: 0 auto;
     min-height: 80vh;
     color: var(--color-main);
     border-radius: 10px;
@@ -759,18 +654,15 @@ body {
     display: flex;
     align-items: center;
     h3 {
-      color: #04a1f6;
+      color: var(--color-blue);
       font-size: var(--l);
     }
     .profileLeft {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      @include flex-c-c();
       text-align: center;
       width: 35%;
       height: 100%;
-      padding: 10% 1%;
+      padding: 10% 2%;
       border-right: 1px solid #000;
       h3 {
         margin-bottom: 15px;
@@ -836,7 +728,7 @@ body {
               border-radius: 10px;
               width: 0;
               height: 100%;
-              background-color: #04a1f6;
+              background-color: var(--color-blue);
             }
           }
         }
@@ -844,82 +736,62 @@ body {
     }
   }
 }
-// about=====================================
-// footer=====================================
 footer {
-  margin-top: 5vh;
   font-size: 10px;
   color: var(--color-sup);
   padding: 1.5rem 0;
   text-align: center;
+  background-color: var(--color-main);
 }
-// pc->모바일 순
-@media screen and (max-width: 1124px) {
+// pc -> tab -> moblie pc 우선
+@media screen and (max-width: 1024px) {
   .intro .introText {
     padding: 10px 0 15px;
   }
   .intro .introText p {
     font-size: 4rem;
   }
-  #work .workSlide {
-    flex-direction: column;
-    align-items: center;
+  .pageStart {
+    .inner {
+      h2 {
+        font-size: 4vw;
+        span {
+          font-size: 4.5vw;
+        }
+      }
+    }
   }
-  #work .workSlide .textSlide {
-    width: 100%;
-    height: 30%;
+  #work {
+    .contentsWrap {
+      padding: 10vh 1.5rem;
+    }
   }
-  #work .workSlide .textSlide .textWrap .workText {
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+  #project {
+    .projectWrap {
+      .project {
+        flex-direction: column;
+        .projectImg {
+          width: 100%;
+          height: 50%;
+          order: -1;
+        }
+        .projectDesc {
+          border: 1px solid #000;
+          width: 100%;
+          height: 50%;
+          .info {
+            align-items: center;
+            text-align: center;
+            .desc br {
+              display: block;
+            }
+          }
+        }
+      }
+    }
   }
-  #work .workSlide .textSlide .textWrap .workText p {
-    /* width: 80%; */
-    padding: 0 1rem;
-    text-align: center;
-    margin: 0;
-    font-size: 5.5vw;
-  }
-  #work .workSlide .textSlide .textWrap .workText .textExp {
-    text-align: left;
-  }
-  #work .workSlide .textSlide .textWrap .workText .textExp span {
-    margin-bottom: 15px;
-  }
-  #work .workSlide .textSlide .textWrap .workText .textExp span:nth-of-type(1) {
-    font-size: 18px;
-  }
-  #work .workSlide .textSlide .textWrap .workText .textExp span:nth-of-type(2) {
-    font-size: 16px;
-  }
-  #work .workSlide .bgSlide {
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 60%;
-  }
-  #work .workSlide .bgSlide .bgWrap .bg {
-    margin: 0 12vw 0 8vw;
-    width: 80vw;
-    height: 40vw;
-    transition: 0.5s;
-  }
-  #work .workSlide .bgSlide .bgWrap .bg.sub {
-    opacity: 0;
-  }
-  #project .projectImgWrap {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  #project .projectWrap {
-    width: 80%;
-    margin: 0 auto;
-    z-index: 9;
-  }
+
   #about {
     .normal-content {
       flex-direction: column;
@@ -952,13 +824,23 @@ footer {
     }
   }
 }
-// ================767================
 @media screen and (max-width: 767px) {
   #header {
-    height: calc(7vw + 25px);
+    height: calc(6vw + 25px);
   }
-  #project .projectImgWrap {
-    display: none;
+
+  .pageStart {
+    .inner {
+      h2 {
+        font-size: 5vw;
+        span {
+          font-size: 5.5vw;
+        }
+      }
+    }
+  }
+  #work .contents {
+    gap: 15px;
   }
   #about {
     .normal-content {
@@ -971,11 +853,13 @@ footer {
       }
     }
   }
+  #project .projectWrap .project .projectImg figure {
+    width: 80vw;
+  }
 }
-// ================576================
 @media screen and (max-width: 576px) {
   #header {
-    height: calc(7vw + 50px);
+    height: calc(6vw + 50px);
   }
   #header nav.inner .tabs {
     height: 5vw;
@@ -985,26 +869,9 @@ footer {
     padding: 0 1.7vw;
     line-height: 5vw;
   }
-  #work .bg a .desc {
-    font-size: 20px;
-  }
-  #work .workSlide .bgSlide .bgWrap .bg {
-    margin: 0 8vw 0 2vw;
-    width: 90vw;
-    height: 45vw;
-  }
-  #work .workSlide .textSlide {
-    margin-top: -100px;
-  }
-  #work .workSlide .textSlide .textWrap .workText {
-    flex-direction: column;
-    justify-content: center;
-  }
-  #work .workSlide .textSlide .textWrap .workText .textExp {
-    text-align: center;
-  }
-  #work .workSlide .textSlide .textWrap .workText p {
-    font-size: 6.5vw;
+
+  #work .contents {
+    gap: 5px;
   }
   #about {
     .normal-content {

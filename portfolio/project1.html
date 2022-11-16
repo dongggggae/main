@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Project(identity)</title>
     <link rel="stylesheet" href="./css/project.css" />
   </head>
   <body>
@@ -13,7 +13,7 @@
         <article
           class="pro1-art1"
           style="
-            background: url(./tab2-imges/pro1-mainbg.png) no-repeat center;
+            background: url(./projectImges/pro1-mainbg.png) no-repeat center;
             background-size: cover;
             background-attachment: fixed;
           "
@@ -36,7 +36,7 @@
               <strong class="proScroll">Personal branding</strong> 하였습니다.
             </p>
             <figure>
-              <img src="./tab2-imges/pro1-mindmap.png" alt="brainstroming" />
+              <img src="./projectImges/pro1-mindmap.png" alt="brainstroming" />
             </figure>
           </div>
         </article>
@@ -75,7 +75,7 @@
             <h2>Brand Concept</h2>
             <div class="sub-title">
               <p><strong>key</strong> concept</p>
-              <span><img src="./tab2-imges/Arrow.png" alt="화살표" /></span>
+              <span><img src="./projectImges/Arrow.png" alt="화살표" /></span>
               <p><strong> Brand</strong> concept</p>
             </div>
             <div class="concept">
@@ -94,10 +94,10 @@
                 <span>Fighting</span><span>Fix Up</span><span>Fall In</span>
               </div>
               <div class="contents">
-                <img src="./tab2-imges/pro1-item.png" alt="구상 이미지" />
+                <img src="./projectImges/pro1-item.png" alt="구상 이미지" />
               </div>
               <div class="contents">
-                <img src="./tab2-imges/ArrowG.png" alt="" />
+                <img src="./projectImges/ArrowG.png" alt="" />
               </div>
             </div>
           </div>
@@ -131,7 +131,7 @@
             <div class="result">
               <h2 class="proScroll">LOGO DESIGN</h2>
               <figure class="proScroll">
-                <img src="./tab2-imges/pro1-symbol.png" alt="sybol-logo" />
+                <img src="./projectImges/pro1-symbol.png" alt="sybol-logo" />
               </figure>
               <p class="proScroll">
                 나의 이니셜인 D와 나의 특징을 나타내는 F를 합쳐 표현하였고,
@@ -145,19 +145,22 @@
       </section>
     </main>
     <script>
+      // project 공통 스크롤 funtion
       (() => {
-        let observer = new IntersectionObserver((e) => {
-          e.forEach((Item, j) => {
-            setTimeout(() => {
-              if (Item.isIntersecting) {
-                Item.target.classList.add("active");
-              } else {
-                Item.target.classList.remove("active");
-              }
-            }, j * 300);
-          });
-          threshold: 0.5;
-        });
+        let observer = new IntersectionObserver(
+          (e) => {
+            e.forEach((Item, j) => {
+              setTimeout(() => {
+                if (Item.isIntersecting) {
+                  Item.target.classList.add("active");
+                }
+              }, j * 500);
+            });
+          },
+          {
+            threshold: 0.5,
+          }
+        );
 
         document
           .querySelectorAll(".proScroll")

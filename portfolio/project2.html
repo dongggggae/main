@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Project(ourhome)</title>
     <link rel="stylesheet" href="./css/project.css" />
   </head>
   <body>
@@ -13,8 +13,8 @@
         <article
           class="pro2-art1"
           style="
-            background: url(./tab2-imges/pro2-mainbg.png) no-repeat center;
-            background-size: cover;
+            background: url(./projectImges/pro2-mainbg.png) no-repeat center;
+            background-size: contain;
             background-attachment: fixed;
           "
         >
@@ -30,7 +30,7 @@
           <div class="inner">
             <h2>MENU FRAME</h2>
             <figure>
-              <img src="./tab2-imges/pro2-menufame.png" alt="pro2-menufame" />
+              <img src="./projectImges/pro2-menufame.png" alt="pro2-menufame" />
             </figure>
           </div>
         </article>
@@ -49,13 +49,13 @@
               <div class="phone">
                 <figure class="proScroll">
                   <img
-                    src="./tab2-imges/pro2-phone2.png"
+                    src="./projectImges/pro2-phone2.png"
                     alt="휴대폰 목업 이미지"
                   />
                 </figure>
                 <figure class="proScroll">
                   <img
-                    src="./tab2-imges/pro2-phone1.png"
+                    src="./projectImges/pro2-phone1.png"
                     alt="휴대폰 목업 이미지"
                   />
                 </figure>
@@ -71,7 +71,7 @@
                 <h3 class="sub-title">Logo Design</h3>
                 <figure>
                   <img
-                    src="./tab2-imges/pro2-logodesign.png"
+                    src="./projectImges/pro2-logodesign.png"
                     alt="logodesign이미지"
                   />
                 </figure>
@@ -133,27 +133,30 @@
               autoplay
               loop
               muted
-              src="./tab2-imges/pro2-video.mp4"
+              src="./projectImges/pro2-video.mp4"
             ></video>
           </div>
         </article>
       </section>
     </main>
-    <script>
-      (() => {
-        let observer = new IntersectionObserver((e) => {
-          e.forEach((Item, j) => {
-            setTimeout(() => {
-              if (Item.isIntersecting) {
-                Item.target.classList.add("active");
-              } else {
-                Item.target.classList.remove("active");
-              }
-            }, j * 300);
-          });
-          threshold: 0.5;
-        });
 
+    <script>
+      // project 공통 스크롤 funtion
+      (() => {
+        let observer = new IntersectionObserver(
+          (e) => {
+            e.forEach((Item, j) => {
+              setTimeout(() => {
+                if (Item.isIntersecting) {
+                  Item.target.classList.add("active");
+                }
+              }, j * 500);
+            });
+          },
+          {
+            threshold: 0.5,
+          }
+        );
         document
           .querySelectorAll(".proScroll")
           .forEach((elem) => observer.observe(elem));
