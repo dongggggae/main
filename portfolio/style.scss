@@ -24,7 +24,7 @@
   --color-sup: rgb(232, 232, 232);
   --color-blue: rgb(0, 115, 229);
   --color-green: rgb(25, 206, 96);
-  --color-pro1: rgb(190, 190, 255);
+  --color-pro1: rgb(161, 161, 229);
   --color-gray: rgb(121, 123, 128);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
@@ -216,6 +216,15 @@ body {
     color: var(--color-main);
   }
 }
+#header nav.inner .tabs {
+  &:nth-of-type(2) {
+    &.on {
+      .tab {
+        color: var(--color-main);
+      }
+    }
+  }
+}
 #header nav.inner .tabs.on {
   .tab {
     color: var(--color-green);
@@ -275,7 +284,6 @@ body {
 }
 .wrap {
   background-color: var(--color-main);
-  transition: 0.5s cubic-bezier(1, 1, 1, 1);
 }
 .proScroll {
   will-change: transform;
@@ -283,7 +291,7 @@ body {
   position: relative;
   opacity: 0;
   transform: translate3d(0px, 45px, 0px);
-  transition: all 1s ease-in-out 0.25s;
+  transition: all 1s ease-in-out 0.2s;
   &.active {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
@@ -307,9 +315,11 @@ body {
 }
 
 .secIntro {
+  .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
   text-align: right;
-  max-width: 1400px;
-  margin: 0 auto;
   height: 30vh;
   color: var(--color-gray);
   font-size: var(--xxl);
@@ -326,6 +336,7 @@ body {
     color: var(--color-green);
   }
 }
+
 #work {
   min-height: 100%;
   .btnArea {
@@ -441,11 +452,43 @@ body {
 }
 // project===========
 #project {
+  transition: 0.35s ease-in-out;
   height: 300vh;
   width: 100%;
+  display: flex;
+  .projectImg {
+    @include flex-c-c();
+    figure {
+      position: absolute;
+      opacity: 0;
+      width: 45vw;
+      transition: 0.35s ease-in-out;
+      &.on {
+        opacity: 1;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &.mobile {
+      display: none;
+    }
+  }
+  .imgWrap {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    article {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
   .projectWrap {
     height: 100%;
-    width: 100%;
+    width: 50%;
     .project {
       &:last-of-type {
         figure {
@@ -456,34 +499,12 @@ body {
       display: flex;
       width: 100%;
       height: 100vh;
-      position: sticky;
-      top: 0;
-      left: 0;
-      .shadow {
-        z-index: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        opacity: 0;
-      }
-      .projectImg {
-        width: 55%;
-        @include flex-c-c();
-        figure {
-          width: 45vw;
-          img {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
       .projectDesc {
-        width: 45%;
+        width: 100%;
         @include flex-c-c();
         .info {
+          text-align: right;
+          align-items: flex-end;
           z-index: 2;
           word-break: keep-all;
           width: 100%;
@@ -507,9 +528,6 @@ body {
           .desc {
             font-size: var(--l);
             line-height: 1.5;
-            br {
-              display: none;
-            }
           }
           .link {
             padding: 1rem 1.5rem;
@@ -520,10 +538,7 @@ body {
         }
       }
       &:first-of-type {
-        background-color: var(--color-blue);
         .info {
-          align-items: flex-end;
-          text-align: right;
           .link {
             &:hover {
               background-color: var(--color-sub);
@@ -533,12 +548,7 @@ body {
         }
       }
       &:nth-of-type(2) {
-        background-color: var(--color-pro1);
-        .projectDesc {
-          order: -1;
-        }
         .info {
-          align-items: flex-start;
           .link {
             &:hover {
               background-color: var(--color-sub);
@@ -548,11 +558,8 @@ body {
         }
       }
       &:last-of-type {
-        background-color: var(--color-main);
         color: var(--color-sub);
         .info {
-          text-align: right;
-          align-items: flex-end;
           .subTit {
             color: var(--color-sup);
           }
@@ -571,7 +578,7 @@ body {
 // project====end
 #about {
   padding: 10vh 0 3vh;
-  color: var(--color-main);
+  color: var(--color-sub);
   .introduce {
     h2.introTitle {
       font-size: var(--xxl);
@@ -766,32 +773,40 @@ footer {
       padding: 10vh 1.5rem;
     }
   }
-
   #project {
+    // display: block;
+    .imgWrap.pc {
+      display: none;
+    }
+    .projectImg {
+      width: 100%;
+      height: 50%;
+      order: -1;
+      figure {
+        position: relative;
+        opacity: 1;
+      }
+      &.mobile {
+        display: flex;
+      }
+    }
     .projectWrap {
+      width: 100%;
+      height: 100%;
       .project {
         flex-direction: column;
-        .projectImg {
-          width: 100%;
-          height: 50%;
-          order: -1;
-        }
+        height: 100vh;
         .projectDesc {
-          border: 1px solid #000;
           width: 100%;
           height: 50%;
           .info {
             align-items: center;
             text-align: center;
-            .desc br {
-              display: block;
-            }
           }
         }
       }
     }
   }
-
   #about {
     .normal-content {
       flex-direction: column;

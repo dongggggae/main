@@ -23,7 +23,7 @@
   --color-sup: rgb(232, 232, 232);
   --color-blue: rgb(0, 115, 229);
   --color-green: rgb(25, 206, 96);
-  --color-pro1: rgb(190, 190, 255);
+  --color-pro1: rgb(161, 161, 229);
   --color-gray: rgb(121, 123, 128);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
@@ -229,6 +229,10 @@ body {
   color: var(--color-main);
 }
 
+#header nav.inner .tabs:nth-of-type(2).on .tab {
+  color: var(--color-main);
+}
+
 #header nav.inner .tabs.on .tab {
   color: var(--color-green);
 }
@@ -295,7 +299,6 @@ body {
 
 .wrap {
   background-color: var(--color-main);
-  transition: 0.5s cubic-bezier(1, 1, 1, 1);
 }
 
 .proScroll {
@@ -304,7 +307,7 @@ body {
   position: relative;
   opacity: 0;
   transform: translate3d(0px, 45px, 0px);
-  transition: all 1s ease-in-out 0.25s;
+  transition: all 1s ease-in-out 0.2s;
 }
 .proScroll.active {
   opacity: 1;
@@ -329,12 +332,14 @@ body {
 
 .secIntro {
   text-align: right;
-  max-width: 1400px;
-  margin: 0 auto;
   height: 30vh;
   color: var(--color-gray);
   font-size: var(--xxl);
   padding: 0 1.5rem;
+}
+.secIntro .inner {
+  max-width: 1400px;
+  margin: 0 auto;
 }
 .secIntro h2 {
   display: inline-block;
@@ -446,58 +451,68 @@ body {
 }
 
 #project {
+  transition: 0.35s ease-in-out;
   height: 300vh;
   width: 100%;
+  display: flex;
+}
+#project .projectImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#project .projectImg figure {
+  position: absolute;
+  opacity: 0;
+  width: 45vw;
+  transition: 0.35s ease-in-out;
+}
+#project .projectImg figure.on {
+  opacity: 1;
+}
+#project .projectImg figure img {
+  width: 100%;
+  height: 100%;
+}
+#project .projectImg.mobile {
+  display: none;
+}
+#project .imgWrap {
+  width: 50%;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+#project .imgWrap article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 #project .projectWrap {
   height: 100%;
-  width: 100%;
+  width: 50%;
 }
 #project .projectWrap .project {
   color: var(--color-sub);
   display: flex;
   width: 100%;
   height: 100vh;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
 }
 #project .projectWrap .project:last-of-type figure {
   width: 50vw;
 }
-#project .projectWrap .project .shadow {
-  z-index: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-}
-#project .projectWrap .project .projectImg {
-  width: 55%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#project .projectWrap .project .projectImg figure {
-  width: 45vw;
-}
-#project .projectWrap .project .projectImg figure img {
-  width: 100%;
-  height: 100%;
-}
 #project .projectWrap .project .projectDesc {
-  width: 45%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 #project .projectWrap .project .projectDesc .info {
+  text-align: right;
+  align-items: flex-end;
   z-index: 2;
   word-break: keep-all;
   width: 100%;
@@ -523,46 +538,22 @@ body {
   font-size: var(--l);
   line-height: 1.5;
 }
-#project .projectWrap .project .projectDesc .info .desc br {
-  display: none;
-}
 #project .projectWrap .project .projectDesc .info .link {
   padding: 1rem 1.5rem;
   border: 1px solid #fff;
   border-radius: 1.5rem;
   transition: 0.35s cubic-bezier(1, 1, 1, 1);
 }
-#project .projectWrap .project:first-of-type {
-  background-color: var(--color-blue);
-}
-#project .projectWrap .project:first-of-type .info {
-  align-items: flex-end;
-  text-align: right;
-}
 #project .projectWrap .project:first-of-type .info .link:hover {
   background-color: var(--color-sub);
   color: var(--color-blue);
-}
-#project .projectWrap .project:nth-of-type(2) {
-  background-color: var(--color-pro1);
-}
-#project .projectWrap .project:nth-of-type(2) .projectDesc {
-  order: -1;
-}
-#project .projectWrap .project:nth-of-type(2) .info {
-  align-items: flex-start;
 }
 #project .projectWrap .project:nth-of-type(2) .info .link:hover {
   background-color: var(--color-sub);
   color: var(--color-pro1);
 }
 #project .projectWrap .project:last-of-type {
-  background-color: var(--color-main);
   color: var(--color-sub);
-}
-#project .projectWrap .project:last-of-type .info {
-  text-align: right;
-  align-items: flex-end;
 }
 #project .projectWrap .project:last-of-type .info .subTit {
   color: var(--color-sup);
@@ -577,7 +568,7 @@ body {
 
 #about {
   padding: 10vh 0 3vh;
-  color: var(--color-main);
+  color: var(--color-sub);
 }
 #about .introduce h2.introTitle {
   font-size: var(--xxl);
@@ -757,25 +748,36 @@ footer {
   #work .contentsWrap {
     padding: 10vh 1.5rem;
   }
-  #project .projectWrap .project {
-    flex-direction: column;
+  #project .imgWrap.pc {
+    display: none;
   }
-  #project .projectWrap .project .projectImg {
+  #project .projectImg {
     width: 100%;
     height: 50%;
     order: -1;
   }
+  #project .projectImg figure {
+    position: relative;
+    opacity: 1;
+  }
+  #project .projectImg.mobile {
+    display: flex;
+  }
+  #project .projectWrap {
+    width: 100%;
+    height: 100%;
+  }
+  #project .projectWrap .project {
+    flex-direction: column;
+    height: 100vh;
+  }
   #project .projectWrap .project .projectDesc {
-    border: 1px solid #000;
     width: 100%;
     height: 50%;
   }
   #project .projectWrap .project .projectDesc .info {
     align-items: center;
     text-align: center;
-  }
-  #project .projectWrap .project .projectDesc .info .desc br {
-    display: block;
   }
   #about .normal-content {
     flex-direction: column;

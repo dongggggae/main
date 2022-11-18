@@ -125,7 +125,7 @@ article .inner p {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .pro1-art3 {
@@ -147,7 +147,8 @@ article .inner p {
   align-items: center;
   height: 300px;
   border-radius: 0.5rem;
-  box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff, inset -0.2rem -0.2rem 0.5rem #ffffff;
+  box-shadow: 0.3rem 0.3rem 0.6rem #c8d0e7, -0.2rem -0.2rem 0.5rem #ffffff,
+    inset -0.2rem -0.2rem 0.5rem #ffffff;
 }
 .pro1-art3 .item:nth-of-type(odd) {
   top: 30px;
@@ -199,7 +200,11 @@ article .inner p {
   align-items: center;
   width: 250px;
   height: 100px;
-  background: linear-gradient(93.65deg, rgb(190, 190, 255) 28.81%, #f6f3ff 102.65%);
+  background: linear-gradient(
+    93.65deg,
+    rgb(190, 190, 255) 28.81%,
+    #f6f3ff 102.65%
+  );
   border-radius: 46.4286px;
 }
 .pro1-art4 .concept .contents span {
@@ -486,7 +491,8 @@ article .inner p {
 .pro3-art2 .strategy li {
   padding: 50px;
 }
-.pro3-art2 .strategy::after, .pro3-art2 .strategy::before {
+.pro3-art2 .strategy::after,
+.pro3-art2 .strategy::before {
   content: "";
   width: 50px;
   height: 50px;
@@ -650,7 +656,7 @@ article .inner p {
     font-size: 30px;
   }
   .pro3-art2 .inner h2,
-.pro3-art2 .inner p {
+  .pro3-art2 .inner p {
     text-align: center;
   }
 }
@@ -673,7 +679,7 @@ article .inner p {
     left: 0;
   }
   .pro2-art4 .concept .contents .fonts,
-.pro2-art4 .concept .contents .fontDesc {
+  .pro2-art4 .concept .contents .fontDesc {
     margin-left: 0;
   }
   .pro3-art2 .inner h3::after {
@@ -683,7 +689,8 @@ article .inner p {
     border: none;
     justify-content: space-evenly;
   }
-  .pro3-art2 .strategy::after, .pro3-art2 .strategy::before {
+  .pro3-art2 .strategy::after,
+  .pro3-art2 .strategy::before {
     display: none;
   }
   .pro3-art2 .strategy li {
@@ -695,19 +702,21 @@ article .inner p {
   .pro3-art3 .inner .guide {
     flex-direction: column;
     flex-wrap: nowrap;
-    border: 1px solid #000;
   }
   .pro3-art3 .inner .guide li {
     height: 33.333%;
     align-items: center;
     text-align: center;
   }
-  .pro3-art3 .inner .guide li:nth-of-type(1), .pro3-art3 .inner .guide li:nth-of-type(2), .pro3-art3 .inner .guide li:nth-of-type(3) {
+  .pro3-art3 .inner .guide li:nth-of-type(1),
+  .pro3-art3 .inner .guide li:nth-of-type(2),
+  .pro3-art3 .inner .guide li:nth-of-type(3) {
     width: 100%;
   }
 }
 @media screen and (max-width: 576px) {
-  article:nth-of-type(2) .inner, article:last-of-type .inner {
+  article:nth-of-type(2) .inner,
+  article:last-of-type .inner {
     padding: 0;
   }
   .pro1-art2 .inner figure {

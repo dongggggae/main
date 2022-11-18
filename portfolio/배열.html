@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-color: rgb(17, 17, 17);
+      }
+      #work {
+        min-height: 100%;
+      }
+      #work .btnArea {
+        margin: 5vh auto;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      #work .btnArea button {
+        transition: 0.35s ease-in;
+        padding: 10px 20px;
+        font-size: var(--l);
+        cursor: pointer;
+        border-radius: 30px;
+        background-color: rgb(255, 255, 255);
+        color: greenyellow;
+        border: none;
+      }
+      #work .btnArea button.on {
+        background-color: greenyellow;
+        color: rgb(255, 255, 255);
+      }
+      #work .btnArea button:hover {
+        background-color: greenyellow;
+        color: rgb(255, 255, 255);
+      }
+      #work .contents {
+        min-height: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        max-width: 1480px;
+        margin: 0 auto;
+        gap: 20px;
+        padding: 10vh 0;
+        justify-content: center;
+      }
+      #work .contents .content {
+        position: relative;
+        width: 240px;
+        height: 200px;
+      }
+      #work .contents .content.on .item img {
+        opacity: 1;
+        transition: 0.15s ease-in-out;
+        transition-delay: 0.2s;
+      }
+      #work .contents .content:nth-of-type(4n) .item {
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+      }
+      #work .contents .content:nth-of-type(4n).on .item {
+        width: 100%;
+      }
+      #work .contents .content:nth-of-type(4n + 1) .item {
+        right: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+      }
+      #work .contents .content:nth-of-type(4n + 1).on .item {
+        height: 100%;
+      }
+      #work .contents .content:nth-of-type(4n + 2) .item {
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+      }
+      #work .contents .content:nth-of-type(4n + 2).on .item {
+        width: 100%;
+      }
+      #work .contents .content:nth-of-type(4n + 3) .item {
+        left: 0;
+        top: 0;
+        height: 0;
+        width: 100%;
+      }
+      #work .contents .content:nth-of-type(4n + 3).on .item {
+        height: 100%;
+      }
+      #work .contents .content .item {
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        position: absolute;
+        transition: 0.25s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      #work .contents .content .item img {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="work">
+      <div class="btnArea">
+        <button id="all">ALL</button
+        ><button id="responsive">Responsive</button>
+        <button id="renew">Rewnewal</button
+        ><button id="clone">Clone coding</button>
+      </div>
+      <ul class="contents">
+        <li class="content all responsive clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/nongshim.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew responsive">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/Bamdokkaebi.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/chilsung.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all responsive renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/jeep.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/wmpo.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew responsive">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/updown.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/perfume.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all responsive clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/chungwadae.png" alt="work thumbnail" />
+          </a>
+        </li>
+
+        <li class="content all clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/ace.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/seven.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/hongru.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/artisty.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/ader.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/stx.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/mugo.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all responsive clone">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/incheon.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all responsive renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/starbucks.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all responsive renew">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/sulbing.png" alt="work thumbnail" />
+          </a>
+        </li>
+        <li class="content all responsive renew">
+          <a href="#" target="_blank" class="item">
+            <img
+              style="width: 240px"
+              src="./imges/jeep.png"
+              alt="work thumbnail"
+            />
+          </a>
+        </li>
+        <li class="content all">
+          <a href="#" target="_blank" class="item">
+            <img src="./imges/pocari.png" alt="work thumbnail" />
+          </a>
+        </li>
+      </ul>
+    </section>
+    <script charset="UTF-8">
+      (() => {
+        const allBtn = document.getElementById("all");
+        const responBtn = document.getElementById("responsive");
+        const renewBtn = document.getElementById("renew");
+        const cloneBtn = document.getElementById("clone");
+        const liElems = document.querySelectorAll("li.content");
+        // let btnElems = document.querySelectorAll(".btnArea button");
+        let array = [];
+        window.addEventListener("load", () => {
+          liElems.forEach((elem) => {
+            elem.classList.add("on");
+          });
+        });
+
+        function randomNum() {
+          while (array.length < liElems.length) {
+            let ramdom = Math.trunc(Math.random() * liElems.length);
+            if (array.indexOf(ramdom) < 0) {
+              array.push(ramdom);
+            }
+          }
+        }
+
+        function activeFilter(filter) {
+          liElems.forEach((elem, i) => {
+            liElems[i].classList.remove("on");
+            let j = array[i];
+            elemClass = elem.classList;
+            if (elemClass.contains(filter)) {
+              elem.style.display = "block";
+            } else {
+              elem.style.display = "none";
+            }
+            setTimeout(() => {
+              elem.classList.add("on");
+            }, j * 150);
+          });
+        }
+        
+        
+        // randomNum();
+       
+
+        allBtn.addEventListener("click", () => {
+          liElems.forEach((elem, i) => {
+            let j = array[i];
+            liElems[i].classList.remove("on");
+            elem.style.display = "block";
+            setTimeout(() => {
+              elem.classList.add("on");
+            }, j * 150);
+          });
+        });
+        responBtn.addEventListener("click", (e) => {
+          let name = e.target.getAttribute("id");
+          let liElems = document.querySelectorAll(`.${name}`);
+          randomNum();
+          activeFilter(`${name}`);
+        });
+        renewBtn.addEventListener("click", () => {
+          activeFilter("renew");
+        });
+        cloneBtn.addEventListener("click", () => {
+          activeFilter("clone");
+        });
+      })();
+    </script>
+  </body>
+</html>

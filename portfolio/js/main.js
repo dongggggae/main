@@ -3,7 +3,7 @@
 window.addEventListener("load", function () {
   let intro = document.getElementById("intro"),
     header = document.getElementById("header"),
-    pageStart = document.querySelectorAll(".secIntro");
+    pageIntro = document.querySelectorAll(".secIntro");
   body = document.querySelector("body");
 
   function intro1() {
@@ -25,8 +25,8 @@ window.addEventListener("load", function () {
   }
   function intro3() {
     body.style.overflowY = "auto";
-    let start = pageStart[0].offsetTop;
-    window.scrollTo({ top: start - 150, behavior: "smooth" });
+    let start = pageIntro[0].offsetTop;
+    window.scrollTo({ top: start - 30, behavior: "smooth" });
   }
   setTimeout(() => intro1(), 500);
   setTimeout(() => introRe1(), 1100);
@@ -38,13 +38,9 @@ window.addEventListener("load", function () {
 
 // header scroll + observar
 (() => {
-  const header = document.getElementById("header");
   let beforePosition = document.documentElement.scrollTop,
     tabsElems = document.querySelectorAll(".tabs"),
-    bg = document.querySelector(".wrap"),
-    secIntroElems = document.querySelectorAll(".secIntro"),
-    sectElems = document.querySelectorAll("section"),
-    bgColor = ["rgb(255,255,255)", "rgb(30,31,33)"];
+    sectElems = document.querySelectorAll("section");
 
   // 각 섹션위치 찾아가기
   tabsElems.forEach((tab) => {
@@ -57,24 +53,16 @@ window.addEventListener("load", function () {
   });
 
   window.addEventListener("scroll", () => {
-    let header = document.getElementById("header"),
-      afterPosition = document.documentElement.scrollTop;
+    let afterPosition = document.documentElement.scrollTop;
     // section 높이마다 헤더 on//off
     sectElems.forEach((section, i) => {
       let sectTop = section.offsetTop;
+
       if (afterPosition + 150 >= sectTop) {
         tabsElems.forEach((tab) => {
           tab.classList.remove("on");
         });
         tabsElems[i].classList.add("on");
-        if (i == 2) {
-          console.log("aaaaaaaaaaa");
-          bg.style.backgroundColor = bgColor[0];
-          header.classList.add("on");
-        } else {
-          bg.style.backgroundColor = bgColor[1];
-          header.classList.remove("on");
-        }
       }
     });
 
@@ -88,13 +76,12 @@ window.addEventListener("load", function () {
   });
 })();
 
-// work random filter
-// 섹션의 위치에 도달하면 랜덤 배열로 content에 on 클래서 넣어서 보여지게한다 << 한번만 실행
-// 스크롤로 하던가 아니면 기존에는 그냥 배치가 되어있다가 보여주기?
-// 각각의 버튼을 누르게 되면 그 해당하는 classlist를 받아와서 실행 시킨다.
-// removeclass를 하고 난 뒤에 settimeOut으로 none 넣고 다시 랜덤배열로 on 넣는다.
-// 반복 하면 될 것이다.
-// all responsive renew clone
+/* work random filter
+ 섹션의 위치에 도달하면 랜덤 배열로 content에 on 클래서 넣어서 보여지게한다 << 한번만 실행
+ 각각의 버튼을 누르게 되면 그 해당하는 classlist를 받아와서 실행 시킨다.
+ removeclass를 하고 난 뒤에 none 넣고 다시 랜덤배열로 on 넣는다. */
+
+//  all responsive renew clone
 (() => {
   const allBtn = document.getElementById("all");
   const responBtn = document.getElementById("responsive");
@@ -103,13 +90,16 @@ window.addEventListener("load", function () {
   const liElems = document.querySelectorAll("li.content");
   // let btnElems = document.querySelectorAll(".btnArea button");
   let array = [];
+  // 로드되면 인트로 끝나고 바로 work 실행
   window.addEventListener("load", () => {
-    liElems.forEach((elem) => {
-      elem.classList.add("on");
-    });
+    function workSHow() {
+      randomNum();
+      activeFilter("all");
+    }
+    setTimeout(() => workSHow(), 3500);
   });
 
-  function randomNum(n) {
+  function randomNum() {
     while (array.length < liElems.length) {
       let ramdom = Math.trunc(Math.random() * liElems.length);
       if (array.indexOf(ramdom) < 0) {
@@ -117,6 +107,7 @@ window.addEventListener("load", function () {
       }
     }
   }
+
   function activeFilter(filter) {
     liElems.forEach((elem, i) => {
       liElems[i].classList.remove("on");
@@ -154,16 +145,24 @@ window.addEventListener("load", function () {
     activeFilter("clone");
   });
 })();
-// projectShadow
-(() => {
-  let projectElems = document.querySelectorAll(".project");
-  let shadow = document.querySelectorAll(".shadow");
 
+// projectscroll
+(() => {
+  const proSec = document.getElementById("project");
+  let projectElems = document.querySelectorAll(".project"),
+    imgElems = document.querySelectorAll(".projectImg figure");
+  projectBg = ["rgb(0, 115, 229)", "rgb(161, 161, 229)", "rgb(30, 31, 33)"];
   window.addEventListener("scroll", () => {
-    projectElems.forEach((elem, i) => {
-      let projectPos = elem.getBoundingClientRect().y / window.innerHeight;
-      if (1 - projectPos <= 1) {
-        shadow[i].style.opacity = projectPos;
+    let scr = document.documentElement.scrollTop;
+    projectElems.forEach((project, i) => {
+      if (scr >= project.offsetTop) {
+        if (i == i) {
+          proSec.style.backgroundColor = projectBg[i];
+        }
+        imgElems.forEach((img) => {
+          img.classList.remove("on");
+        });
+        imgElems[i].classList.add("on");
       }
     });
   });
@@ -247,8 +246,7 @@ window.addEventListener("load", function () {
       }, 100);
     });
   });
-  // 새로고침 했을 때 상단으로 돌아가기
-  // 화면이 보여 졌을 때 첫 이미지는 보여야 하니 활성화 첫 이미지 활성화
+  //  새로고침 했을 때 상단으로 돌아가기 화면이 보여 졌을 때 첫 이미지는 보여야 하니 활성화 첫 이미지 활성화
   activate();
 })();
 // skill bar
