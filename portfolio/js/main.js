@@ -151,14 +151,10 @@ window.addEventListener("load", function () {
   const proSec = document.getElementById("project");
   let projectElems = document.querySelectorAll(".project"),
     imgElems = document.querySelectorAll(".projectImg figure");
-  projectBg = ["rgb(0, 115, 229)", "rgb(161, 161, 229)", "rgb(30, 31, 33)"];
   window.addEventListener("scroll", () => {
     let scr = document.documentElement.scrollTop;
     projectElems.forEach((project, i) => {
       if (scr >= project.offsetTop) {
-        if (i == i) {
-          proSec.style.backgroundColor = projectBg[i];
-        }
         imgElems.forEach((img) => {
           img.classList.remove("on");
         });

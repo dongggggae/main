@@ -23,9 +23,9 @@
   --color-sub: rgb(255, 255, 255);
   --color-sup: rgb(232, 232, 232);
   --color-blue: rgb(0, 115, 229);
-  --color-green: rgb(25, 206, 96);
   --color-pro1: rgb(161, 161, 229);
-  --color-gray: rgb(121, 123, 128);
+  --color-gray: rgb(165, 169, 172);
+  --color-sky: rgb(235, 245, 255);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
   --font-work: "Nanum";
@@ -216,18 +216,10 @@ body {
     color: var(--color-main);
   }
 }
-#header nav.inner .tabs {
-  &:nth-of-type(2) {
-    &.on {
-      .tab {
-        color: var(--color-main);
-      }
-    }
-  }
-}
+
 #header nav.inner .tabs.on {
   .tab {
-    color: var(--color-green);
+    color: var(--color-blue);
   }
 }
 #header nav.inner .tabs .tab {
@@ -285,6 +277,27 @@ body {
 .wrap {
   background-color: var(--color-main);
 }
+.container {
+  background-color: var(--color-sky);
+  .secIntro {
+    color: var(--color-main);
+  }
+  .pageStart {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      color: var(--color-main);
+      line-height: 1.2;
+      font-size: 2.5vw;
+      span {
+        color: var(--color-blue);
+        font-size: 3vw;
+      }
+    }
+  }
+}
 .proScroll {
   will-change: transform;
   display: inline-block;
@@ -298,42 +311,27 @@ body {
   }
 }
 
-.pageStart {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    color: var(--color-sup);
-    line-height: 1.2;
-    font-size: 2.5vw;
-    span {
-      color: var(--color-green);
-      font-size: 3vw;
-    }
-  }
-}
-
 .secIntro {
   .inner {
+    padding-top: 3.5vh;
     max-width: 1400px;
     margin: 0 auto;
   }
   text-align: right;
   height: 30vh;
-  color: var(--color-gray);
+  color: var(--color-sub);
   font-size: var(--xxl);
   padding: 0 1.5rem;
   h2 {
     display: inline-block;
-    border-bottom: 2px solid var(--color-green);
+    border-bottom: 2px solid var(--color-blue);
     padding: 3vh 0;
   }
   p {
     padding: 4vh 0 0 0;
   }
   span {
-    color: var(--color-green);
+    color: var(--color-blue);
   }
 }
 
@@ -351,14 +349,14 @@ body {
       cursor: pointer;
       border-radius: 30px;
       background-color: var(--color-sub);
-      color: var(--color-green);
+      color: var(--color-blue);
       border: none;
       &.on {
-        background-color: var(--color-green);
+        background-color: var(--color-blue);
         color: var(--color-sub);
       }
       &:hover {
-        background-color: var(--color-green);
+        background-color: var(--color-blue);
         color: var(--color-sub);
       }
     }
@@ -495,7 +493,7 @@ body {
           width: 50vw;
         }
       }
-      color: var(--color-sub);
+      color: var(--color-main);
       display: flex;
       width: 100%;
       height: 100vh;
@@ -514,7 +512,7 @@ body {
           gap: 20px;
           .pageNumber {
             font-size: 6vw;
-            color: var(--color-sup);
+            color: var(--color-gray);
           }
           .proTit {
             font-size: var(--xxxl);
@@ -523,7 +521,7 @@ body {
           }
           .subTit {
             font-size: var(--l);
-            color: var(--color-sup);
+            color: var(--color-gray);
           }
           .desc {
             font-size: var(--l);
@@ -531,54 +529,55 @@ body {
           }
           .link {
             padding: 1rem 1.5rem;
-            border: 1px solid #fff;
             border-radius: 1.5rem;
-            transition: 0.35s cubic-bezier(1, 1, 1, 1);
-          }
-        }
-      }
-      &:first-of-type {
-        .info {
-          .link {
+            transition: 0.35s linear;
+            background-color: var(--color-sub);
+            color: var(--color-blue);
             &:hover {
-              background-color: var(--color-sub);
-              color: var(--color-blue);
+              background-color: var(--color-blue);
+              color: var(--color-sub);
             }
           }
         }
       }
-      &:nth-of-type(2) {
-        .info {
-          .link {
-            &:hover {
-              background-color: var(--color-sub);
-              color: var(--color-pro1);
-            }
-          }
-        }
-      }
-      &:last-of-type {
-        color: var(--color-sub);
-        .info {
-          .subTit {
-            color: var(--color-sup);
-          }
-          .link {
-            border: 1px solid var(--color-sub);
-            &:hover {
-              background-color: var(--color-sub);
-              color: var(--color-main);
-            }
-          }
-        }
-      }
+      // &:first-of-type {
+      //   .info {
+      //     .link {
+      //       &:hover {
+      //         background-color: var(--color-sub);
+      //         color: var(--color-blue);
+      //       }
+      //     }
+      //   }
+      // }
+      // &:nth-of-type(2) {
+      //   .info {
+      //     .link {
+      //       &:hover {
+      //         background-color: var(--color-sub);
+      //         color: var(--color-pro1);
+      //       }
+      //     }
+      //   }
+      // }
+      // &:last-of-type {
+      //   .info {
+      //     .link {
+      //       border: 1px solid var(--color-sub);
+      //       &:hover {
+      //         background-color: var(--color-sub);
+      //         color: var(--color-main);
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 }
 // project====end
 #about {
   padding: 10vh 0 3vh;
-  color: var(--color-sub);
+  color: var(--color-main);
   .introduce {
     h2.introTitle {
       font-size: var(--xxl);

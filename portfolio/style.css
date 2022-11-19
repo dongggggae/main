@@ -22,9 +22,9 @@
   --color-sub: rgb(255, 255, 255);
   --color-sup: rgb(232, 232, 232);
   --color-blue: rgb(0, 115, 229);
-  --color-green: rgb(25, 206, 96);
   --color-pro1: rgb(161, 161, 229);
-  --color-gray: rgb(121, 123, 128);
+  --color-gray: rgb(165, 169, 172);
+  --color-sky: rgb(235, 245, 255);
   --font-heading: "Cafesquare";
   --font-article: "pretendard";
   --font-work: "Nanum";
@@ -229,12 +229,8 @@ body {
   color: var(--color-main);
 }
 
-#header nav.inner .tabs:nth-of-type(2).on .tab {
-  color: var(--color-main);
-}
-
 #header nav.inner .tabs.on .tab {
-  color: var(--color-green);
+  color: var(--color-blue);
 }
 
 #header nav.inner .tabs .tab {
@@ -301,6 +297,28 @@ body {
   background-color: var(--color-main);
 }
 
+.container {
+  background-color: var(--color-sky);
+}
+.container .secIntro {
+  color: var(--color-main);
+}
+.container .pageStart {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .pageStart h2 {
+  color: var(--color-main);
+  line-height: 1.2;
+  font-size: 2.5vw;
+}
+.container .pageStart h2 span {
+  color: var(--color-blue);
+  font-size: 3vw;
+}
+
 .proScroll {
   will-change: transform;
   display: inline-block;
@@ -314,43 +332,28 @@ body {
   transform: translate3d(0px, 0px, 0px);
 }
 
-.pageStart {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pageStart h2 {
-  color: var(--color-sup);
-  line-height: 1.2;
-  font-size: 2.5vw;
-}
-.pageStart h2 span {
-  color: var(--color-green);
-  font-size: 3vw;
-}
-
 .secIntro {
   text-align: right;
   height: 30vh;
-  color: var(--color-gray);
+  color: var(--color-sub);
   font-size: var(--xxl);
   padding: 0 1.5rem;
 }
 .secIntro .inner {
+  padding-top: 3.5vh;
   max-width: 1400px;
   margin: 0 auto;
 }
 .secIntro h2 {
   display: inline-block;
-  border-bottom: 2px solid var(--color-green);
+  border-bottom: 2px solid var(--color-blue);
   padding: 3vh 0;
 }
 .secIntro p {
   padding: 4vh 0 0 0;
 }
 .secIntro span {
-  color: var(--color-green);
+  color: var(--color-blue);
 }
 
 #work {
@@ -369,15 +372,15 @@ body {
   cursor: pointer;
   border-radius: 30px;
   background-color: var(--color-sub);
-  color: var(--color-green);
+  color: var(--color-blue);
   border: none;
 }
 #work .btnArea button.on {
-  background-color: var(--color-green);
+  background-color: var(--color-blue);
   color: var(--color-sub);
 }
 #work .btnArea button:hover {
-  background-color: var(--color-green);
+  background-color: var(--color-blue);
   color: var(--color-sub);
 }
 #work .contents {
@@ -495,7 +498,7 @@ body {
   width: 50%;
 }
 #project .projectWrap .project {
-  color: var(--color-sub);
+  color: var(--color-main);
   display: flex;
   width: 100%;
   height: 100vh;
@@ -523,7 +526,7 @@ body {
 }
 #project .projectWrap .project .projectDesc .info .pageNumber {
   font-size: 6vw;
-  color: var(--color-sup);
+  color: var(--color-gray);
 }
 #project .projectWrap .project .projectDesc .info .proTit {
   font-size: var(--xxxl);
@@ -532,7 +535,7 @@ body {
 }
 #project .projectWrap .project .projectDesc .info .subTit {
   font-size: var(--l);
-  color: var(--color-sup);
+  color: var(--color-gray);
 }
 #project .projectWrap .project .projectDesc .info .desc {
   font-size: var(--l);
@@ -540,35 +543,19 @@ body {
 }
 #project .projectWrap .project .projectDesc .info .link {
   padding: 1rem 1.5rem;
-  border: 1px solid #fff;
   border-radius: 1.5rem;
-  transition: 0.35s cubic-bezier(1, 1, 1, 1);
-}
-#project .projectWrap .project:first-of-type .info .link:hover {
+  transition: 0.35s linear;
   background-color: var(--color-sub);
   color: var(--color-blue);
 }
-#project .projectWrap .project:nth-of-type(2) .info .link:hover {
-  background-color: var(--color-sub);
-  color: var(--color-pro1);
-}
-#project .projectWrap .project:last-of-type {
+#project .projectWrap .project .projectDesc .info .link:hover {
+  background-color: var(--color-blue);
   color: var(--color-sub);
-}
-#project .projectWrap .project:last-of-type .info .subTit {
-  color: var(--color-sup);
-}
-#project .projectWrap .project:last-of-type .info .link {
-  border: 1px solid var(--color-sub);
-}
-#project .projectWrap .project:last-of-type .info .link:hover {
-  background-color: var(--color-sub);
-  color: var(--color-main);
 }
 
 #about {
   padding: 10vh 0 3vh;
-  color: var(--color-sub);
+  color: var(--color-main);
 }
 #about .introduce h2.introTitle {
   font-size: var(--xxl);

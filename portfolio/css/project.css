@@ -570,7 +570,10 @@ article .inner p {
 }
 .pro3-art3 .inner .guide li:first-of-type .color .col4 {
   width: 15%;
-  background-color: rgb(25, 206, 96);
+  background-color: rgb(235, 245, 255);
+}
+.pro3-art3 .inner .guide li:first-of-type .color .col4 span{
+  color: rgb(30, 31, 33);
 }
 .pro3-art3 .inner .guide li:first-of-type .color .col5 {
   background-color: rgb(121, 123, 128);
