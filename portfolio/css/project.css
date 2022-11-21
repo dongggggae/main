@@ -572,7 +572,7 @@ article .inner p {
   width: 15%;
   background-color: rgb(235, 245, 255);
 }
-.pro3-art3 .inner .guide li:first-of-type .color .col4 span{
+.pro3-art3 .inner .guide li:first-of-type .color .col4 span {
   color: rgb(30, 31, 33);
 }
 .pro3-art3 .inner .guide li:first-of-type .color .col5 {
@@ -597,17 +597,20 @@ article .inner p {
   height: 100px;
   width: 100px;
   border-radius: 100px;
-  background-color: rgb(30, 31, 33);
   color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .pro3-art3 .inner .guide li:last-of-type span:first-of-type {
-  color: rgb(25, 206, 96);
+  color: rgb(17, 17, 17);
+  background-color: rgb(235, 245, 255);
+}
+.pro3-art3 .inner .guide li:last-of-type span:nth-of-type(2) {
+  background-color: rgb(30, 31, 33);
 }
 .pro3-art3 .inner .guide li:last-of-type span:last-of-type {
-  color: rgb(0, 115, 229);
+  background-color: rgb(0, 115, 229);
 }
 
 .pro3-art4 {
