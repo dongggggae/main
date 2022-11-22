@@ -48,7 +48,14 @@ body {
   background-color: var(--color-main);
   font-family: var(--font-article);
 }
-
+.outText {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+}
 #intro {
   background-color: var(--color-sub);
   position: relative;
@@ -488,7 +495,7 @@ body {
   position: sticky;
   top: 0;
 }
-#project .imgWrap article {
+#project .imgWrap .projectImg {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -787,7 +794,7 @@ footer {
     gap: 30px;
   }
   #about .normal-content .profileRight .col .inner .infoL > *,
-#about .normal-content .profileRight .col .inner .infoR > * {
+  #about .normal-content .profileRight .col .inner .infoR > * {
     padding: 0;
     margin-bottom: 15px;
   }
